@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="“anonymous”">
+    <meta http-equiv="Access-Control-Allow-Credentials: true;">
+    <meta http-equiv="Access-Control-Allow-Headers" content="X-Requested-With">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="application-name" content="com.SPEKTRUMCreations.theFlight.lpa">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+    <meta name="color-scheme" content="only dark">
+    <!-- Add Light Theme also //-->
+    <meta name="apple-mobile-web-app-title" content="&quot;The Flight&quot;">
+    <meta name="description" content="'A WebApp built specificlly to run on iOS deices, to bring the music album 'The Flight'' to the world...' --Christopher Johnson">
+    <meta name="keywords" content="SPKML, 'Web App', iOS, Music, Album, Songs, Lyrics, Liners, Notes, Cover, Artwork, Rock, Singer-Songwriter, 'Kansas City', Missouri, Denver, Colorado">
+    <meta name="author" content="Christopher Johnson, New Media Artisan: @spkml">
+    <title>"The Flight"</title>
+    <!-- iPhone ICON -->
+    <link href="theFlight-icon.png" rel="apple-touch-icon">
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    <link href="./startScreen.jpg" rel="apple-touch-startup-image">   
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    
+    
+    <script type="text/javascript" src="addToHomescreen.js">
+      /* Add to Homescreen v3.2.3 ~ (c) 2015 Matteo Spinelli ~ @license: http://cubiq.org/
+		</script>
+    <style>
+      /* Add to homescreen css  */ 
+      .ath-viewport * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      }
+      .ath-viewport {
+      position: relative;
+      z-index: 2147483641;
+      pointer-events: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -o-text-size-adjust: none;
+      text-size-adjust: none;
+      }
+      .ath-modal {
+      pointer-events: auto !important;
+      background: rgba(0,0,0,0.6);
+      }
+      .ath-mandatory {
+      background: #000;
+      }
+      .ath-container {
+      pointer-events: auto !important;
+      position: absolute;
+      z-index: 2147483641;
+      padding: 0.7em 0.6em;
+      width: 18em;
+      background: #454545;
+      background-size: 100% auto;
+      box-shadow: 0 0.2em 0 #999;
+      font-family: sans-serif;
+      font-size: 12px;
+      line-height: 1.5em;
+      text-align: center;
+      }
+      .ath-container small {
+      font-size: 0.8em;
+      line-height: 1.3em;
+      display: block;
+      margin-top: 0.5em;
+      }
+      .ath-ios.ath-phone {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      .ath-ios14 .ath-action-icon {
+      display: inline-block;
+      width: 18px;
+      height: 15px;
+      background-repeat: no-repeat;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+      background-size: 18px 15px;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios6.ath-tablet {
+      left: 5em;
+      top: 1.8em;
+      }
+      .ath-ios7.ath-tablet {
+      left: 0.7em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-tablet,
+      .ath-ios9.ath-tablet,
+      .ath-ios10.ath-tablet{
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-android {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      /* close icon */
+      .ath-container:before {
+      content: '';
+      position: relative;
+      display: block;
+      float: right;
+      margin: -0.7em -0.6em 0 0.5em;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAMAAABmmnOVAAAAdVBMVEUAAAA5OTkzMzM7Ozs3NzdBQUFAQEA/Pz8+Pj5BQUFAQEA/Pz8+Pj5BQUFAQEA/Pz9BQUE+Pj4/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8+Pj4/Pz8+Pj4/Pz8/Pz8/Pz8/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8/Pz9AQEA/Pz+fdCaPAAAAJnRSTlMACQoNDjM4OTo7PEFCQ0RFS6ytsbS1tru8vcTFxu7x8vX19vf4+C5yomAAAAJESURBVHgBvdzLTsJAGEfxr4C2KBcVkQsIDsK8/yPaqIsPzVlyzrKrX/5p0kkXEz81L23otc9NpIbbWia2YVLqdnhlqFlhGWpSDHe1aopsSIpRb8gK0dC3G30b9rVmhWZIimTICsvQtx/FsuYOrWHoDjX3Gu31gzJxdki934WrAIOsAIOsAIOiAMPhPsJTgKGN0BVsYIVsYIVpYIVpYIVpYIVpYIVpYIVpYIVpYIVlAIVgEBRs8BRs8BRs8BRs8BRs8BRs8BRs8BRTNmgKNngKNngKNngKNngKNhiKGxgiOlZoBlaYBlaYBlaYBlaYBlaYBlaYBlaYBlZIBlBMfQMrVAMr2KAqBENSHFHhGEABhi5CV6gGUKgGUKgGUKgGUFwuqgEUvoEVsoEVpoEUpgEUggF+gKTKY+h1fxSlC7/Z+RrxOQ3fcEoAPPHZBlaYBlaYBlaYBlZYBlYIhvLBCstw7PgM7hkiWOEZWGEaWGEaWGEaIsakEAysmHkGVpxmvoEVqoEVpoEVpoEVpoEVpoEVpoEVkoEVgkFQsEFSsEFQsGEcoSvY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnmbNAUT2c2WAo2eAo2eAo2eAo2eAo2eArNEPFACjZ4CjZ4CjZ4CjaIird/rBvFH6llNCvewdli1URWCIakSIZesUaDoFg36dKFWk9zCZDei3TtwmCj7pC22AwikiIZPEU29IpFNliKxa/hC9DFITjQPYhcAAAAAElFTkSuQmCC);
+      background-color: rgba(128,128,128,0.9);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      width: 2.7em;
+      height: 2.7em;
+      text-align: center;
+      overflow: hidden;
+      color: #666;
+      z-index: 2147483642;
+      }
+      .ath-container.ath-icon:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-mandatory .ath-container:before {
+      display: none;
+      }
+      .ath-container.ath-android:before {
+      float: left;
+      margin: -0.7em 0.5em 0 -0.6em;
+      }
+      .ath-container.ath-android.ath-icon:before {
+      position: absolute;
+      right: auto;
+      left: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-container.ath-icon {
+      background-color: #787878;
+      }
+      .ath-action-icon {
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('square.and.arrow.up.png');
+      background-position: 50%;
+      background-repeat: no-repeat;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios14 .ath-action-icon,
+      .ath-ios13 .ath-action-icon,
+      .ath-ios12 .ath-action-icon,
+      .ath-ios11 .ath-action-icon{
+      width: 1.6em;
+      height: 1.6em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAACtCAYAAAB7l7tOAAAF6UlEQVR4AezZWWxUZRiH8VcQEdxZEFFiUZBFUCIa1ABBDARDcCciYGKMqTEGww3SOcNSAwQTjOBiiIpEhRjAhRgXRC8MFxojEhAFZUGttVhaoSxlaW3n8W3yXZxm6vTrOMM5Q98n+V9MMu1pvl++uZhKuypghu49KaaTWGdZSYoVN6VD95nMpLNYZ9XNbdQR2od2k88O3Gm6Bh0t7H0p5Vwp2Ax3ajpu2tYbciFWwkTFO63DY6+JcI4USFaSyYpWp8N7SVZJKR3EinkBk9JxvZFXxhnZSjBaoWp1ZL0ES8WKYXMZp0AndORgy8WKFe5Yf1zvvSBWDEpys2LU6MjD5kmEWQlGKsJRHXlcqUSQVcItEnDEA6gAb7LhjvD9WO6yIEfICQI5A1nzGCYB1T4og5bBiFcyv2f6ujYhl4iVxwKG6qp8MK55HsqPwK0rMr9v/yEo3uCPrJstVh5KMER30Aeh31Ioq0FrHfjXw9CYghnrvYFTuqfEymFzGSwBlT4ARYr7u+K6GLmCVGvAGg2NMG0d/sgJnpScZLjXSkC5z8H3eQ72/k24Q8NfzvwFyK4qtuJSZKaubRPyE/K/Mtx+EvCHL+7uasId1t10w0scz/RzSzYzAfgKV30D3LPaG7lRkR8RK4tKKJKAMp+D7r0EfmmOe0x3m2itAc/ZxBjgAt1mXHWKPPkdb+QGSTJdrDaU5EoJ2OtzwD0WwY7KNNzbRfMFFg24WPdtGHnS221Cflgsj56hjwTs8TnY7oq7/QDhjutGicsb2AVcovsO18l6uPPNNiE/JFaGAq7Q7fY50G4LYVtz3FrdaNGyBXbIl+q24DqhyHes9EaulwR3SwtZs+ktAT/7HORliru1gnCndONFyx44Dfn7MPLYN7yR6yTJZAllJeguAT/4HOBFz8I3ZWm4E0TLFbBD7qn7EVdtHYx53R9ZN0ksrZRuErDN5+AuLIWvm+Oe1k0ULdfADrmX7idcR0/DyBXeyCdlLuMMOGCBz4F1ng+f7yFcve5e0fIFHELeiav6BAx70Rt5p0yhY3u/wR0kyarW/uX35b403PtFyzewQ75ctwtXzSkY8WqruHslSV8RscrL6TJ1bcvfWJ0/HzbtIdw/ugdFyzdwOOAq3T6fmzxwGQ3vbmO8iFioIWqYSsHMj9M/ljfuTsOdItoZBXYBfXX7cVXVwvXLm/8+fU3lcdCqdEMNGBbgUmRmfQISQKd5sGEn4VK6YtEiAXYBA3QVuA4q8hCHrDcafR1ul65jewfuovsCl7vJrNlOuEbdo6JFCuwCrtb9hqusBu56Cw4cI1y1briIWEBn3Ue0XKPuMdGiBg4H9NdV0HJ/6QZLOEPmPN0GmpfSPS5arIBdwHUtIFfoBsl/ZsgfhHCfFi2WwC5goO4AmvanbqBkzJA76tboZokWa2AXMEi3RTdAvDLkDqJFAhzB32xFD2wZsGXA0WfAlgFbBmwZsGXAlgFbBpzk04JaKb0iA9ZnF9x5SQAFtRKKIgPWZxfaeRmwAZ/BGbAB37eaG6MCbnq2Aed5czYyKirgpmcbsAHHZAZswN0Wwo7KeG1fFf2jAm56dtzOQ42yB+65mDhWFBUwUETMUiMDNmADbp/APRaTAh6I2bpGCNw1bufRZJQ1cPdF/NueHZsgDEBBGLbMGoIu4AZu5gLOZeEaYmEXeznF3jRPyEv4frgJvvJe3qTefY0AAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwb8rwADBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgz4/sz1Nia/9hizA7zgklwy3RYwYMBzBRjw4bPjxAbAAizAAtwgwAIswAIswAIMGDBgARZgARZgAS4FWIAFWIAFWIABAwYswAIswAIswIUAC7AAC7AACzBgwIAFWIAFWIAFuBBgARZgARZgAQYMGPApQ99ZCdgWtzqwATbABtgAG2DbnxNb7zbRimsMLMACrDf2wMWI/WasfQAAAABJRU5ErkJggg==);
+      margin-top: -0.3em;
+      background-size: auto 100%;
+      }
+      .ath-ios6 .ath-action-icon {
+      width: 1.8em;
+      height: 1.8em;
+      background-image:url(data:image/png;base64,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);
+      margin-bottom: 0.4em;
+      background-size: 100% auto;
+      }
+      .ath-android .ath-action-icon {
+      width: 1.4em;
+      height: 1.5em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEVmZmb///9mZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZW6fJrAAAAEXRSTlMAAAYHG21ub8fLz9DR8/T4+RrZ9owAAAB3SURBVHja7dNLDoAgDATQWv4gKve/rEajJOJiWLgg6WzpSyB0aHqHiNj6nL1lovb4C+hYzkSNAT7mryQFAVOeGAj4CjwEtgrWXpD/uZKtwEJApXt+Vn0flzRhgNiFZQkOXY0aADQZCOCPlsZJ46Rx0jhp3IiN2wGDHhxtldrlwQAAAABJRU5ErkJggg==);
+      background-size: 100% auto;
+      }
+      .ath-container p {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 2147483642;
+      text-shadow: 0.1em 0.1em 0 #000;
+      font-size: 1.1em;
+      }
+      .ath-ios.ath-phone:after {
+      content: '';
+      background: #eee;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      bottom: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: 
+      scaleX(0.9);
+      rotate(45deg);
+      transform: scaleX(0.9);
+      rotate(45deg);
+      box-shadow: 0.2em 0.2em 0 #ccc;
+      }
+      .ath-ios.ath-tablet:after {
+      content: '';
+      background: #666;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      top: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: scaleX(0.9) rotate(45deg);
+      transform: scaleX(0.9) rotate(45deg);
+      z-index: 2147483641;
+      }
+      .ath-application-icon {
+      position: relative;
+      padding: 0;
+      border: 0;
+      margin: 0 auto 0.2em auto;
+      height: 6em;
+      width: 6em;
+      background: transparent;
+      background-image: url('./favicon-96x96.png');
+      z-index: 2147483642;
+      }
+      .ath-container.ath-ios .ath-application-icon {
+      border-radius: 1em;
+      box-shadow: 0 0.2em 0.4em rgba(0,0,0,0.3),
+      inset 0 0.07em 0 rgba(74,74,74,0.5);
+      margin: 0 auto 0.4em auto;
+      }
+      @media only screen and (orientation: landscape) {
+      .ath-container.ath-phone {
+      width: 24em;
+      }
+      .ath-android.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios6:after {
+      left: 39%;
+      }
+      .ath-ios8.ath-phone {
+      left: auto;
+      bottom: auto;
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-phone:after {
+      bottom: auto;
+      top: -0.9em;
+      left: 68%;
+      z-index: 2147483641;
+      box-shadow: none;
+      }
+      }
+      /* End of Add to homescreen css */
+    </style>
+    
+    
+    
+    
+    
+    <style> 
+      /* REST OF CSS FOR WEB APP LPA */
+      body {
+      -webkit-border-top-left-radius: 50px;
+      -webkit-border-top-right-radius: 50px;
+      -webkit-border-bottom-right-radius:50px;
+      -webkit-border-bottom-left-radius:50px;
+      -webkit-background-clip: padding-box; 
+      -webkit-border-radius: 50px;
+      padding-left: max(12px, env(safe-area-inset-left));
+      padding-right: max(12px, env(safe-area-inset-right));
+          -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+   /*   max-height: cover;
+      max-width: cover; */
+      }
+      @media (prefers-color-scheme: dark) {
+      @media (orientation: portrait) {
+      html, body {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      font-family: Arial, Helvetica, sans;
+      font-size: 12px;
+      color: #CFCFCF;
+      font-weight: bold;
+      font-style: oblique;
+      line-height : 100%;
+      width : 100vw;
+      height : contain;
+      position : fixed;
+    }
+      div.webApp {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      width : 100vw;
+      height : 100vh;
+      display : flex;
+      position : fixed;
+      }
+      audio.myPlayer {
+      position : absolute;
+      top : 0px;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      z-index : 2;
+      height: 36px;
+      min-width : 74%;
+      width: 100%;
+      background-color : transparent;
+      }
+      .l-toppane {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom: 50vh;
+      margin : 0;
+      padding : 0;
+      height : 50vh;
+      width : 100vw;
+      position : fixed;
+      display: inline-block;
+      }
+      .LPcover {
+      margin : 0;
+      padding : 0;
+      top : 0;
+      right : 0;
+      left : 0;
+      max-height:  -webkit-fit-content;
+      max-width:  -webkit-fit-content;
+      max-height: 50%;
+      width : 100vw;
+      }
+      .r-botpane {
+      right : 0;
+      left : 0;
+      top : 50%;
+      bottom : 39px;
+      padding : 0px;
+      width : 100vw;
+      max-height : 50%;
+      position : fixed;
+    }
+      
+/* Style the tab content in portrait mode  */
+
+
+.tabcontent {
+            color: #cecece;
+            display: hidden;
+            top: 50vh;
+            left: 0px;
+            right: 0px;
+            width: 100vw -24px;
+            height: 100%;
+            bottom: -2px;
+            padding-left: 18px;
+            padding-right: 18px;
+            text-align: justify;
+            overflow-y: scroll;
+            -webkit-box-shadow: inset 0px 6px 18px 3px #000000; 
+            box-shadow: inset 0px 6px 18px 3px #000000;
+            text-shadow: -2px 2px 6px #000000;
+            border: 4px inset #696969;
+            border-radius: 0px 0px 47px 47px;
+            background: #333333;
+      background: -webkit-gradient(linear, 0 0, 100% 0, from(#111111), color-stop(0.5, #676767), to(#333333));
+      background: -webkit-linear-gradient(left, #111111, #676767, #333333);
+    }
+      
+      .playlist {
+      position : fixed;
+      margin : 18px;
+      text-align : justify;
+      filter : drop-shadow(7px 7px 7px black);
+      }
+      .copyright {
+      position : absolute;
+      bottom : 0;
+      right : 0;
+      left : 0;
+      margin : 0;
+      width : 100vw;
+      height : 48px;
+      font-size : x-small;
+      text-align : center;
+      }
+      
+      
+        
+      
+      div.scrollmenu {
+        width: 100%;
+        -webkit-align: center;
+        border-top: 4px ridge rgba(255,255,255,0.92);
+        border-radius: 12px 12px 0px 0px;
+        margin-left: 0px;
+        margin-left: 0px;
+        bottom: 0px;
+        border-bottom: 0px solid #999;
+        background: #333;
+        background: -webkit-linear-gradient(top, #666, #ababab, #000000);
+       overflow-x: scroll;
+       white-space: nowrap;
+      }
+      div.scrollmenu a {
+        
+      text-decoration: none;
+      }
+      div.scrollmenu a:hover {
+      -webkit-transform: hue lightblue;
+    }
+      
+      
+      /* Style the tab */
+      .tab {
+      min-width: -webkit-fit-content;
+      max-width: 100%;
+      line-height: -webkit-fit-content;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        bottom: -1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        left: 0%;
+        right: 0%;
+      }
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        left: 1px;
+        right: 1px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      border-left: 1px solid #333;
+      border-right: 1px solid #666;
+      border-bottom: 0px;
+      bottom: 0px;
+      border-radius: 12px 12px 0px 0px;
+      background: -moz-linear-gradient(top, #333333 100%, #cccccc 92%, #000 74%);
+      font-size: 12px;
+      font-weight: bolder;
+      text-decoration: none;
+      font-style: oblique;
+      font-variant: small-caps;
+      text-transform: capitalize;
+      overflow-x: scroll;
+      cursor: hand;
+      padding: 2px 2px;
+      transition: 0.5s;
+      transition-timing-function: ease-in-out;
+      text-shadow: -2px -2px 8px black;
+      border-top: 3px ridge #dfdfdf;
+       -webkit-box-shadow: 2px 4px 9px 5px #000;
+      color: #ffffffde;
+      transform: overlay;
+      box-shadow: -3px -2px 6px #141414;
+      }
+      /* Change background color of buttons on hover */
+          .tab button:hover {
+          background: -webkit-linear-gradient(top, #585858 100%, #adadad 100%, bottom, #232323 100%);
+          border-top:3px ridge rgba(255,255,255,1.0);
+        -webkit-transform: screen;
+          }
+      /* Create an active/current tablink class */
+      .tab button.active {
+      text-decoration: rgba(0, 222, 222, 0.9);
+      -webkit-box-shadow: -1px -2px 3px 2px #333;
+       -webkit-transform: multiply;
+       -webkit-filter: 2px 3px 4px #64646;
+       -webkit-color-transform: difference;
+       animation: mymove 4s infinite;
+       transition-timing-function: ease-in-out;
+       color: white;
+       -webkit-border-bottom: 1px 3px 12px 5px #000;
+       text-shadow: 6px 4px 7px #555;
+       border-top: 3px groove #fff;
+
+      }
+@keyframes mymove {
+  50% {
+    border-top: 3px groove skyblue;
+    color: skyblue;
+    text-shadow: 6px 4px 7px #111;
+    transform: overlay;
+  }
+
+}   
+      
+      ol {
+      list-style-type: upper-roman;
+      }
+      
+      }
+      
+    }
+    </style>
+     
+  </head>
+  <body oncontextmenu="return false;" onload="javascript:addToHomescreen();" onorientationchange="updateOrientation();">
+    <div class="webApp">
+    <div class="r-toppane">
+       <audio controls="controls" title="myPlayer" class="myPlayer" autoplay="autoplay" preload="metadata"> <source src="./mp3s/theFlight.m3u" type="audio/mp3">
+       </audio>
+      
+      <img src="./TheFlight-coverArt.jpg" alt="The Flight Album Coveer" class="LPcover">
+    </div>
+    <div class="r-botpane">
+    <center>
+      <div class="tab">
+        <div class="scrollmenu">
+          <a href="https://spkml.com/" class="menulink" media="aural" title=""></a><a>
+          <button class="tablinks active" onclick="openThisPage(event, 'Album')" id="defaultOpen">album</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Tracks')">tracks</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Lyrics')">lyrics</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Liners')">liners</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Bio')">bio</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Online')">online</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Credits')">credits</button>
+        </a></div><a>
+      </a></div><a>
+    </a></center><a>
+      <div id="Album" class="tabcontent" style="display: block;">
+        <h1>"The Flight"</h1>
+        <h2>
+        About this Album<!--2-->
+        </h2><h3>Created by: Christopher Johnson</h3>
+        <p>This is an experiment in creating a web app that contains only Standards Based content created in HTML5 using only native javascript and CSS.</p>
+        <p>The music for this hybrid webApp design was initially set up with only one mp3 file Playing through an HTML5 audio tag element, which was on purpose so that the listener could experience the album as an album, which is what this app is being created as.</p>
+        <p>To serve the purpose of creating a Standards Based stand-alone bundle with an elegant approach to logically designing a self contained, fluid UI and a base set of functionalities to present all the embedded content, including album cover, track listing, liner notes, bio, photos, social and web links, etc... this is where the idea came for the LPA file type Named for the classic long play album vinyl records.</p>
+        <p>If we can agree that webpacked webapps are at first an acceptable crossplatform container for the LPA file bundle, the next question is can it or should it be a stand alone file type with built in player to play the embedded content?</p>
+        <p>In the spirit of FOSS, for accesibility by Timmy the bedroom hobby-ist musician as well as by artists, the likes of Paul McCartney and Ringo Starr, the LPA format has the goal of being widely used and hopefully can standardized a release format by presenting a platform to develop the .lpa file type for eventual mime-type recognition.</p>
+        <p>The current state of things seemes to make it clear that mp3 is the most compatible choice to start from. MP3 uses the power of embedded content in the ID3 Tags. Taken a step further and especially when filled out in fullness the mp3 id3/4 tag content will make the .LPA file type make you want to sing...</p>
+        <p>Along other ideas, so long as the content is represented by a fully navigatable, fully accessible by controls, music album, the .lpa file standards will meet minimum requirements of acceptability for licensed release.</p>
+        <p>Instead of using MP3 files in M3U8 playlist or HLS streaming, convert The MP3 files to MP4 and use M3U8  to host the Mp4 audio files(). Use the poster attribute to display the album cover.  Adding timed captioning of lyrics would be an accessibility dream come true. </p>
+        <p>At this point, or at least at the time of this writing, the aim is now to stick firmly to strict W3C standards and guidelines and remain completely open source. that's said, The design will follow as such:</p>
+        <ol start="I">
+          <li>
+            The XML file markup structure will be defined by an XSD, initially built as an internal   definition.
+          </li>
+          <li>
+            Turn the 'Tracks Listing' section into an .XSPF style XML playlist that is written as XML file content but including the inline embedded internal XML Schema, NameSpace and inline XSD defined in just preceeding XSD data which will then be readable by HTML through a JavaScript XML parser script.
+          </li>
+          <li>  
+            But the XML will be reused as UI content that is styled as needed by CSS while still remaining  readable by the audio element  embedded into the code of thia HTML5.
+          </li>
+          <li>      
+            The question arises also of whether to use the information contained within the properly encoded mp4 audio files by getting the tag content from embedded meta-data... -TBD;
+          </li>
+          <li>
+            Additional album content such as the artwork can also be pulled from the meta tags in the audio tracks. I will call
+          </li>
+        </ol>
+        <p>View the source code of this webpage/webapp to learn more about the code through the actual code wich has comments 
+          throughout this document written with html5, js/es5-6 and css3+ 
+        </p>
+        <br>
+      </div>
+      <div id="Tracks" class="tabcontent" style="display: none;">
+        <ol start="1" class="playlist">
+          <li>CitizensOfEarth(album cut).mp3 <span class="songTime">( 3:42) </span></li>
+          <li>The Great Fall.mp3 <span class="songTime">( 0:52) </span></li>
+          <li>What I do (Remastered).mp3 <span class="songTime">( 2:22) </span></li>
+          <li>Sunday Afternoon (Remastered).mp3 <span class="songTime">( 4:03) </span></li>
+          <li>Sheep In Wolves Clothing.mp3 <span class="songTime">( 4:19) </span></li>
+          <li>Anyway.mp3 <span class="songTime">( 3:44) </span></li>
+          <li>It doesn't feel right.mp3 <span class="songTime">( 3:03) </span></li>
+          <li>2 Pause (Ah).mp3 <span class="songTime">( 3:11) </span></li>
+          <li>Billed As.mp3 <span class="songTime">( 5:12) </span></li>
+          <li>Feeling Blue.mp3 <span class="songTime">( 3:56) </span></li>
+          <li>GettinIt.mp3 <span class="songTime">( 5:26) </span></li>
+          <li>Lifestyle.mp3 <span class="songTime">( 4:00) </span></li>
+          <li>The Gopher On The TV.mp3 <span class="songTime">( 3:21) </span></li>
+          <li>The Epic of Mister Resistor.mp3 <span class="songTime">( 3:34) </span></li>
+          <li>Play My Life Away.mp3 <span class="songTime">( 4:38) </span></li>
+          <li>ForSamantha.mp3 <span class="songTime">( 3:10) </span></li>
+          <li>When All Is Said &amp; Done.mp3 <span class="songTime">( 3:42) </span></li>
+          <li>D.S. Al Coda.mp3 <span class="songTime">( 1:56) </span></li>
+        </ol>
+      </div>
+      <div id="Lyrics" class="tabcontent" style="display: none;">
+        <h3>Lyrics</h3>
+        <p> coming soon...
+        </p>
+      </div>
+      <div id="Liners" class="tabcontent" style="display: none;">
+        <h3>Liner notes</h3>
+        <p> coming soon...
+        </p>
+      </div>
+      <div id="Bio" class="tabcontent" style="display: none;">
+        <h3>Bio</h3>
+        <p>
+          From the perspective of music, Christopher Johnson is a musician at heart, a guitarist by preference, though he can tickle the ivories when needed… Recording and Mixing is a passion for Christopher and his catalog of music can back that up…</p>
+          <p>
+
+But how did Christopher get from there to here? In his words;
+</p>
+<p>
+“I was in fourth and fifth grade playing church music giving it no attention I thought because I wasn’t playing Van Halen. As it were, I knew a few songs at best and a handful of chords but didn’t realize that church music I played used the same chords to play the rock music I loved from the radio. I set it down…
+</p>
+<p>
+In 1992, I was over at a duplex with a friend and we were visiting a friend named Eric Boyce. Eric had been playing a couple of years and when he played “American Pie”, I payed attention to his hands and recognized the chords, at least a few of them if not most and I was inspired… I went out the next day and bought a classical acoustic and tried to put steel strings on it, which as anyone knows, will destroy a pawn shop guitar meant for nylon strings… Anyway, after a terrible electric guitar purchase, I traded it in with cash, to buy a Lotus Acoustic Dreadnaught with black binding. I named the guitar “Stoney Kingston Buckthorne” . I still play Stoney as my main acoustic to this day… Or I </p>
+<p>
+
+I started recording songs with a four-track tape recorder in probably mid-1993 or later, but I was recording myself to get better and learn songs. I bought my own Fostex X-18 4-track recorder and Eric had the same model and so we shared and collaborated between the tapes we shared. Sometimes we would setup and just jam… Other times we worked out songs or came up with different parts and they would come together in a song. This is the basis for the drawing on the album cover of “Midnight Jam”.
+
+</p>
+<p>
+By 1995, Eric and I were sort of drifting and life was happening for him and me. I started to play at a Sunday jam session which I ended up being a strong member of most of the summer. In November of that same year I played my first solo show. I opened for a St. Louis band named MU330…</p>
+<p>
+
+Just about a month prior to the show opening for MU330, I wrote a long-hand rough draft of a screenplay which I wrote over three or so days at an AppleBee’s in Topeka, KS. The story, “The Overnight Success” was about a band who sold platinum in literally one night over the internet. It was way ahead of it’s time. iTunes didn’t even come out until 2003 and the iPod was only released in October of 2001. Recordable CD drives were out barely and were outrageously priced in 1995 . Windows 95 was only just released in August of 1995 and I saw a story to be told to shape the future. I got on AOL as soon as I could, probably in 1996 and early 1997. I was working on recording with my Multitrack recorder and worked on learning about the content to write a full screenplay with a basic soundtrack which I copyrighted in 1998 as “The Other Side Of Blue”.</p>
+<p>
+
+I ultimately had to turn down a record deal that I’d negotiated for the film. I feel it would have laid the ground work for a quite different outcome. However, “The Other Side Of Blue” went unproduced and probably just as well.</p>
+<p>
+
+I followed up over the next couple years with writing two or so more screenplays in a series of the story of SPEKTRUM, the band in “The Other Side Of Blue”. I set to work on a work that was different.
+</p>
+<p>
+
+
+In the late 1990’s, I released a a could albums on mp3.com/spektrum.
+I had become intrigued by AI, Artificial Intelligence and I started looking into programming in a language called AIML . I’d envisioned a hybrid language called SPKML based in part in the XML structure of AIML with the MultiMedia capabilities of HTML, or then DHTML; now, HTML5… SPKML is an acronym in this case for Specific Purpose Knowledge and Media Language. I call it something different in a book I wrote inspired by the idea in 2003-2004, “&lt;CodeBase /&gt;” was written and then published in various incarnations as well as in paperback since 2005. You can find it today in paperback at https://www.amazon.com/Codebase-Chris-Johnson/dp/1438248628</p>
+<p>
+
+In early 2005 I began working on a MacBook G4 laptop and it was a dream for the time. I set out recording an album of music that year and started mainly recording midi Karaoke tracks that were more real than midi, at least in my attempt to make good ‘covers’… There’s a selection from those recordings… under ‘Music’ in the menu.
+</p>
+<p>
+I worked on some stuff but not much for a couple years, dealing with life on life’s terms as it were and doing poorly until I got to build my first computer in 2009 and it was good enough to run World Of Warcraft. Though that doesn’t say much since I also was able to get it hackintoshed and was able to not only hackintosh an atom powered netbook from hp but also run World of Warcraft.</p>
+<p>
+
+I played a few years and worked on music on my hackintosh machines but I had to come back to windows and then back to a real mac. I’d run my website and ran a podcast for a while and have run SPKML.com and SPEKTRUMCreations.com for years, perhaps since 2003-2005?</p>
+<p>
+
+One of the reasons that I thought a Mac works better for me is that Apple bought Logic, they slimmed it down to make Garageband and include it as an app in a standard install… Now Garageband is a full-fledged app that is more than capable and though I like Logic, I find with 24 bit audio master mixdowns, it is plenty good enough for my needs… On top of that I now share on blend.io/spkml where you can download my actual Garageband sessions to remaster or remix yourself.
+
+</p>
+<p>
+I’ve recorded on an iPhone in fact to the point that I’ve actually done entire albums worth of material on my iPhone 4, 6 and now 8. I’ll eventually upgrade but that’s not the point of this… I guess I’m a nerd still… But I’m a music nerd, so I think my 4th grade self would think that’s pretty neat…
+        </p>
+      </div>
+      <div id="Online" class="tabcontent" style="display: none;">
+        <h3>Online</h3>
+        <p>Instagram, Facebook, Twitter, YouTube...</p>
+      </div>
+      <div id="Credits" class="tabcontent" style="display: none;">
+        <h3>Credits</h3>
+        <p>All songs written, performed and recorded by Christopher Johnson.  "The Flight" was recorded in Denver, Colorado in within three weeks in July and August of 2019 and was originally released on September 19, 2019.</p>
+        <span class="copyright">Copyright © 2020 SPEKTRUM Creations</span><p></p>
+      </div>
+      <!-- end tabs -->
+    </a></div><a>
+    <script type="text/javascript">
+      function openThisPage(evt, pageID) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      }
+      
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(pageID).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
+      
+    </script>
+    <script>
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+<!--
+  bouncefix.js 
+  //-->
+		<script src="./bouncefix.js"></script>
+		<script>
+			bouncefix.add('content');
+		</script>
+
+  
+  </a></div></body></html>

@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Long Play Album (LPA)file CREATOR [prototype example]</title>
+</head>
+<body>
+    <form method="POST">
+      
+              <label for="metaDescription-input">This LPA's meta tag description:</label>
+        <input type="text" id="metaDescription-input" placeholder="Describe Your LPA File and Contents" >
+        <br />
+        <label for="author-input">This LPA File's Author:</label>
+        <input type="text" id="author-input" placeholder="The name of the author of the LPA you are creating... (i.e., Your Name...)" >
+        <br />
+        <label for="metaKeywords-input">Meta Keywords:</label>
+        <input type="text" id="metaKeywords-input" placeholder="Keywords that might be search terms to find your LPA File." >
+        <br />
+      
+      
+      
+      
+        <label for="ptSplash-input">Splash Screen (portrait) File:</label>
+        <input type="file" id="ptSplash-input" accept=".jpg" placeholder="upload splash .jpg 1792h*828w portrait" >
+        <br />
+        <label for="lsSplash-input">Splash Screen (landscape) File:</label>
+        <input type="file" id="splash-input" accept=".jpg" placeholder="upload splash .jpg 828px*1792px landscape" >
+        <br />
+        <label for="cover-input">Cover File:</label>
+        <input type="file" id="cover-input" accept=".png" placeholder="upload png 500px * 500px" >
+         <br />
+        <label for="icon-input">Icon File:</label>
+        <input type="file" id="icon-input" accept=".png" placeholder="upload .png Icon 144px*144px" >
+        <br />
+        <label for="audio-input">audio File:</label>
+        <input type="file" id="audio-input" accept=".mp3, .wav" placeholder="upload mp3 or .wav" >
+        <br />
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" name="title" placeholder="Album Title" >
+				<br />
+        <label for="artist-input">Artist:</label>
+        <input type="text" id="artist-input" name="artist" placeholder="Artist Name" >
+				<br />
+        <label for="composer-input">Composer:</label>
+        <input type="text" id="composer-input" name="composer" placeholder="Composer Name" >
+				<br />
+        <label for="label-input">Label:</label>
+        <input type="text" id="label-input" name="label" placeholder="Record Label" >
+				<br />
+        <label for="date-input">Release Date:</label>
+        <input type="date" id="date-input" name="date" >
+        <br />       
+        <hr />       
+        <br />       
+        <label for="track-list-input">Track List:</label>
+        <textarea placeholder="track-titles (one title per line)" rows="20" cols="64" id="track-titles" name="track-titles" ></textarea>
+        <br />
+        <hr />      
+        <br />
+        <label>Tracks-Time-Lyrics:</label>
+        <br />
+        <hr />
+        <br />       
+        <label for="track 1">Track 1</label>
+        <input placeholder="track1-title" cols="64" id="track1-title" name="track1-title" ></input>
+        <input placeholder="track1-time" cols="64" id="track1-time" name="track1-time" ></input>
+            <textarea placeholder="lyrics1-input" cols="64" id="lyrics1-input" name="lyrics1-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track2">Track 2</label>
+        
+        <input placeholder="track2-title" cols="64" id="track2-title" name="track2-title" ></input>
+        <input placeholder="track2-time" cols="64" id="track2-time" name="track2-time" ></input>
+            <textarea placeholder="lyrics2-input" cols="64" id="lyrics2-input" name="lyrics2-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track3">Track 3</label>
+        <input placeholder="track3-title" cols="64" id="track3-title" name="track3-title" ></input>
+        <input placeholder="track3-time" cols="64" id="track3-time" name="track3-time" ></input>
+            <textarea placeholder="lyrics3-input" cols="64" id="lyrics3-input" name="lyrics3-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track4">Track 4</label>
+        <input placeholder="track4-title" cols="64" id="track4-title" name="track4-title" ></input>
+        <input placeholder="track4-time" cols="64" id="track4-time" name="track4-time" ></input>
+            <textarea placeholder="lyrics4-input" cols="64" id="lyrics4-input" name="lyrics4input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track5">Track 5</label>
+        <input placeholder="track5-title" cols="64" id="track5-title" name="track5-title" ></input>
+        <input placeholder="track5-time" cols="64" id="track5-time" name="track5-time" ></input>
+            <textarea placeholder="lyrics5-input" cols="64" id="lyrics5-input" name="lyrics5-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track6">Track 6</label>
+        <input placeholder="track6-title" cols="64" id="track6-title" name="track6-title" ></input>
+        <input placeholder="track6-time" cols="64" id="track6-time" name="track6-time" ></input>
+            <textarea placeholder="lyrics6-input" cols="64" id="lyrics6-input" name="lyrics6-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track7">Track 7</label>
+        <input placeholder="track7-title" cols="64" id="track7-title" name="track7-title" ></input>
+        <input placeholder="track7-time" cols="64" id="track7-time" name="track7-time" ></input>
+            <textarea placeholder="lyrics7-input" cols="64" id="lyrics7-input" name="lyrics7-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track8">Track 8</label>
+        <input placeholder="track8-title" cols="64" id="track8-title" name="track8-title" ></input>
+        <input placeholder="track8-time" cols="64" id="track8-time" name="track8-time" ></input>
+            <textarea placeholder="lyrics8-input" cols="64" id="lyrics8-input" name="lyrics8-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track9">Track 9</label>
+        <input placeholder="track9-title" cols="64" id="track9-title" name="track9-title" ></input>
+        <input placeholder="track9-time" cols="64" id="track9-time" name="track9-time" ></input>
+            <textarea placeholder="lyrics9-input" cols="64" id="lyrics9-input" name="lyrics9-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track10">Track 10</label>
+        <input placeholder="track10-title" cols="64" id="track10-title" name="track10-title" ></input>
+        <input placeholder="track10-time" cols="64" id="track10-time" name="track10-time" ></input>
+            <textarea placeholder="lyrics10-input" cols="64" id="lyrics10-input" name="lyrics10-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track11">Track 11</label>
+        <input placeholder="track11-title" cols="64" id="track11-title" name="track11-title" ></input>
+        <input placeholder="track11-time" cols="64" id="track11-time" name="track11-time" ></input>
+            <textarea placeholder="lyrics11-input" cols="64" id="lyrics11-input" name="lyrics11-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track12">Track 12</label>
+        <input placeholder="track12-title" cols="64" id="track12-title" name="track12-title" ></input>
+        <input placeholder="track12-time" cols="64" id="track12-time" name="track12-time" ></input>
+            <textarea placeholder="lyrics12-input" cols="64" id="lyrics12-input" name="lyrics12-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track13">Track 13</label>
+        <input placeholder="track13-title" cols="64" id="track13-title" name="track13-title" ></input>
+        <input placeholder="track13-time" cols="64" id="track13-time" name="track13-time" ></input>
+            <textarea placeholder="lyrics13-input" cols="64" id="lyrics13-input" name="lyrics13-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track14">Track 14</label>
+        <input placeholder="track14-title" cols="64" id="track14-title" name="track14-title" ></input>
+        <input placeholder="track14-time" cols="64" id="track14-time" name="track23-time" ></input>
+            <textarea placeholder="lyrics14-input" cols="64" id="lyrics14-input" name="lyrics14-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track15">Track 15</label>
+        <input placeholder="track15-title" cols="64" id="track15-title" name="track15-title" ></input>
+        <input placeholder="track15-time" cols="64" id="track15-time" name="track15-time" ></input>
+            <textarea placeholder="lyrics15-input" cols="64" id="lyrics15-input" name="lyrics15-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track16">Track 16</label>
+        <input placeholder="track16-title" cols="64" id="track16-title" name="track16-title" ></input>
+        <input placeholder="track16-time" cols="64" id="track16-time" name="track16-time" ></input>
+            <textarea placeholder="lyrics16-input" cols="64" id="lyrics16-input" name="lyrics16-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track17">Track 17</label>
+        <input placeholder="track17-title" cols="64" id="track17-title" name="track17-title" ></input>
+        <input placeholder="track17-time" cols="64" id="track17-time" name="track17-time" ></input>
+            <textarea placeholder="lyrics17-input" cols="64" id="lyrics17-input" name="lyrics17-input" ></textarea>
+        <br />
+        <hr />       
+        <br />
+        <label for="track18">Track 18</label>
+        <input placeholder="track18-title" cols="64" id="track18-title" name="track18-title" ></input>
+        <input placeholder="track18-time" cols="64" id="track18-time" name="track18-time" ></input>
+            <textarea placeholder="lyrics18-input" cols="64" id="lyrics18-input" name="lyrics18-input" ></textarea>
+        <br />
+        <hr />       
+        <br />        
+        <label for="liners-input">Liners:</label>
+        <textarea id="liners-input" rows="20" cols="64" name="liners-input" ></textarea>
+         <br />       
+         <hr />
+        <br />        
+        <label for="bio-input">Bio:</label>
+        <textarea id="bio-input" rows="20" cols="64" name="bio-input" ></textarea>
+         <br />
+         <hr />
+         <br />        
+        <label for="links-input">Links:</label>
+        <textarea type="" id="liner-notes-input" rows="10" cols="64" name="links-input" ></textarea>
+         <br />  
+         <hr />
+         <br />        
+        <label for="notes-input">Notes:</label>
+        <textarea id="notes-input" rows="15" cols="64" name="notes-input" placeholder="Additional Notes" ></textarea>
+         <br />       
+         <hr /> 
+         <br />        
+        <label for="copyright-info-input">Copyright Info:</label>
+        <textarea id="copyright-info-input" rows="5" cols="64" name="copyright-info-input" placeholder="Copyright &copy; 2023 SPEKTRUM Creations" ></textarea>
+         <br />       
+                <br />        
+        <label for="credits-input">LPA-fileTypeCredits</label>
+        <textarea id="credits-input" placeholder="Copyright &copy; 2023 SPEKTRUM Creations" cols="64" name="credits-input" type="hidden">
+        <details title="read me">
+          <pre>```You MUST include this documentation to meet the use
+requirements for use in your own projects! - Keep reading...
+
+
+                                 ;  j; 2 ;
+                            ; :jjQqpp:::q@qp@gjj
+                         ; gqZ:::;{_zujauj{{;_;;@Qq
+                       ; ::;j:{ugjQQ::jQajuCjzj{j;j@,2
+                     'z.\:{a:gQQQKgu::2aa:{au22{jj:"}:Z              .
+                     ::{j:::QQg1:p:Q:QQQ:Qgpg:Qu::{{;\@p.         .JA1,
+                  .q:\{jQ:ZuQQpQ:gggQa22QQQQQQgzgQzQQ:\;jpa  _____zyq$}
+                  "{2g:QuQQzZuggzg2aaua2au2a2Q2Qggzzg:Qgj:_}(g2gvQgpz2|
+                j"\2zZuzgQqQggQ2Q2aauazagaaqauzQoSugp=:`gc2|aqLdQgJzzz]
+               '@:u{:qg2zzq2QQaazaaazgzggzaHuzQU2ek\1kQzqoQ;ppgg|N`[auq
+              ;Q"ua:Q:cQ@gg2aaaazuQzagwSQ:@puK"\_GQuQpXLgQg|qzgaz  ~x7*
+               :j2::j:QQg2aaa2uuuaon:QC:Q:y<_1kQgg4Q1XQq?pgz_Saed
+             2@"{auZz:QQu2QQ2zQQu1guuQ:=q_azzQy=\gQgQQQgxqaruQ7*
+             j:j{audQgQZzgauQ@Qzuuupz_gxqg9QL_(:[QQm.,aoq.7Wi_2a
+             Q:[ja{ggKQgQuqzzzK=\_;[uQp=\.,QQQqj1gxZqL^%_{:::zj@
+            jq{j{Qu:zzQjQ2g?q_1XQz$NQQ.::\;$QQjajQy=qzzQ:uuQ:z;:
+            :Q\\aQzgdQQS^\gez2QaQgZQQ|qQzQxzzz|Qi_gQQgKzguzu:j::
+            ja:{aZ2QRq_jnQzg4Q; g$QQ$Qx/XQQ(=\1g2Q2QZQQgzzzQ:\@@
+            .g:{}<_pVg2QyqzQQgL Q@Zy&pxg+gggQgzgaQQg22gguuuQr":@
+             :._JcpzgdQ{QQQQ9v_:Qga|L1\QQQQQxgyu2za2QuQzguun\\@
+           _JHpgzVq_ggS<$$$LQQQ;d?t_QggQQQQSuQzuazu22QggzhZ{":::
+      ._d5_qQ7+1XgQQP*q}qZEQY=__auagzggNuQaaazauu2222QQuna{{{:p
+      T:QpQ\_; {QQy.uQQQ(<%_Quauau2Uqp:gQauaa2a222Q2Zguza2aj:p,
+     ~oQ1XzgQQ,[QQla2Z;:ZxgQg2USQzQ:QXQggqa222aQ222QogQz{2{:@j
+      zaQpNQQQ|[Zg^{{2::ggQQQ3zpQ@zQzuxgggj22222QZupg1Q{jj:@z
+       ._zQgxy`(`::"{2aQg::z:Q3q:QgZujupuzzqQ2SZp:gpuzjj{:@2.
+      gQgZy=*     :@:2{auQ:Xuz@uxg:QzQQux:Q@z:QQp:a:g2j::@2
+     qQV*`         :N:\j{u1:z:QQ:ZQQ:Qp:Qzuzuzuggzjzj\:@Q:
+        .___,.___.   .__g_g2cQQQQuuqQzQzQQuQQQgQ;{j:__;Q ._, ._.  .__.,
+      .gmYV@p(qpVV@; 4$9=4@:J4@@$uZ1@V@YG$g7VqpV+{_@VVqQw%@Q V@F`gpVH@|
+      dp`  (* [$__g$ {Q_Q;* ".$5@y21P{Q$dPajjd|"@@@l   qx[$@x Q} qQ__J+
+      qQ      [$V@@` ($V@}.,.QQgQ$::\"Qp"p\@pd|@  @|   1p[@|4LQ}  ≤44@l
+      7q_Q_gp_gQ_:4x_gQ_Q_QLg@y=q@L;._@\QQ __QQ_; 4@_Qg$T1@L,q@} @L_QQ$
+        74V**7=v=  ==v=Vvvv^==*;<==!(vv=v  7v==v+  w=V*` (==tj=` ^=VV*`
+
+                          SPEKTRUM Creations
+           The Home of Christopher Johnson, New Media Artisan
+                     https://SPEKTRUMCreations.com
+    __________________________________________________________________
+
+    // ============================================================ //
+    // ==================== SPEKTRUMCreations.com ================= //
+    // ============================================================ //
+    // =========================== E.U.L.A. ======================= //
+    // ============================================================ //
+    // ================= (End User License Agreement) ============= //
+    // ============================================================ //
+                                 Document Created:
+                                   October 30, 2020
+                    E.U.L.A. Written By Christopher Johnson
+    		             modified: January 27, 2022:027
+    ___________________________________________________________________
+
+
+Preamble
+--------
+
+    I have constructed the current incarnation of the SPEKTRUM CREATIONS / spkml.com
+    website, to act as an extensible portal to projects and sites within
+    the scope of SPEKTRUM CREATIONS and it’s entities contained within
+    the ownership of intellectual property by said entity.
+    Allowing now for the growth of contents presented over the course of
+    including the contents of the original materials presented by Christopher
+    Johnson through this site or other sites and destinations on the internet,
+    the contents of the SPEKTRUM SERIES screenplays, other publications
+    (including books. articles, posts, pages, music releases, etc.),
+    requires that this site be capable of working with common technologies
+    with room to add functionality in the future.  For this reason,
+    SPEKTRUMCreations.com has established a new community for develpers,
+    The SPEKTRUM CREATIONS DEVELOPER'S NETWORK (SCDN),
+
+    Visit: https://SCDN.SPEKTRUMCreations.com (may be in development, see link below)
+
+    Follow the work also on https://github.com/SPEKTRUM-Creations/LPA-WebApp
+
+
+Notice of Copyright and Ownership
+---------------------------------
+
+       Except where documented, all files, images or other documents
+    located on the server with the DNS, www.spektrumcreations.com OR SPKML.com
+ are
+    owned and copyrighted by Chris Johnson and/or SPEKTRUM CREATIONS.
+    At no time will any of the material be used by any user, for any
+    purpose without first obtaining expressed written consent from
+    the proper representative of SPEKTRUM CREATIONS(currently Chris
+    Johnson).  Any public display, performance, transmission or other-
+    wise of material on this site, including development and production,
+    shall constitute US Copyright infringement and suit will follow.
+    Obvious exceptions are some of the icons and buttons used to make
+    hyper-links directly to pages within the remote site(s) where the
+    images were aquired, in most cases for the purpose of enriching the
+    user's experience while using www.spektrumcreations.com.  In the
+    event that there was no suitable button, providing a link to such
+    remote sites, for the purpose of enhancing the site experience,
+    these contents were created following tasteful visual guidelines,
+    adhereing to the look and feel of the site for which the button is
+    hyper-linked, and using any logos available and associated with the
+    site or the site's product(software or otherwise).
+
+       GNU freeware javascript code has been used exclusively, in cases
+    where the coding was already written.  Provided credits have been
+    kept in tact, at the request of those programmers.  However, most of
+    the 'pre-fab' code, that is used in this site's pages, has been mod-
+    ified to suit the purposes of SPEKTRUM CREATIONS.
+
+    The use of W3C code is essential to this software and Javascript plays
+    a major role in the architecture of this site. This goal of using the
+    most widely accepted coding Standards allow the code to be supported by
+    on any and all major platforms and the software requires similar EULA's
+    consent to use of these technologies which is at your sole discretion.
+    At no point will SPEKTRUM CREATIONS, or it's employees or representatives
+    be held responsible for damages or support for these softwares and no
+    intellectual properties, real properties or monies shall be seen as
+    equivocal to any damages that may come from the use of this software in
+    any suit brought against SPEKTRUM Creations it’s properties/employees/owner.
+
+
+Limitation of Liability
+-----------------------
+
+       On that note, accessing any content on SPEKTRUMCreations.com will
+    constitute agreement, to this end, regarding the liability of SPEKTRUM
+    CREATIONS, and any content or software provider(i.e., Microsoft, Sun,
+    Apple, Google, etc.), for any damage arising from the viewing or
+    use of any files (including, but not limited to http and ftp downloads
+    to local user's machine).  This disclaimant of liability is to meant
+    as legal contract which the user need not read to agree to, as a
+    hyperlink to this page is clearly visible to all browsers in plain text
+    html, on the main page of this site.  By confirming your agreement, you
+    agree to these terms explicitly though that is not a neccesity for your
+    agreement. As previously mentioned, if you use this software, you agree.
+
+       Unforeseen bugs, glitches, incompatibilities will also not be
+    considered the liability of SPEKTRUM CREATIONS.  Upon notification
+    of these issues, attempts may/will be made to correct the issues.
+    However, SPEKTRUM CREATIONS provides no warranty or guarantee, implied
+    or otherwise, and will, at it's own discretion, remedy these issues
+    in as timely a manner as it sees fit.
+
+       The user is solely responsible for any charges occuring, directly
+    or indirectly, from any use of material from SPEKTRUM CREATIONS.  Under
+    no circumstances will SPEKTRUM CREATIONS be liable for charges arising
+    from the use of it's contents except in the case of certain media content
+    where monies were exchanged for the products available on this site.
+    In the event that any of that media is flawed or improperly provided,
+    on immediate notification by the user(s) will result only in the fixing
+    of the problem if code or the replacement of the product.  If a there
+    is no suitable replacement, arrangements will be made to find a suitable
+    remedy to replacement, but only at the discretion of SPEKTRUM Creations
+    or one of it’s employees or representatives.
+
+
+Installation of Required Resources
+----------------------------------
+
+       SPEKTRUM CREATIONS may not be designed for cross-browser compatibility.
+    The site content is optimized for use with MSIE6, running the Java VMM
+    for Javascript spec. v.1.4, and the Flash 6 Player plugin.  The contents
+    of this site may run on IE5+ version browsers and some/most/all Javascript
+    may work(although no testing has been done).  With that said, the Flash 6
+    Player is required.  Any attempt to access Flash content from this site
+    may result in the initiation of downloading the required current plugin.
+
+       SPEKTRUM CREATIONS makes certain downloads available. These files
+    are most generally intended to enhance the intended user experience. Some
+    of these are internally created and are the property of SPEKTRUM CREATIONS.
+    Each of these files may contain their own license agreement(s) which you
+    must agree to before using.  SPEKTRUM CREATIONS is not responsible for
+    remote files, even in the case that the download file has been directly
+    hyperlinked(i.e., not downloaded from a remote page residing on the
+    aforementioned file's host server).  Reasonable attempts are made to
+    ensure the integrity of files(See: Limitation of Liability).
+
+Lack of Disclaimant
+-------------------
+
+       This statement is meant to disclaim any un-addressed, and thus unforeseen
+    disclaimant.  No suit may/will be brought against SPEKTRUM CREATIONS for any
+    reason, without first allowing remedy of any action for which the owner(s)
+    of this site may be found responsible.  If actions are not taken to remedy
+    such aforementioned actions, then, and only then, may suit be brought against
+    SPEKTRUM CREATIONS and/or it's owner(s), employees, representatives or other-
+    wise(here-in, SPEKTRUM CREATIONS).  If the case proves that SPEKTRUM CREATIONS
+    is responsible, at fault or other-wise guilty of the charges of the case, and
+    damages are to be awarded, the damages shall not exceed US$50.00.  This shall
+    be recognized as a valid part of this disclaimant by a court of law, regardless
+    of the venue, beit country, state, county or city court authority.
+
+Modifications of EULA - TOS
+---------------------------
+
+   SPEKTRUM CREATIONS may and will, from time to time, modify these
+   terms/agreement(s) without notification to the user with the understanding
+   that no party related to or working for SPEKTRUMCreations or SCDN is or
+   will be obligated to announce these changes directly to users of this
+   code.
+
+   It is therefore the user's responsiblity to keep up with any and all changes
+   to these and future terms/agreement(s).
+
+   If you use this software without reading this, your agreement is implicit
+   by your use of this software and if you don’t agree to the terms of this
+   End User License Agreement, please refrain from using this software.
+
+
+Additional Description of Copyright and Licensing of and for
+ this Code VS. the Content LPA and/or SPKML Coded Documents:
+------------------------------------------------------------
+
+    This document is meant to define and present an album within the content of
+    the document and using the full contents of the code for the definition of
+    the Long Play Album file type.
+
+    The intellectual content within the contained album file or LPA is the
+    "content and media"  AND  the “coded document(s)” or “Code” itself, whether
+     using this exact or any similar structures or designs to accomplish similar
+     and repeatable code to present the digital LPA CONTAINER FOR PRESENTATION
+     AND INTERACTION by third parties shall be seen as that party being in
+     violation of this agreement as this code is being given to the public
+     through the licensing contained within, with strict adherrence to said
+     license (included here).
+
+    The album contents may be considered seperate intellictual property from
+    the code displayed within the context of the suggested standard coding
+     style for the digital album format to be declared by the following
+     entities presented prototypically as this LPA FILE as a container for
+     the entire contents of what would appear in a physical version of this
+     digital product kind.
+
+    Notice: No claim may be made towards the ownership of content written
+    and compiled in fixed format within these coded document and types modified
+    from such code.  All content copyrighted as “Album” will protect the
+     artist/label from infringment when copyrighted through normal means
+     and shall not constitute or ever be construed that the artist/label
+     is responsible for the content of the code itself, but only the contents
+      contained within the coded document or linked container(s).
+
+    The ideas of Fair Use are in play here and shall be respected.  If the
+    “DBAD License” could hold up in court, it would be used to ensure that
+    those using this software will abide by the License agreement towards
+    the end goal of adhereing to the simple concept:  “Don’t Be A Dick”.
+
+    The following actions are taking place or are in the process and will
+    be updated as they occur, in reference to this code, it’s construction
+    and any changes to it’s licensing with respect to the request for
+    consideration of the code for Standardization by Software and
+    Code Consortiums or Collectives, including but not limited to those
+    taking part in setting such standards such as the W3C and the parties
+    that make up it’s body.
+
+    Requests of the W3C-WG OR other relevent or connected WORKING GROUPS
+    would begin with the reservation of the referrence for:
+
+  * files
+      (lpa, spkml)
+
+  * filetypes
+      (appkication/lpa
+       application/spkml)
+
+  * tag-names
+      (&lt;lpa&gt;,
+       &lt;spkml&gt;)
+
+  ** additionally required elements and attributes of tag with attribute
+  variables that are essential to such a file type that would be designed
+  to meet the task of presenting an album,  using definitions in and XML
+  markup with a custom DOM and using a subset of HTML5 tags which maybe
+  defined or modified through embeddded file-type content from Javascript
+  (full lib or a partial subset only) and styled or otherwise modified by
+  CSS3 or higher as requied by any software seeking specificatiin approval
+  as a standard for inclusion in W3C esteem as a Standardized format for
+  use on the web and beyond.
+
+       The preceeding content and the code within,
+       ecxepting the js/ccs for the addToHomescreen
+       code and the rest of this code was assembled
+       using free referrence from pages on primarily
+       and strictly by the following website...
+
+       These sites include:
+
+            developer.apple.com
+            developer.mozilla.com
+            w3c.com
+
+  The author of this code and this document wishes to thank the resources
+  and communities provided through the following sites and online resources,
+   which may provide snippets that have been used in the code but cannot
+   be given credits by neccesity or requirements:
+
+      github.com - For hosting github.com/SPEKTRUM-Creations
+      npmjs.com  - For it’s help in finding direction towards
+                   our goal by allowing the viewing and use
+                   of coded projects by others, though not
+                   implimenting any of the code projects,
+                   neccesarily.
+
+    apple.com  - for their encouragement to developers to
+   ’think different’ by providing support and
+   examples of code which are intended to meet
+   standards if not then to attempt the tasks
+   of presenting reasons and solutions for the
+   redefinition of such standards as standards.
+
+      Any number of other resources will be properly mentioned in future
+      updates where applicable, if applicable.
+
+     Please visit and join us at SCDN.SPEKTRUMCreations.com to join our
+     fun in creating this standard for digital album releases and other
+     code projects like the seperate though related development of the
+     SPKML language.  There will be plenty of ideas and tasks to solve.
+
+     Accept the challenge!!!
+
+     Some Programs Keep Me Learning...
+                 and
+     Some Programmers Know My Language.
+                 Also,
+       Some People Know My Lyrics
+
+
+
+           This is an .lpa file
+    Containing the code for the file type
+        the album contents format
+
+      ____________________________
+     ⎛ \  Scripted & Designed by:  \
+     ⎝⎠ ⎞   Christopher Johnson     ⎞
+        ⎥   SPEKTRUMCreations.com   ⎥
+        ⎠_______¡We Want You!_______⎠
+       ⎛        Join S.C.D.N.      ⎛
+       ⎢     help develop &lt;spkml&gt;  ⎝
+       ⎝    ________________________\,
+        \__/_________________________/
+
+                    ♪✈♫
+  ${title} - ${artist}
+                 
+
+  LPA file type concieved, Developed & Coded By: 
+--Christopher Johnson
+-	New Media Artisan:
+- Founder of SPEKTRUM Creations in 1998
+     Owner & operator of the site domain:
+           SPEKTRUMCreations.com
+                since: 2002
+
+|=================================================================|
+
+  Note: The goal of this software’s development is to create a
+  file type which acts as a container, that will be comprised of
+  standardized and open-sourced code for use by anyone upon the
+  release of the code, with accepting of terms by the user whom
+  may be interested in contributing to extensible additions or
+  more streamlined approaches, with a common goal to make this
+  code for use by musicians as well as by listeners for the goal
+  of enhancing the ability of both parties to enjoy the final
+  product, either presenting or being presented, and providing
+  a win-win scenario for everyone involved.  Please Contribute
+  if you can but note that any changes you make to the overall
+  code portion of these documents must be shared back to the
+  group of developers located hereforth at either site below:
+
+          github.com/SPEKTRUM-Creations
+
+          SCDN.SPEKTRUMCreations.com
+
+|=================================================================|
+
+  MIT License
+  ===========
+
+Copyright (c) 2020 Christopher Johnson (SPEKTRUMCreations.com)
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+`
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+
+```                                              ._                           ._
+                                     ;          g+                .; _qJt;===
+            .;(|     _Q              Q         [|           .;= ;.+(+p+
+          .J  .|   J   ;             [;        @|     ; _q_J+ _;(|V
+         .+   g  .p    ;              @       .@ .g+_V==
+        J+  ;.+ .J    (               (    .gp+@[+(=
+       J    =+ .p                      | _+ [  (+
+      =        J    ;         .q;   .+ @[  .;
+    .J        [+  .;    .; JQJ++   =   [ =+
+   .V         @  J+ _ .Jq;=      .=    [|
+  .V          q;= .J==V          +      |
+  +          ;=t_J+             [       |
+ [        _p                    [       g
+ (;   ._V=                       t;   _
+  (==V                            '-='
+
+
+
+             Copyright © 2020 SPEKTRUMCreations
+                    All Rights Reserved.
+```
+                    </pre></details>
+
+ </textarea>       
+        
+        
+<button id="submit-btn" type="button">Generate & Download LPA File</button>
+    </form>
+    
+    <script type="text/javascript">
+		/*jshint esversion: 8 */ 
+      // Function to convert file to base64
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+      resolve(reader.result.split(',')[1]);
+    };
+
+    reader.onerror = (error) => {
+      reject(error);
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+// Function to generate HTML document
+function generateHTMLDocument(title, artist, trackList, linerNotes, mp3Base64, pngBase64) {
+  const html=`     <!DOCTYPE html>
+<HTML lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content=“anonymous” />
+    <meta http-equiv="Access-Control-Allow-Credentials: true;">
+    <meta http-equiv="Access-Control-Allow-Headers" content="X-Requested-With" />
+    <meta name = "viewport" content = "user-scalable=yes, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="application-name" content="com.SPEKTRUMCreations.theFlight.lpa">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+    <meta name="color-scheme" content="only dark">
+    <!-- Add Light Theme also //-->
+    <meta name="apple-mobile-web-app-title" content="&quot;${title}&quot;">
+    <meta name="description" content="${metaDescription}">
+    <meta name="keywords" content="${metaKeywords}">
+    <meta name="author" content="${Author}">
+    <title>&quot;${title}-${artist}&quot;</title>
+    <!-- ICONS -->
+    <link href="icon.png" sizes="57x57,72x72,114x114" rel="apple-touch-icon">
+    
+    
+    <!-- Upload a 256x256 icon file as a .png //-->
+    
+    <!-- Upload a 1792x828 icon file as a .jpg (landscape)//-->
+    
+    <!-- Upload a 828x1792 icon file as a .jpg (portrait) //-->
+    
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    <link href="./startScreen.jpg" rel="apple-touch-startup-image">
+    
+    <link href="${ptSplash}" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" >
+    <link href="${ptSplash}" media="(device-width: 414px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" >
+    
+    
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    
+    <link rel="apple-touch-startup-image" href="${lsSplash}" media="(screen:Compact width, regular height) and (min-device-height: 786px) and (max-device-height: 896) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" >
+    <link rel="apple-touch-startup-image" href="${lsSplash}" media="(screen:Regular width, compact height) and (min-device-height: 375px) and (max-device-height: 414) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" >
+    <link rel="apple-touch-startup-image" href="${ptSplash}" media="screen and (min-device-height:786px) and (max-device-height: 896px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" >
+    <link rel="apple-touch-startup-image" href="${ptSplash}" media="screen and (min-device-width: 375px) and (max-device-width: 414) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" >
+    
+    <link href="${lsSplash}" media="(device-width: 1792) and (device-height: 828) and (orientation: landscape)" rel="apple-touch-startup-image" >
+    <link href="${ptSplash}" media="(device-width: 828) and (device-height: 1792) and (orientation: portrait)" rel="apple-touch-startup-image" > 
+    
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    
+    
+    
+    <script type="text/javascript">
+      /* Add to Homescreen v3.2.3 ~ (c) 2015 Matteo Spinelli ~ @license: http://cubiq.org/license */
+      (function addToHomescreen(window, document) {
+      /*
+      
+      by Matteo Spinelli ~ http://cubiq.org
+      
+      */
+      
+      // Check for addEventListener browser support (prevent errors in IE<9)
+      var _eventListener = 'addEventListener' in window;
+      
+      // Check if document is loaded, needed by autostart
+      var _DOMReady = false;
+      if ( document.readyState === 'complete' ) {
+      	_DOMReady = true;
+      } else if ( _eventListener ) {
+      	window.addEventListener('load', loaded, false);
+      }
+      
+      function loaded () {
+      	window.removeEventListener('load', loaded, false);
+      	_DOMReady = true;
+      }
+      
+      // regex used to detect if app has been added to the homescreen
+      var _reSmartURL = /\/ath(\/)?$/;
+      var _reQueryString = /([\?&]ath=[^&]*$|&ath=[^&]*(&))/;
+      
+      // singleton
+      var _instance;
+      function ath (options) {
+      	_instance = _instance || new ath.Class(options);
+      
+      	return _instance;
+      }
+      
+      // message in all supported languages
+      ath.intl = {
+      	cs_cs: {
+      		ios: 'Pro přidáni této webové aplikace na úvodní obrazovku: stlačte %icon a pak <strong>Přidat na úvodní obrazovku</strong>.',
+      		android: 'Pro přidáni této webové aplikace na úvodní obrazovku otevřete menu nastavení prohlížeče a stlačte <strong>Přidat na úvodní obrazovku</strong>. <small>K menu se dostanete stlačením hardwaroveho tlačítka, když ho vaše zařízení má, nebo stlačením pravé horní menu ikony <span class="ath-action-icon">icon</span>.</small>'
+      	},
+      
+      	de_de: {
+      		ios: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf %icon und dann <strong>Zum Home-Bildschirm</strong>.',
+      		android: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, öffnen Sie das Menü und tippen dann auf <strong>Zum Startbildschirm hinzufügen</strong>. <small>Wenn Ihr Gerät eine Menütaste hat, lässt sich das Browsermenü über diese öffnen. Ansonsten tippen Sie auf %icon.</small>'
+      	},
+      
+      	da_dk: {
+      		ios: 'For at tilføje denne web app til hjemmeskærmen: Tryk %icon og derefter <strong>Føj til hjemmeskærm</strong>.',
+      		android: 'For at tilføje denne web app til hjemmeskærmen, åbn browser egenskaber menuen og tryk på <strong>Føj til hjemmeskærm</strong>. <small>Denne menu kan tilgås ved at trykke på menu knappen, hvis din enhed har en, eller ved at trykke på det øverste højre menu ikon %icon.</small>'
+      	},
+      
+      	el_gr: {
+      		ios: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη: πατήστε το %icon και μετά <strong>Πρόσθεσε στην αρχική οθόνη</strong>.',
+      		android: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη, ανοίξτε τις επιλογές του browser σας και πατήστε το <strong>Προσθήκη στην αρχική οθόνη</strong>. <small>Μπορείτε να έχετε πρόσβαση στο μενού, πατώντας το κουμπί του μενού του κινητού σας ή το πάνω δεξιά κουμπί του μενού %icon.</small>'
+      	},
+      
+      	en_us: {
+      		ios: 'To add this WebApp to the home screen: tap %icon  and then <strong>Add to Home Screen</strong>.',
+      		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+      	},
+      
+      	es_es: {
+      		ios: 'Para añadir esta aplicación web a la pantalla de inicio: pulsa %icon y selecciona <strong>Añadir a pantalla de inicio</strong>.',
+      		android: 'Para añadir esta aplicación web a la pantalla de inicio, abre las opciones y pulsa <strong>Añadir a pantalla inicio</strong>. <small>El menú se puede acceder pulsando el botón táctil en caso de tenerlo, o bien el icono de la parte superior derecha de la pantalla %icon.</small>'
+      	},
+      
+      	fi_fi: {
+      		ios: 'Liitä tämä sovellus kotivalikkoon: klikkaa %icon ja tämän jälkeen <strong>Lisää kotivalikkoon</strong>.',
+      		android: 'Lisätäksesi tämän sovelluksen aloitusnäytölle, avaa selaimen valikko ja klikkaa tähti -ikonia tai <strong>Lisää aloitusnäytölle tekstiä</strong>. <small>Valikkoon pääsee myös painamalla menuvalikkoa, jos laitteessasi on sellainen tai koskettamalla oikealla yläkulmassa menu ikonia %icon.</small>'
+      	},
+      
+      	fr_fr: {
+      		ios: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez %icon et sélectionnez <strong>Ajouter sur l\'écran d\'accueil</strong>.',
+      		android: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez sur le bouton "menu", puis sur <strong>Ajouter sur l\'écran d\'accueil</strong>. <small>Le menu peut-être accessible en appuyant sur le bouton "menu" du téléphone s\'il en possède un <i class="fa fa-bars"></i>. Sinon, il se trouve probablement dans la coin supérieur droit du navigateur %icon.</small>'
+      	},
+      
+      	he_il: {
+      		ios: '<span dir="rtl">להוספת האפליקציה למסך הבית: ללחוץ על %icon ואז <strong>הוסף למסך הבית</strong>.</span>',
+      		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+      	},
+      
+      	hu_hu: {
+      		ios: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, érintse meg a következő ikont: %icon , majd a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontot.',
+      		android: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, a böngésző menüjében kattintson a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontra. <small>A böngésző menüjét a következő ikon megérintésével tudja megnyitni: %icon.</small>'
+      	},
+      
+      	it_it: {
+      		ios: 'Per aggiungere questa web app alla schermata iniziale: premi %icon e poi <strong>Aggiungi a Home</strong>.',
+      		android: 'Per aggiungere questa web app alla schermata iniziale, apri il menu opzioni del browser e premi su <strong>Aggiungi alla homescreen</strong>. <small>Puoi accedere al menu premendo il pulsante hardware delle opzioni se la tua device ne ha uno, oppure premendo l\'icona %icon in alto a destra.</small>'
+      	},
+      
+      	ja_jp: {
+      		ios: 'このウェプアプリをホーム画面に追加するには、%iconをタップして<strong>ホーム画面に追加</strong>してください。',
+      		android: 'このウェプアプリをホーム画面に追加するには、ブラウザのオプションメニューから<strong>ホーム画面に追加</strong>をタップしてください。<small>オプションメニューは、一部の機種ではデバイスのメニューボタンから、それ以外では画面右上の%iconからアクセスできます。</small>'
+       	},
+      
+      	ko_kr: {
+      		ios: '홈 화면에 바로가기 생성: %icon 을 클릭한 후 <strong>홈 화면에 추가</strong>.',
+      		android: '브라우저 옵션 메뉴의 <string>홈 화면에 추가</string>를 클릭하여 홈화면에 바로가기를 생성할 수 있습니다. <small>옵션 메뉴는 장치의 메뉴 버튼을 누르거나 오른쪽 상단의 메뉴 아이콘 %icon을 클릭하여 접근할 수 있습니다.</small>'
+      	},
+      
+      	nb_no: {
+      		ios: 'For å installere denne appen på hjem-skjermen: trykk på %icon og deretter <strong>Legg til på Hjem-skjerm</strong>.',
+      		android: 'For å legge til denne webappen på startsiden åpner en nettlesermenyen og velger <strong>Legg til på startsiden</strong>. <small>Menyen åpnes ved å trykke på den fysiske menyknappen hvis enheten har det, eller ved å trykke på menyikonet øverst til høyre %icon.</small>'
+      	},
+      
+      	pt_br: {
+      		ios: 'Para adicionar este app à tela de início: clique %icon e então <strong>Tela de início</strong>.',
+      		android: 'Para adicionar este app à tela de início, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
+      	},
+      
+      	pt_pt: {
+      		ios: 'Para adicionar esta app ao ecrã principal: clique %icon e depois <strong>Ecrã principal</strong>.',
+      		android: 'Para adicionar esta app web ecrã principal, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
+      	},
+      
+      	nl_nl: {
+      		ios: 'Om deze webapp aan je startscherm toe te voegen, klik op %icon en dan <strong>Zet in startscherm</strong>.',
+      		android: 'Om deze webapp aan je startscherm toe te voegen, open de browserinstellingen en tik op <strong>Toevoegen aan startscherm</strong>. <small>Gebruik de "menu" knop als je telefoon die heeft, anders het menu-icoon rechtsbovenin %icon.</small>'
+      	},
+      
+      	ru_ru: {
+      		ios: 'Чтобы добавить этот сайт на свой домашний экран, нажмите на иконку %icon и затем <strong>На экран "Домой"</strong>.',
+      		android: 'Чтобы добавить сайт на свой домашний экран, откройте меню браузера и нажмите на <strong>Добавить на главный экран</strong>. <small>Меню можно вызвать, нажав на кнопку меню вашего телефона, если она есть. Или найдите иконку сверху справа %icon[иконка].</small>'
+      	},
+      
+      	sk_sk: {
+      		ios: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku: stlačte %icon a potom <strong>Pridať na úvodnú obrazovku</strong>.',
+      		android: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku otvorte menu nastavenia prehliadača a stlačte <strong>Pridať na úvodnú obrazovku</strong>. <small>K menu sa dostanete stlačením hardwaroveho tlačidla, ak ho vaše zariadenie má, alebo stlačením pravej hornej menu ikony <span class="ath-action-icon">icon</span>.</small>'
+      	},
+      
+      	sv_se: {
+      		ios: 'För att lägga till denna webbapplikation på hemskärmen: tryck på %icon och därefter <strong>Lägg till på hemskärmen</strong>.',
+      		android: 'För att lägga till den här webbappen på hemskärmen öppnar du webbläsarens alternativ-meny och väljer <strong>Lägg till på startskärmen</strong>. <small>Man hittar menyn genom att trycka på hårdvaruknappen om din enhet har en sådan, eller genom att trycka på menyikonen högst upp till höger %icon.</small>'
+      	},
+      
+      	tr_tr: {
+      		ios: 'Uygulamayı ana ekrana eklemek için, %icon ve ardından <strong>ana ekrana ekle</strong> butonunu tıklayın.',
+      		android: 'Uygulamayı ana ekrana eklemek için, menüye girin ve <strong>ana ekrana ekle</strong> butonunu tıklayın. <small>Cihazınız menü tuşuna sahip ise menüye girmek için menü tuşunu tıklayın. Aksi takdirde %icon butonunu tıklayın.</small>'
+      	},
+      
+      	uk_ua: {
+      		ios: 'Щоб додати цей сайт на початковий екран, натисніть %icon, а потім <strong>На початковий екран</strong>.',
+      		android: 'Щоб додати цей сайт на домашній екран, відкрийте меню браузера та виберіть <strong>Додати на головний екран</strong>. <small>Це можливо зробити, натиснувши кнопку меню на вашому смартфоні, якщо така є. Або ж на іконці зверху справа %icon.</small>'
+      	},
+      
+      	zh_cn: {
+      		ios: '如要把应用程序加至主屏幕,请点击%icon, 然后<strong>添加到主屏幕</strong>',
+      		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+      	},
+      
+      	zh_tw: {
+      		ios: '如要把應用程式加至主屏幕, 請點擊%icon, 然後<strong>加至主屏幕</strong>.',
+      		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+      	}
+      };
+      
+      // Add 2 characters language support (Android mostly)
+      for ( var lang in ath.intl ) {
+      	ath.intl[lang.substr(0, 2)] = ath.intl[lang];
+      }
+      
+      // default options
+      ath.defaults = {
+      	appID: 'com.SPKML.theFlight.LPA',		// original code used as local storage name (org.cubiq.addtohome)
+      	fontSize: 12,				// base font size, used to properly resize the popup based on viewport scale factor
+      	debug: false,				// override browser checks
+      	logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
+      	modal: false,				// prevent further actions until the message is closed
+      	mandatory: false,			// you can't proceed if you don't add the app to the homescreen
+      	autostart: true,			// show the message automatically
+      	skipFirstVisit: false,		// show only to returning visitors (ie: skip the first time you visit)
+      	startDelay: 2,				// display the message after that many seconds from page load
+      	lifespan: 256,	  // life of the message in seconds
+      	displayPace: 256,	// minutes before the message is shown again (0: display every time, default 24 hours is == 1440 min)
+      	maxDisplayCount: 0,			// absolute maximum number of times the message will be shown to the user (0: no limit)
+      	icon: true,					// add touch icon to the message
+      	message: 'We are cleared for takeoff. Enjoy the flight.',	// this message can be customized or not at all.
+      	validLocation: [],			// list of pages where the message will be shown (array of regexes)
+      	onInit: 260,				// executed on instance creation (orig: null)
+      	onShow: 'true',				// executed when the message is shown
+      	onRemove: null,				// executed when the message is removed
+      	onAdd: 'true',				// when the application is launched the first time from the homescreen (guesstimate)
+      	onPrivate: null,			// executed if user is in private mode
+      	privateModeOverride: 'false',	// show the message even in private mode (very rude)
+      	detectHomescreen: 'true'		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+      };
+      
+      // browser info and capability
+      var _ua = window.navigator.userAgent;
+      
+      var _nav = window.navigator;
+      _extend(ath, {
+      	hasToken: document.location.hash == '#ath' || _reSmartURL.test(document.location.href) || _reQueryString.test(document.location.search),
+      	isRetina: window.devicePixelRatio && window.devicePixelRatio > 1,
+      	isIDevice: (/iphone|ipod|ipad/i).test(_ua),
+      	isMobileChrome: _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua) && _ua.indexOf("Version") == -1,
+      	isMobileIE: _ua.indexOf('Windows Phone') > -1,
+      	language: _nav.language && _nav.language.toLowerCase().replace('-', '_') || ''
+      });
+      
+      // falls back to en_us if language is unsupported
+      ath.language = ath.language && ath.language in ath.intl ? ath.language : 'en_us';
+      
+      ath.isMobileSafari = ath.isIDevice && _ua.indexOf('Safari') > -1 && _ua.indexOf('CriOS') < 0;
+      ath.OS = ath.isIDevice ? 'ios' : ath.isMobileChrome ? 'android' : ath.isMobileIE ? 'windows' : 'unsupported';
+      
+      ath.OSVersion = _ua.match(/(OS|Android) (\d+[_\.]\d+)/);
+      ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.') : 0;
+      
+      ath.isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
+      ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad') > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile') < 0);
+      
+      ath.isCompatible = (ath.isMobileSafari && ath.OSVersion >= 6) || ath.isMobileChrome;	// TODO: add winphone
+      
+      var _defaultSession = {
+      	lastDisplayTime: 0,			// last time we displayed the message
+      	returningVisitor: false,	// is this the first time you visit
+      	displayCount: 0,			// number of times the message has been shown
+      	optedout: false,			// has the user opted out
+      	added: false				// has been actually added to the homescreen
+      };
+      
+      ath.removeSession = function (appID) {
+      	try {
+      		if (!localStorage) {
+      			throw new Error('localStorage is not defined');
+      		}
+      
+      		localStorage.removeItem(appID || ath.defaults.appID);
+      	} catch (e) {
+      		// we are most likely in private mode
+      	}
+      };
+      
+      ath.doLog = function (logStr) {
+      	if ( this.options.logging ) {
+      		console.log(logStr);
+      	}
+      };
+      
+      ath.Class = function (options) {
+      	// class methods
+      	this.doLog = ath.doLog;
+      
+      	// merge default options with user config
+      	this.options = _extend({}, ath.defaults);
+      	_extend(this.options, options);
+      	// override defaults that are dependent on each other
+      	if ( this.options && this.options.debug && (typeof this.options.logging === "undefined") ) {
+      		this.options.logging = true;
+      	}
+      
+      	// IE<9 so exit (I hate you, really) <--@spkml does too!!!
+      	if ( !_eventListener ) {
+      		return;
+      	}
+      
+      	// normalize some options
+      	this.options.mandatory = this.options.mandatory && ( 'standalone' in window.navigator || this.options.debug );
+      	this.options.modal = this.options.modal || this.options.mandatory;
+      	if ( this.options.mandatory ) {
+      		this.options.startDelay = -0.75;		// make the popup hasty
+      	}
+      	this.options.detectHomescreen = this.options.detectHomescreen === true ? 'hash' : this.options.detectHomescreen;
+      
+      	// setup the debug environment
+      	if ( this.options.debug ) {
+      		ath.isCompatible = true;
+      		ath.OS = typeof this.options.debug == 'string' ? this.options.debug : ath.OS == 'unsupported' ? 'android' : ath.OS;
+      		ath.OSVersion = ath.OS == 'ios' ? '8' : '4';
+      	}
+      
+      	// the element the message will be appended to
+      	this.container = document.body.LPCover;
+/*
+
+
+
+  is this defined by tag element or can 
+  I put a class element in this section?
+
+
+          ? ???????????????????? ?
+
+
+*/      
+      	// load session
+      	this.session = this.getItem(this.options.appID);
+      	this.session = this.session ? JSON.parse(this.session) : undefined;
+      
+      	// user most likely came from a direct link containing our token, we don't need it and we remove it
+      	if ( ath.hasToken && ( !ath.isCompatible || !this.session ) ) {
+      		ath.hasToken = false;
+      		_removeToken();
+      	}
+      
+      	// the device is not supported
+      	if ( !ath.isCompatible ) {
+       		this.doLog("Add to homescreen: not displaying callout because device not supported");
+      		return;
+      	}
+      
+      	this.session = this.session || _defaultSession;
+      
+      	// check if we can use the local storage
+      	try {
+      		if (!localStorage) {
+      			throw new Error('localStorage is not defined');
+      		}
+      
+      		localStorage.setItem(this.options.appID, JSON.stringify(this.session));
+      		ath.hasLocalStorage = true;
+      	} catch (e) {
+      		// we are most likely in private mode
+      		ath.hasLocalStorage = false;
+      
+      		if ( this.options.onPrivate ) {
+      			this.options.onPrivate.call(this);
+      		}
+      	}
+      
+      	// check if this is a valid location
+      	var isValidLocation = !this.options.validLocation.length;
+      	for ( var i = this.options.validLocation.length; i--; ) {
+      		if ( this.options.validLocation[i].test(document.location.href) ) {
+      			isValidLocation = true;
+      			break;
+      		}
+      	}
+      
+      	// check compatibility with old versions of add to homescreen. Opt-out if an old session is found
+      	if ( this.getItem('addToHome') ) {
+      		this.optOut();
+      	}
+      
+      	// critical errors:
+      	if ( this.session.optedout ) {
+      		this.doLog("Add to homescreen: not displaying callout because user opted out");
+      		return;
+      	}
+      	if ( this.session.added ) {
+      		this.doLog("Add to homescreen: not displaying callout because already added to the homescreen");
+      		return;
+      	}
+      	if ( !isValidLocation ) {
+      		this.doLog("Add to homescreen: not displaying callout because not a valid location");
+      		return;
+      	}
+      
+      	// check if the app is in stand alone mode
+      	if ( ath.isStandalone ) {
+      		// execute the onAdd event if we haven't already
+      		if ( !this.session.added ) {
+      			this.session.added = true;
+      			this.updateSession();
+      
+      			if ( this.options.onAdd && ath.hasLocalStorage ) {	// double check on localstorage to avoid multiple calls to the custom event
+      				this.options.onAdd.call(this);
+      			}
+      		}
+      
+      		this.doLog("Add to homescreen: not displaying callout because in standalone mode");
+      		return;
+      	}
+      
+      	// (try to) check if the page has been added to the homescreen
+      	if ( this.options.detectHomescreen ) {
+      		// the URL has the token, we are likely coming from the homescreen
+      		if ( ath.hasToken ) {
+      			_removeToken();		// we don't actually need the token anymore, we remove it to prevent redistribution
+      
+      			// this is called the first time the user opens the app from the homescreen
+      			if ( !this.session.added ) {
+      				this.session.added = true;
+      				this.updateSession();
+      
+      				if ( this.options.onAdd && ath.hasLocalStorage ) {	// double check on localstorage to avoid multiple calls to the custom event
+      					this.options.onAdd.call(this);
+      				}
+      			}
+      
+      			this.doLog("Add to homescreen: not displaying callout because URL has token, so we are likely coming from homescreen");
+      			return;
+      		}
+      
+      		// URL doesn't have the token, so add it
+      		if ( this.options.detectHomescreen == 'hash' ) {
+      			history.replaceState('', window.document.title, document.location.href + '#ath');
+      		} else if ( this.options.detectHomescreen == 'smartURL' ) {
+      			history.replaceState('', window.document.title, document.location.href.replace(/(\/)?$/, '/ath$1'));
+      		} else {
+      			history.replaceState('', window.document.title, document.location.href + (document.location.search ? '&' : '?' ) + 'ath=');
+      		}
+      	}
+      
+      	// check if this is a returning visitor
+      	if ( !this.session.returningVisitor ) {
+      		this.session.returningVisitor = true;
+      		this.updateSession();
+      
+      		// we do not show the message if this is your first visit
+      		if ( this.options.skipFirstVisit ) {
+      			this.doLog("Add to homescreen: not displaying callout because skipping first visit");
+      			return;
+      		}
+      	}
+      
+      	// we do no show the message in private mode
+      	if ( !this.options.privateModeOverride && !ath.hasLocalStorage ) {
+      		this.doLog("Add to homescreen: not displaying callout because browser is in private mode");
+      		return;
+      	}
+      
+      	// all checks passed, ready to display
+      	this.ready = true;
+      
+      	if ( this.options.onInit ) {
+      		this.options.onInit.call(this);
+      	}
+      
+      	if ( this.options.autostart ) {
+      		this.doLog("Add to homescreen: autostart displaying callout");
+      		this.show();
+      	}
+      };
+      
+      ath.Class.prototype = {
+      	// event type to method conversion
+      	events: {
+      		load: '_delayedShow',
+      		error: '_delayedShow',
+      		orientationchange: 'resize',
+      		resize: 'resize',
+      		scroll: 'resize',
+      		click: 'remove',
+      		touchmove: '_preventDefault',
+      		transitionend: '_removeElements',
+      		webkitTransitionEnd: '_removeElements',
+      		MSTransitionEnd: '_removeElements'
+      	},
+      
+      	handleEvent: function (e) {
+      		var type = this.events[e.type];
+      		if ( type ) {
+      			this[type](e);
+      		}
+      	},
+      
+      	show: function (force) {
+      		// in autostart mode wait for the document to be ready
+      		if ( this.options.autostart && !_DOMReady ) {
+      			setTimeout(this.show.bind(this), 50);
+      			// we are not displaying callout because DOM not ready, but don't log that because
+      			// it would log too frequently
+      			return;
+      		}
+      
+      		// message already on screen
+      		if ( this.shown ) {
+      			this.doLog("Add to homescreen: not displaying callout because already shown on screen");
+      			return;
+      		}
+      
+      		var now = Date.now();
+      		var lastDisplayTime = this.session.lastDisplayTime;
+      
+      		if ( force !== true ) {
+      			// this is needed if autostart is disabled and you programmatically call the show() method
+      			if ( !this.ready ) {
+      				this.doLog("Add to homescreen: not displaying callout because not ready");
+      				return;
+      			}
+      
+      			// we obey the display pace (prevent the message to popup too often)
+      			if ( now - lastDisplayTime < this.options.displayPace * 60000 ) {
+      				this.doLog("Add to homescreen: not displaying callout because displayed recently");
+      				return;
+      			}
+      
+      			// obey the maximum number of display count
+      			if ( this.options.maxDisplayCount && this.session.displayCount >= this.options.maxDisplayCount ) {
+      				this.doLog("Add to homescreen: not displaying callout because displayed too many times already");
+      				return;
+      			}
+      		}
+      
+      		this.shown = true;
+      
+      		// increment the display count
+      		this.session.lastDisplayTime = now;
+      		this.session.displayCount++;
+      		this.updateSession();
+      
+      		// try to get the highest resolution application icon
+      		if ( !this.applicationIcon ) {
+      			if ( ath.OS == 'ios' ) {
+      				this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
+      			} else {
+      				this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');
+      			}
+      		}
+      
+      		var message = '';
+      
+      		if ( typeof this.options.message == 'object' && ath.language in this.options.message ) {		// use custom language message
+      			message = this.options.message[ath.language][ath.OS];
+      		} else if ( typeof this.options.message == 'object' && ath.OS in this.options.message ) {		// use custom os message
+      			message = this.options.message[ath.OS];
+      		} else if ( this.options.message in ath.intl ) {				// you can force the locale
+      			message = ath.intl[this.options.message][ath.OS];
+      		} else if ( this.options.message !== '' ) {						// use a custom message
+      			message = this.options.message;
+      		} else if ( ath.OS in ath.intl[ath.language] ) {				// otherwise we use our message
+      			message = ath.intl[ath.language][ath.OS];
+      		}
+      
+      		// add the action icon
+      		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
+      			return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
+      		}) + '</p>';
+      
+      		// create the message container
+      		this.viewport = document.createElement('div');
+      		this.viewport.className = 'ath-viewport';
+      		if ( this.options.modal ) {
+      			this.viewport.className += ' ath-modal';
+      		}
+      		if ( this.options.mandatory ) {
+      			this.viewport.className += ' ath-mandatory';
+      		}
+      		this.viewport.style.position = 'absolute';
+      
+      		// create the actual message element
+      		this.element = document.createElement('div');
+      		this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (parseInt(ath.OSVersion) || '') + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
+      		this.element.style.cssText = '-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-duration:0s;-webkit-transition-timing-function:ease-out;transition-property:transform,opacity;transition-duration:0s;transition-timing-function:ease-out;';
+      		this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+      		this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+      
+      		// add the application icon
+      		if ( this.options.icon && this.applicationIcon ) {
+      			this.element.className += ' ath-icon';
+      			this.img = document.createElement('img');
+      			this.img.className = 'ath-application-icon';
+      			this.img.addEventListener('load', this, false);
+      			this.img.addEventListener('error', this, false);
+      
+      			this.img.src = this.applicationIcon.href;
+      			this.element.appendChild(this.img);
+      		}
+      
+      		this.element.innerHTML += message;
+      
+      		// we are not ready to show, place the message out of sight
+      		this.viewport.style.left = '-99999em';
+      
+      		// attach all elements to the DOM
+      		this.viewport.appendChild(this.element);
+      		this.container.appendChild(this.viewport);
+      
+      		// if we don't have to wait for an image to load, show the message right away
+      		if ( this.img ) {
+      			this.doLog("Add to homescreen: not displaying callout because waiting for img to load");
+      		} else {
+      			this._delayedShow();
+      		}
+      	},
+      
+      	_delayedShow: function (e) {
+      		setTimeout(this._show.bind(this), this.options.startDelay * 1000 + 500);
+      	},
+      
+      	_show: function () {
+      		var that = this;
+      
+      		// update the viewport size and orientation
+      		this.updateViewport();
+      
+      		// reposition/resize the message on orientation change
+      		window.addEventListener('resize', this, false);
+      		window.addEventListener('scroll', this, false);
+      		window.addEventListener('orientationchange', this, false);
+      
+      		if ( this.options.modal ) {
+      			// lock any other interaction
+      			document.addEventListener('touchmove', this, true);
+      		}
+      
+      		// Enable closing after 1 second
+      		if ( !this.options.mandatory ) {
+      			setTimeout(function () {
+      				that.element.addEventListener('click', that, true);
+      			}, 1000);
+      		}
+      
+      		// kick the animation
+      		setTimeout(function () {
+      			that.element.style.webkitTransitionDuration = '1.2s';
+      			that.element.style.transitionDuration = '1.2s';
+      			that.element.style.webkitTransform = 'translate3d(0,0,0)';
+      			that.element.style.transform = 'translate3d(0,0,0)';
+      		}, 0);
+      
+      		// set the destroy timer
+      		if ( this.options.lifespan ) {
+      			this.removeTimer = setTimeout(this.remove.bind(this), this.options.lifespan * 1000);
+      		}
+      
+      		// fire the custom onShow event
+      		if ( this.options.onShow ) {
+      			this.options.onShow.call(this);
+      		}
+      	},
+      
+      	remove: function () {
+      		clearTimeout(this.removeTimer);
+      
+      		// clear up the event listeners
+      		if ( this.img ) {
+      			this.img.removeEventListener('load', this, false);
+      			this.img.removeEventListener('error', this, false);
+      		}
+      
+      		window.removeEventListener('resize', this, false);
+      		window.removeEventListener('scroll', this, false);
+      		window.removeEventListener('orientationchange', this, false);
+      		document.removeEventListener('touchmove', this, true);
+      		this.element.removeEventListener('click', this, true);
+      
+      		// remove the message element on transition end
+      		this.element.addEventListener('transitionend', this, false);
+      		this.element.addEventListener('webkitTransitionEnd', this, false);
+      		this.element.addEventListener('MSTransitionEnd', this, false);
+      
+      		// start the fade out animation
+      		this.element.style.webkitTransitionDuration = '0.3s';
+      		this.element.style.opacity = '0';
+      	},
+      
+      	_removeElements: function () {
+      		this.element.removeEventListener('transitionend', this, false);
+      		this.element.removeEventListener('webkitTransitionEnd', this, false);
+      		this.element.removeEventListener('MSTransitionEnd', this, false);
+      
+      		// remove the message from the DOM
+      		this.container.removeChild(this.viewport);
+      
+      		this.shown = false;
+      
+      		// fire the custom onRemove event
+      		if ( this.options.onRemove ) {
+      			this.options.onRemove.call(this);
+      		}
+      	},
+      
+      	updateViewport: function () {
+      		if ( !this.shown ) {
+      			return;
+      		}
+      
+      		this.viewport.style.width = window.innerWidth + 'px';
+      		this.viewport.style.height = window.innerHeight + 'px';
+      		this.viewport.style.left = window.scrollX + 'px';
+      		this.viewport.style.top = window.scrollY + 'px';
+      
+      		var clientWidth = document.documentElement.clientWidth;
+      
+      		this.orientation = clientWidth > document.documentElement.clientHeight ? 'landscape' : 'portrait';
+      
+      		var screenWidth = ath.OS == 'ios' ? this.orientation == 'portrait' ? screen.width : screen.height : screen.width;
+      		this.scale = screen.width > clientWidth ? 1 : screenWidth / window.innerWidth;
+      
+      		this.element.style.fontSize = this.options.fontSize / this.scale + 'px';
+      	},
+      
+      	resize: function () {
+      		clearTimeout(this.resizeTimer);
+      		this.resizeTimer = setTimeout(this.updateViewport.bind(this), 100);
+      	},
+      
+      	updateSession: function () {
+      		if ( ath.hasLocalStorage === false ) {
+      			return;
+      		}
+      
+              if (localStorage) {
+                  localStorage.setItem(this.options.appID, JSON.stringify(this.session));
+              }
+      	},
+      
+      	clearSession: function () {
+      		this.session = _defaultSession;
+      		this.updateSession();
+      	},
+      
+      	getItem: function(item) {
+      		try {
+      			if (!localStorage) {
+      				throw new Error('localStorage is not defined');
+      			}
+      
+      			return localStorage.getItem(item);
+      		} catch(e) {
+      			// Preventing exception for some browsers when fetching localStorage key
+      			ath.hasLocalStorage = false;
+      		}
+      	},
+      
+      	optOut: function () {
+      		this.session.optedout = true;
+      		this.updateSession();
+      	},
+      
+      	optIn: function () {
+      		this.session.optedout = false;
+      		this.updateSession();
+      	},
+      
+      	clearDisplayCount: function () {
+      		this.session.displayCount = 0;
+      		this.updateSession();
+      	},
+      
+      	_preventDefault: function (e) {
+      		e.preventDefault();
+      		e.stopPropagation();
+      	}
+      };
+      
+      // utility
+      function _extend (target, obj) {
+      	for ( var i in obj ) {
+      		target[i] = obj[i];
+      	}
+      
+      	return target;
+      }
+      
+      function _removeToken () {
+      	if ( document.location.hash == '#ath' ) {
+      		history.replaceState('', window.document.title, document.location.href.split('#')[0]);
+      	}
+      
+      	if ( _reSmartURL.test(document.location.href) ) {
+      		history.replaceState('', window.document.title, document.location.href.replace(_reSmartURL, '$1'));
+      	}
+      
+      	if ( _reQueryString.test(document.location.search) ) {
+      		history.replaceState('', window.document.title, document.location.href.replace(_reQueryString, '$2'));
+      	}
+      }
+      
+      // expose to the world
+      window.addToHomescreen = ath;
+      
+    })(window, document);
+/* endn add to homescreen */ 
+<`+`/script>
+    <script src="https://code.jquery.com/jquery-1.6.js" integrity="sha256-p8mNoqAmClyKxhXK2Va4siC3otc9hTZNz3e2P5LpB7M=" crossorigin="anonymous"><`+`/script>
+        <style>
+      /* Add to homescreen css  */ 
+      .ath-viewport * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      }
+      .ath-viewport {
+      position: relative;
+      z-index: 2147483641;
+      pointer-events: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -o-text-size-adjust: none;
+      text-size-adjust: none;
+      }
+      .ath-modal {
+      pointer-events: auto !important;
+      background: rgba(0,0,0,0.6);
+      }
+      .ath-mandatory {
+      background: #000;
+      }
+      .ath-container {
+      pointer-events: auto !important;
+      position: absolute;
+      z-index: 2147483641;
+      padding: 0.7em 0.6em;
+      width: 18em;
+      background: #454545;
+      background-size: 100% auto;
+      box-shadow: 0 0.2em 0 #999;
+      font-family: sans-serif;
+      font-size: 12px;
+      line-height: 1.5em;
+      text-align: center;
+      }
+      .ath-container small {
+      font-size: 0.8em;
+      line-height: 1.3em;
+      display: block;
+      margin-top: 0.5em;
+      }
+      .ath-ios.ath-phone {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      .ath-ios14 .ath-action-icon {
+      display: inline-block;
+      width: 18px;
+      height: 15px;
+      background-repeat: no-repeat;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+      background-size: 18px 15px;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios6.ath-tablet {
+      left: 5em;
+      top: 1.8em;
+      }
+      .ath-ios7.ath-tablet {
+      left: 0.7em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-tablet,
+      .ath-ios9.ath-tablet,
+      .ath-ios10.ath-tablet{
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-android {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      /* close icon */
+      .ath-container:before {
+      content: '';
+      position: relative;
+      display: block;
+      float: right;
+      margin: -0.7em -0.6em 0 0.5em;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAMAAABmmnOVAAAAdVBMVEUAAAA5OTkzMzM7Ozs3NzdBQUFAQEA/Pz8+Pj5BQUFAQEA/Pz8+Pj5BQUFAQEA/Pz9BQUE+Pj4/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8+Pj4/Pz8+Pj4/Pz8/Pz8/Pz8/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8/Pz9AQEA/Pz+fdCaPAAAAJnRSTlMACQoNDjM4OTo7PEFCQ0RFS6ytsbS1tru8vcTFxu7x8vX19vf4+C5yomAAAAJESURBVHgBvdzLTsJAGEfxr4C2KBcVkQsIDsK8/yPaqIsPzVlyzrKrX/5p0kkXEz81L23otc9NpIbbWia2YVLqdnhlqFlhGWpSDHe1aopsSIpRb8gK0dC3G30b9rVmhWZIimTICsvQtx/FsuYOrWHoDjX3Gu31gzJxdki934WrAIOsAIOsAIOiAMPhPsJTgKGN0BVsYIVsYIVpYIVpYIVpYIVpYIVpYIVpYIVpYIVlAIVgEBRs8BRs8BRs8BRs8BRs8BRs8BRs8BRTNmgKNngKNngKNngKNngKNhiKGxgiOlZoBlaYBlaYBlaYBlaYBlaYBlaYBlaYBlZIBlBMfQMrVAMr2KAqBENSHFHhGEABhi5CV6gGUKgGUKgGUKgGUFwuqgEUvoEVsoEVpoEUpgEUggF+gKTKY+h1fxSlC7/Z+RrxOQ3fcEoAPPHZBlaYBlaYBlaYBlZYBlYIhvLBCstw7PgM7hkiWOEZWGEaWGEaWGEaIsakEAysmHkGVpxmvoEVqoEVpoEVpoEVpoEVpoEVpoEVkoEVgkFQsEFSsEFQsGEcoSvY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnmbNAUT2c2WAo2eAo2eAo2eAo2eAo2eArNEPFACjZ4CjZ4CjZ4CjaIird/rBvFH6llNCvewdli1URWCIakSIZesUaDoFg36dKFWk9zCZDei3TtwmCj7pC22AwikiIZPEU29IpFNliKxa/hC9DFITjQPYhcAAAAAElFTkSuQmCC);
+      background-color: rgba(128,128,128,0.9);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      width: 2.7em;
+      height: 2.7em;
+      text-align: center;
+      overflow: hidden;
+      color: #666;
+      z-index: 2147483642;
+      }
+      .ath-container.ath-icon:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-mandatory .ath-container:before {
+      display: none;
+      }
+      .ath-container.ath-android:before {
+      float: left;
+      margin: -0.7em 0.5em 0 -0.6em;
+      }
+      .ath-container.ath-android.ath-icon:before {
+      position: absolute;
+      right: auto;
+      left: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-container.ath-icon {
+      background-color: #787878;
+      }
+      .ath-action-icon {
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('square.and.arrow.up.png');
+      background-position: 50%;
+      background-repeat: no-repeat;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios14 .ath-action-icon,
+      .ath-ios13 .ath-action-icon,
+      .ath-ios12 .ath-action-icon,
+      .ath-ios11 .ath-action-icon{
+      width: 1.6em;
+      height: 1.6em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAACtCAYAAAB7l7tOAAAF6UlEQVR4AezZWWxUZRiH8VcQEdxZEFFiUZBFUCIa1ABBDARDcCciYGKMqTEGww3SOcNSAwQTjOBiiIpEhRjAhRgXRC8MFxojEhAFZUGttVhaoSxlaW3n8W3yXZxm6vTrOMM5Q98n+V9MMu1pvl++uZhKuypghu49KaaTWGdZSYoVN6VD95nMpLNYZ9XNbdQR2od2k88O3Gm6Bh0t7H0p5Vwp2Ax3ajpu2tYbciFWwkTFO63DY6+JcI4USFaSyYpWp8N7SVZJKR3EinkBk9JxvZFXxhnZSjBaoWp1ZL0ES8WKYXMZp0AndORgy8WKFe5Yf1zvvSBWDEpys2LU6MjD5kmEWQlGKsJRHXlcqUSQVcItEnDEA6gAb7LhjvD9WO6yIEfICQI5A1nzGCYB1T4og5bBiFcyv2f6ujYhl4iVxwKG6qp8MK55HsqPwK0rMr9v/yEo3uCPrJstVh5KMER30Aeh31Ioq0FrHfjXw9CYghnrvYFTuqfEymFzGSwBlT4ARYr7u+K6GLmCVGvAGg2NMG0d/sgJnpScZLjXSkC5z8H3eQ72/k24Q8NfzvwFyK4qtuJSZKaubRPyE/K/Mtx+EvCHL+7uasId1t10w0scz/RzSzYzAfgKV30D3LPaG7lRkR8RK4tKKJKAMp+D7r0EfmmOe0x3m2itAc/ZxBjgAt1mXHWKPPkdb+QGSTJdrDaU5EoJ2OtzwD0WwY7KNNzbRfMFFg24WPdtGHnS221Cflgsj56hjwTs8TnY7oq7/QDhjutGicsb2AVcovsO18l6uPPNNiE/JFaGAq7Q7fY50G4LYVtz3FrdaNGyBXbIl+q24DqhyHes9EaulwR3SwtZs+ktAT/7HORliru1gnCndONFyx44Dfn7MPLYN7yR6yTJZAllJeguAT/4HOBFz8I3ZWm4E0TLFbBD7qn7EVdtHYx53R9ZN0ksrZRuErDN5+AuLIWvm+Oe1k0ULdfADrmX7idcR0/DyBXeyCdlLuMMOGCBz4F1ng+f7yFcve5e0fIFHELeiav6BAx70Rt5p0yhY3u/wR0kyarW/uX35b403PtFyzewQ75ctwtXzSkY8WqruHslSV8RscrL6TJ1bcvfWJ0/HzbtIdw/ugdFyzdwOOAq3T6fmzxwGQ3vbmO8iFioIWqYSsHMj9M/ljfuTsOdItoZBXYBfXX7cVXVwvXLm/8+fU3lcdCqdEMNGBbgUmRmfQISQKd5sGEn4VK6YtEiAXYBA3QVuA4q8hCHrDcafR1ul65jewfuovsCl7vJrNlOuEbdo6JFCuwCrtb9hqusBu56Cw4cI1y1briIWEBn3Ue0XKPuMdGiBg4H9NdV0HJ/6QZLOEPmPN0GmpfSPS5arIBdwHUtIFfoBsl/ZsgfhHCfFi2WwC5goO4AmvanbqBkzJA76tboZokWa2AXMEi3RTdAvDLkDqJFAhzB32xFD2wZsGXA0WfAlgFbBmwZsGXAlgFbBpzk04JaKb0iA9ZnF9x5SQAFtRKKIgPWZxfaeRmwAZ/BGbAB37eaG6MCbnq2Aed5czYyKirgpmcbsAHHZAZswN0Wwo7KeG1fFf2jAm56dtzOQ42yB+65mDhWFBUwUETMUiMDNmADbp/APRaTAh6I2bpGCNw1bufRZJQ1cPdF/NueHZsgDEBBGLbMGoIu4AZu5gLOZeEaYmEXeznF3jRPyEv4frgJvvJe3qTefY0AAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwb8rwADBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgz4/sz1Nia/9hizA7zgklwy3RYwYMBzBRjw4bPjxAbAAizAAtwgwAIswAIswAIMGDBgARZgARZgAS4FWIAFWIAFWIABAwYswAIswAIswIUAC7AAC7AACzBgwIAFWIAFWIAFuBBgARZgARZgAQYMGPApQ99ZCdgWtzqwATbABtgAG2DbnxNb7zbRimsMLMACrDf2wMWI/WasfQAAAABJRU5ErkJggg==);
+      margin-top: -0.3em;
+      background-size: auto 100%;
+      }
+      .ath-ios6 .ath-action-icon {
+      width: 1.8em;
+      height: 1.8em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAAB0CAQAAADAmnOnAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAAWwEAAFsBAXkZiFwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAF4klEQVR4Ae3a/a+XdR3H8ec5HM45HDmKICoVohkZsxESRRCzcZM/2JKkdGR5MrSkleA0Pd00O4u5IVuNM2yYc6XSzCExU4oUNRPCJFdMUAhsYZpUGhscOHA4N8/WZzsL6HBxvofvdV3fa3yer//gsV3vH659KHzncBsJxUYhDzOEhCKQbORs+ip2wzgM+wvj+P9i35qAGLaHGcQSgKSTrxBLABJppZpYApCspoFYApBsZjSxBCD5OxOJJQBJG1cQSwCSLpqJJQCJ3MvgCGTinuSMCJS8LZwfgZL3FtMiUPIOcU0ESl4PLRHoRPsJtREoeRsYGYGS9yrvo6RmpbLaigWSfzOdErLs6+bLUMFA0sF1+QF1cz1UNlBYK9V5AHXyWSgEkKyiIWOgGh829Ki1lLcaxjCVK7mJRSxjBY+zgRf/u9pXcMB7jhEZAg32EUP3O6hMKOP5Iq2sZQeHMZXt5KKMgOpcY+iHVnFyjeQKlrCBdsxge5ieAVC9vzLUelI8H+A7bKIHM10H81IGGuKvDf1ggDxVTKOV1zG3/Yia1ICG+ltD32MgNTKfP2HuW0VDKkCNrjfUTOm9i6XswwrZJkaVHeh0f2fodkrtfO6jAytqrzG+rEDDfVG1x1sprZEs5RBW4PZxeT+Bbrf5hPu9arfzKaU6WjiAFbseWvoF1GW/6vYGSmkyW7Dit4xB5QHq9Br6Xx2t9GAhtp6zkoHsfNp1J9wX6H+jeR4LtJc4LxGopZZyNpN/YcG2mw9nBTSPLizgOmjKAujGgvJID3ekD7QYi7nGzkvmQtpA38Vi7iJf0TedlC7QTVjMfcY2QyvSBPpUMW/PIBfbo9pls1XpAX2EdizeznStob3OJpQO0DB2YfE21q2GtnghpAm0Gou3T9tm6BGHQppA12HRVt17eboNlydNoLHsx2JtmL801OYcQmkC/QKLtQt9ydBW3wNpA30ci7Ur3WdolUMhbaBqNhf/8qQJ9Hkszs5wjaH9XkUobaAqtmFRdoGbDb3sWMgG6DIs5852knO82RaXer+P+qyb3eWeo7ZNBrRZvm1otY2QFdBjeHIb6hTne49Put12+9ObMoDdYmfy5UkF6AK6cCCr9aM2u9IddptcOYCG+FNDB5xLKCugO7G01TndFp/xgAntdYvrfdwVLnORt3q9Vx25F27DUjbGPxr6qxMgW6Cd2N+d6wLXedA+6nKbK73Lr/pJxzusvE/wZrvX0FOOgGyBxmF/dprXutYOj6nNdS6xyYnWp/dGcaGdhr5vDWQN9E1MXrUzfcA2j2qPj/l1J1uT9iPOeh8w1O7nCGUN9HzyGZ7ndo9qp0ucanU2r1xH+wdDu5wIeQDVVx0+/kd1i697RNv8thdn+Qz4Uv9p6DeOhHyApmBfq3OBu+3Nfd7nVELZAX3Nw4ZarYG8gG7GY1dlk6/Zm3/2Rk8jlB1QvT82dNAmQjkBVf8Mj957fdrefM7ZVhPKEuidvmDob06CXIGGbsX/bZDf8KAhfdbJhLIGmuZuQ084HHIGatiLvRvrRkP6qldbBXkAzbfD0N0OhryBGqrEMOd50FC7d1hPKGugBh8ydMh5hPIGGouI1d5lj6F1vptQ9kDvcKOhN5wMlQH0QcRGnzC03yZCeQDN9G1D6xwBFQI07FI8x02GdjgB8gJqttPQcmuhYoAumzvG7YZWejrkA1TrPYYO+SVCFQO0aM4bqj0uJJQH0LluSP7PkyeQU9QOmyAvoBm+Zegpz4LKA/qYB/wE5AXUe3m81zqoRKAPOYWcuvP9dxvqcD6h7IAKkaNU3eUlHLcI9EzS5YlAi62h/zUy89QCqqKUmvgHywsJlEHnsQYxAvXVIJo5gIhnPhiBju1iNmLvLn85Ah1ZPYs5jBGo72awEzEC9dVwHqQHI9DxWoAYgSLQQKteGIESu/qhCJTYtT+PQBEoAkWgCBSBkotAEehUWwSKQBEoAkWg/BeBIlAEikARKAJFoFmealu4gVLy1Gt5dkARKAL9BzujPSurTmu/AAAAAElFTkSuQmCC);
+      margin-bottom: 0.4em;
+      background-size: 100% auto;
+      }
+      .ath-android .ath-action-icon {
+      width: 1.4em;
+      height: 1.5em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEVmZmb///9mZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZW6fJrAAAAEXRSTlMAAAYHG21ub8fLz9DR8/T4+RrZ9owAAAB3SURBVHja7dNLDoAgDATQWv4gKve/rEajJOJiWLgg6WzpSyB0aHqHiNj6nL1lovb4C+hYzkSNAT7mryQFAVOeGAj4CjwEtgrWXpD/uZKtwEJApXt+Vn0flzRhgNiFZQkOXY0aADQZCOCPlsZJ46Rx0jhp3IiN2wGDHhxtldrlwQAAAABJRU5ErkJggg==);
+      background-size: 100% auto;
+      }
+      .ath-container p {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 2147483642;
+      text-shadow: 0.1em 0.1em 0 #000;
+      font-size: 1.1em;
+      }
+      .ath-ios.ath-phone:after {
+      content: '';
+      background: #eee;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      bottom: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: 
+      scaleX(0.9);
+      rotate(45deg);
+      transform: scaleX(0.9);
+      rotate(45deg);
+      box-shadow: 0.2em 0.2em 0 #ccc;
+      }
+      .ath-ios.ath-tablet:after {
+      content: '';
+      background: #666;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      top: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: scaleX(0.9) rotate(45deg);
+      transform: scaleX(0.9) rotate(45deg);
+      z-index: 2147483641;
+      }
+      .ath-application-icon {
+      position: relative;
+      padding: 0;
+      border: 0;
+      margin: 0 auto 0.2em auto;
+      height: 6em;
+      width: 6em;
+      background: transparent;
+      background-image: url('./favicon-96x96.png');
+      z-index: 2147483642;
+      }
+      .ath-container.ath-ios .ath-application-icon {
+      border-radius: 1em;
+      box-shadow: 0 0.2em 0.4em rgba(0,0,0,0.3),
+      inset 0 0.07em 0 rgba(74,74,74,0.5);
+      margin: 0 auto 0.4em auto;
+      }
+      @media only screen and (orientation: landscape) {
+      .ath-container.ath-phone {
+      width: 24em;
+      }
+      .ath-android.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios6:after {
+      left: 39%;
+      }
+      .ath-ios8.ath-phone {
+      left: auto;
+      bottom: auto;
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-phone:after {
+      bottom: auto;
+      top: -0.9em;
+      left: 68%;
+      z-index: 2147483641;
+      box-shadow: none;
+      }
+      }
+      /* End of Add to homescreen css */
+      </style>
+    <style type="text/css">
+.flip-container {
+	perspective: 500px;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 54px;
+}
+.flip-container.hover .flipper {
+        -ms-transform: rotateY(180deg);
+    }
+.flip-container.hover .back {
+	transform: rotateY(0deg);
+-ms-transform: scale(-1, 1); 
+}
+.flip-container.hover .front {
+    transform: rotateY(180deg);
+}
+
+.front {
+    background-color:#666666;
+transform: rotateY(0deg);
+}
+.back {
+	transform: rotateY(-180deg);
+    background-color:#666666;
+  border: solid 0px #333333;
+  border-radius: 0px 12px 47px 47px;
+  
+  
+}
+.flip-container, .front, .back {
+	width: 500px;
+	height: 500px;
+}
+.flipper {
+	transition: 1.9s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front, .back {
+    border:1px solid black;
+    -webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: 1.9s;
+	transform-style: preserve-3d;
+	position:absolute;
+	top:54px;
+	left: 0;
+	right:0;
+	bottom:0;
+}
+
+
+      .LPcover {
+      height : 500px;
+      width : 500px;
+      max-height : contain;
+      max-width : contain;
+      position : fixed;
+      backface-visibility: hidden;    }
+ /* Style the tab content in portrait mode  */
+      .tabcontent {
+            color: #cecece;
+            display: hidden;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            width: 500px;
+            height: 100%;
+            bottom: 0px;
+            padding-left: 4px;
+            padding-right: 4px;
+            text-align: left;
+            overflow-y: scroll;
+            -webkit-box-shadow: inset 0px 6px 18px 3px #000000; 
+            box-shadow: inset 0px 6px 18px 3px #000000;
+            text-shadow: -2px 2px 6px #000000;
+            border: 10px inset #696969;
+            border-radius: 12px 26px 47px 47px;
+            background: #333333;
+      background: -webkit-gradient(linear, 0 0, 100% 0, from(#111111), color-stop(0.5, #676767), to(#333333));
+      background: -webkit-linear-gradient(left, #111111, #676767, #333333);
+          }
+            div.scrollmenu {
+        width: 500px;
+        border-top: 3px ridge rgba(255,255,255,0.92);
+        margin-left: 0px;
+        margin-left: 0px;
+        bottom: 0px;
+        border-bottom: 0px solid #000000;
+        background: #666666;
+        border-radius: 12px 12px 0px 0px;
+background: -moz-linear-gradient(top, #474747, #ababab, #030303);
+background: -webkit-linear-gradient(top, #474747, #ababab, #030303);
+background: linear-gradient(to bottom, #474747, #ababab, #030303);
+      overflow-x: none;
+      white-space: nowrap;
+      }
+      div.scrollmenu a {
+        
+      text-decoration: none;
+      }
+      div.scrollmenu a:hover {
+
+    }
+      /* Style the tab */
+      .tab {
+      width: fit-content;
+      width: -moz-fit-content;
+      width: -o-fit-content;
+      width: -webkit-fit-content;
+      max-width: 98%;
+      min-width: 98%;
+      line-height: fit-content;
+      line-height: -webkit-fit-content;
+      line-height: -moz-fit-content;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        bottom: -5px;
+        margin-left:0px;
+        margin-right: 0px;
+        border-radius: 12px 12px 0px 0px;
+        
+      }
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px;
+        border-right: 0px solid #333;
+        border-left: 0px solid #666;
+        bottom: 0px;
+        border-radius: 12px 12px 0px 0px;       
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14pt;
+        letter-spacing: 2.5px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        font-style: oblique;
+        font-variant: small-caps;
+        text-transform: capitalize;
+        text-shadow: -2px 3px 5px lightskyblue;
+        background: -webkit-linear-gradient(top, #333333 100%, #999999 100%, #cccccc 100%);
+        overflow-x: scroll;
+        cursor: hand;
+        padding: 8px 8px;
+        transition: 0.4s;
+        transition-timing-function: ease-in-out;
+        border-top: 4px ridge rgba(74,74,74,0.8);
+        -webkit-box-shadow: 4px -2px 8px -3px #666; 
+        } 
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+background: -webkit-linear-gradient(top, #666666 100%, #999999 100%, #cccccc 100%);
+      border-top: 4px ridge rgba(255,255,255,1.0);
+            -webkit-box-shadow: 2px 4px 18px 3px lightskyblue; 
+      }
+      /* Create an active/current tablink class */
+      .tab button.active {
+text-decoration: rgba(0, 202, 205, 0.8);
+        -webkit-box-shadow: inset -2px 5px 8px 4px rgba(169,169,169,0.7), inset -2px 2px 7px 3px rgba(0,0,0,0.9); 
+background: -webkit-linear-gradient(top, #999999 100%, #ccccc 100%, #666666 100%);
+      border-top: 4px ridge white;
+            -webkit-box-shadow: 0px 2px 12px 3px lightskyblue; 
+       -webkit-box-shadow: inset -1px -3px 6px 5px #000000; 
+       color: white;
+       text-shadow: -3px -4px 12px lightskyblue;
+    }
+  button.active {
+  border-top: 4px ridge white;
+  color: white;
+  animation: mymove 4s infinite;
+}
+
+a:hover, a:active, a:visited, a:link {
+  color:#000000;
+  text-decoration: none;
+}
+@keyframes mymove {
+  50% {
+    border-top-color: #009aff;
+    color: #128bff;
+  }
+}   
+      ol {
+      list-style-type: upper-roman;
+      }
+    }
+  }
+</style>
+
+
+
+
+
+
+
+</head>
+      <body>
+        <h1>${title}</h1>
+        <p>Artist: ${artist}</p>
+        
+               <span style="background: -webkit-linear-gradient(top, #999999, #cccccc, #ffffff);position:relative;font-size:18pt;outline:1px solid black;"><a href="">⋘</a> ∙ <a href="">↺</a> ∙ <a href="">■</a> ∙ <a href="">∣∣</a> ∙ <a href="">▸</a> ∙ <a href="">↻</a> ∙ <a href="">⋙</a></span>
+               
+	<audio src="data:audio/mp3;base64,${mp3Base64}" preload="meta" controls autoplay="true" style="-webkit-backface-visibility:hidden;backface-visibility:visible;background-color:transparent;top:0px;left:0px;right:0px;width:500px;visibility:hidden;">
+				cannot load or play music file in this app.   Load in supported browser app
+			</audio> 
+      
+      <div id="divFlipContainer" class="flip-container">
+    <div class="flipper" >
+        <div class="front">
+			<img src="data:image/png;base64,${pngBase64}" height="500px" width="500px" border="0px" style="top:0px;left:0px;right:0px;bottom:0px;height:500px;width:500px;" name="LP-Cover" id="LP-Cover" title="LP-Cover" />
+		</div>
+<div class="back">
+	<div class="tab" style="">
+        <div class="scrollmenu">&nbsp;
+          <button class="tablinks active" onclick="openThisPage(event, 'Album')" id="defaultOpen">💿</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Tracks')">🎚</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Lyrics')">🗣</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Liners')">📝</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Bio')">📖</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Links')">⛓</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Credits')">©ⓅⓇ</button>
+&nbsp;</div>
+      </div>
+	  
+	  
+	  
+	<div id="Album" class="tabcontent" style="display: block;">	
+    <h1>${lbumTitle}</h1>
+    <h2>${ArtstName}</h2>
+    ${composer} ${label} ${liners}  ${notes}
+
+
+
+
+
+    </div>
+
+
+
+
+      <div id="Tracks" class="tabcontent" style="display: none;">
+        <ol start="1" class="playlist">
+
+<li>. ${track1} - <span class="songTime">(${time1})</span><br />${lyrics1}
+</li>
+<li>. ${track2} - <span class="songTime">(${time2})</span><br />${lyrics2}
+</li>
+<li>. ${track3} - <span class="songTime">(${time3})</span><br />${lyrics3}
+</li>
+<li>. ${track4} - <span class="songTime">(${time4})</span><br />{lyrics4}
+</li>
+<li>. ${track5} - <span class="songTime">(${time5})</span><br />${lyrics5}
+</li>
+<li>. ${track6} - <span class="songTime">(${time6})</span><br />${lyrics6}
+</li>
+<li>. ${track7} - <span class="songTime">(${time7})</span><br />${lyrics7}
+</li>
+<li>. ${track8} - <span class="songTime">(${time8})</span><br />${lyrics8}
+</li>
+<li>. ${track9} - <span class="songTime">(${time9})</span><br />${lyrics9}
+</li>
+<li>. ${track10} - <span class="songTime">(${time10})</span><br />${lyrics10}
+</li>
+<li>. ${track11} - <span class="songTime">(${time11})</span><br />${lyrics11}
+</li>
+<li>. ${track12} - <span class="songTime">(${time12})</span><br />${lyrics12}
+</li>
+<li>. ${track13} - <span class="songTime">(${time13})</span><br />${lyrics13}
+</li>
+<li>. ${track14} - <span class="songTime">(${time14})</span><br />${lyrics14}
+</li>
+<li>. ${track15} - <span class="songTime">(${time15})</span><br />${lyrics15}
+</li>
+<li>. ${track16} - <span class="songTime">(${time16})</span><br />${lyrics16}
+</li>
+<li>. ${track17} - <span class="songTime">(${time17})</span><br />${lyrics17}
+</li>
+<li>. ${track18} - <span class="songTime">(${time18})</span><br />${lyrics18}
+</li>
+</ol>
+
+      </div>
+
+
+
+
+      <div id="Lyrics" class="tabcontent" style="display: none;">
+        <h3>Lyrics</h3>
+
+"${title}"
+By ${artist}
+Music &amp; Lyrics by ${composer}
+
+
+<ol start="1">
+
+<li>. ${track1} - <span class="songTime">(${time1})</span><br /><pre>${lyrics1}</pre>
+</li>
+<li>. ${track2} - <span class="songTime">(${time2})</span><br /><pre>${lyrics2}</pre>
+</li>
+<li>. ${track3} - <span class="songTime">(${time3})</span><br /><pre>${lyrics3}</pre>
+</li>
+<li>. ${track4} - <span class="songTime">(${time4})</span><br /><pre>{lyrics4}</pre>
+</li>
+<li>. ${track5} - <span class="songTime">(${time5})</span><br /><pre>${lyrics5}</pre>
+</li>
+<li>. ${track6} - <span class="songTime">(${time6})</span><br /><pre>${lyrics6}</pre>
+</li>
+<li>. ${track7} - <span class="songTime">(${time7})</span><br /><pre>${lyrics7}</pre>
+</li>
+<li>. ${track8} - <span class="songTime">(${time8})</span><br /><pre>${lyrics8}</pre>
+</li>
+<li>. ${track9} - <span class="songTime">(${time9})</span><br /><pre>${lyrics9}</pre>
+</li>
+<li>. ${track10} - <span class="songTime">(${time10})</span><br /><pre>${lyrics10}</pre>
+</li>
+<li>. ${track11} - <span class="songTime">(${time11})</span><br /><pre>${lyrics11}</pre>
+</li>
+<li>. ${track12} - <span class="songTime">(${time12})</span><br /><pre>${lyrics12}</pre>
+</li>
+<li>. ${track13} - <span class="songTime">(${time13})</span><br /><pre>${lyrics13}</pre>
+</li>
+<li>. ${track14} - <span class="songTime">(${time14})</span><br /><pre>${lyrics14}</pre>
+</li>
+<li>. ${track15} - <span class="songTime">(${time15})</span><br /><pre>${lyrics15}</pre>
+</li>
+<li>. ${track16} - <span class="songTime">(${time16})</span><br /><pre>${lyrics16}</pre>
+</li>
+<li>. ${track17} - <span class="songTime">(${time17})</span><br /><pre>${lyrics17}</pre>
+</li>
+<li>. ${track18} - <span class="songTime">(${time18})</span><br /><pre>${lyrics18}</pre>
+</li>
+</ol>
+      </div>
+      <div id="Liners" class="tabcontent" style="display: none;">	
+			<h2>Liner Notes</h2>
+      </div>
+      <div id="Bio" class="tabcontent" style="display: none;">
+        <h2>Bio</h2>
+      </div>
+      <div id="Online" class="tabcontent" style="display: none;">	  
+		<h2>Links</h2>
+	  </div>
+	   <div id="Credits" class="tabcontent" style="display: none;">
+          <h2>Credits & Rights</h2>     
+     
+     </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      function openThisPage(evt, pageID) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      }
+      
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(pageID).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
+      
+    <`+`/script>
+    <script>
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    <`+`/script>
+
+<button id="FlipToggle" type="button" class="btn btn-info" runat="server" style="position:relative;top:5px;left:300px;right:0px;">flip to see other side<i class="fa fa-folder-open-o fa-lg" aria-hidden="true"></i></button>	
+
+<script type="text/javascript">
+$(window).load(function () {
+ $('#FlipToggle').click(function () {
+document.querySelector('#divFlipContainer').classList.toggle('hover');
+ });
+});
+<`+`/script>
+</body>
+</html>`
+;
+  
+  return html;
+}
+
+
+
+
+
+// Get the file input elements
+const mp3Input = document.getElementById('mp3-input');
+const pngInput = document.getElementById('png-input');
+const iconInput = document.getElementById('icon-input');
+const splashInput = document.getElementById('splash-input');
+
+// Get the text inputs
+const titleInput = document.getElementById('title-input');
+const artistInput = document.getElementById('artist-input');
+const composerInput = document.getElementById('composer-input');
+const dateInput = document.getElementById('date-input');
+
+
+
+// Get the textarea input
+const notesInput = document.getElementById('notes-input');
+const linersInput = document.getElementById('liners-input');
+const bioInput = document.getElementById('bio-input');
+const linksInput = document.getElementById('links-input');
+const copyrightInfoInput = document.getElementById('copyrightInfo-input');
+const creditsInput = document.getElementById('credits-input');
+
+// Get the track list input
+const trackListInput = document.getElementById('track-list-input');
+
+// Get the track input
+const track1Input = document.getElementById('track1-input');
+
+const track2Input = document.getElementById('track2-input');
+
+const track3Input = document.getElementById('track3-input');
+
+const track4Input = document.getElementById('track4-input');
+
+const track5Input = document.getElementById('track5-input');
+
+const track6Input = document.getElementById('track6-input');
+
+const track7Input = document.getElementById('track7-input');
+
+const track8Input = document.getElementById('track8-input');
+
+const track9Input = document.getElementById('track9-input');
+
+const track10Input = document.getElementById('track10-input');
+
+const track11Input = document.getElementById('track11-input');
+
+const track12Input = document.getElementById('track12-input');
+
+const track13Input = document.getElementById('track13-input');
+
+const track14Input = document.getElementById('track14-input');
+
+const track15Input = document.getElementById('track15-input');
+
+const track16Input = document.getElementById('track16-input');
+
+const track17Input = document.getElementById('track17-input');
+
+const track18Input = document.getElementById('track18-input');
+
+
+
+
+
+
+// Get the time input
+const time1Input = document.getElementById('time1-input');
+
+const time2Input = document.getElementById('time2-input');
+
+const time3Input = document.getElementById('time3-input');
+
+const time4Input = document.getElementById('time4-input');
+
+const time5Input = document.getElementById('time5-input');
+
+const time6Input = document.getElementById('time6-input');
+
+const time7Input = document.getElementById('time7-input');
+
+const time8Input = document.getElementById('time8-input');
+
+const time9Input = document.getElementById('time9-input');
+
+const time10Input = document.getElementById('time10-input');
+
+const time11Input = document.getElementById('time11-input');
+
+const time12Input = document.getElementById('time12-input');
+
+const time13Input = document.getElementById('time13-input');
+
+const time14Input = document.getElementById('time14-input');
+
+const time15Input = document.getElementById('time15-input');
+
+const time16Input = document.getElementById('time16-input');
+
+const time17Input = document.getElementById('time17-input');
+
+const time18Input = document.getElementById('time18-input');
+
+
+
+// Get the lyrics input
+const lyrics1Input = document.getElementById('lyrics1-input');
+
+const lyrics2Input = document.getElementById('lyrics2-input');
+
+const lyrics3Input = document.getElementById('lyrics3-input');
+
+const lyrics4Input = document.getElementById('lyrics4-input');
+
+const lyrics5Input = document.getElementById('lyrics5-input');
+
+const lyrics6Input = document.getElementById('lyrics6-input');
+
+const lyrics7Input = document.getElementById('lyrics7-input');
+
+const lyrics8Input = document.getElementById('lyrics8-input');
+
+const lyrics9Input = document.getElementById('lyrics9-input');
+
+const lyrics10Input = document.getElementById('lyrics10-input');
+
+const lyrics11Input = document.getElementById('lyrics11-input');
+
+const lyrics12Input = document.getElementById('lyrics12-input');
+
+const lyrics13Input = document.getElementById('lyrics13-input');
+
+const lyrics14Input = document.getElementById('lyrics14-input');
+
+const lyrics15Input = document.getElementById('lyrics15-input');
+
+const lyrics16Input = document.getElementById('lyrics16-input');
+
+const lyrics17Input = document.getElementById('lyrics17-input');
+
+const lyrics18Input = document.getElementById('lyrics18-input');
+
+
+
+
+// Add event listener for the submit button click
+document.getElementById('submit-btn').addEventListener('click', async () => {
+
+
+
+
+
+
+
+
+  // Get file objects
+  const audioFile = audioInput.files[0];
+  const coverFile = coverInput.files[0];
+  const ptSplashFile = ptSplashInput.files[0];
+  const lsSplashFile = lsSplashInput.files[0];
+  
+  const author = authorInput.value[0];
+  const metaDescription = metaDescriptionInput.value[0];
+  const metaKeywords = metaKeywordsInput.value[0];
+  
+  // Get text values
+  const title = titleInput.value;
+  const artist = artistInput.value;
+  const composer = composerInput.value;
+  const label = labelInput.value;
+  const date = dateInput.value;
+  
+
+  const trackList = trackListInput.value;
+  const lyrics = lyricsInput.value;
+  const liners = linersInput.value;  
+  const bio = bioInput.value;
+  const links = linksInput.value;
+  const notes = notesInput.value;
+  const copyrightInfo = copyrightInfoInput.value;
+  const credits = creditsInput.value;
+  
+  
+  
+  // Get track list values
+  const trackList = trackListInput.value.split('\n');
+  
+  // Get time values for each track
+  const time = timeInput.value.split('/n'); 
+  
+  // Get lyrics values
+  const lyrics = lyricsInput.value.split('\n');
+  
+  /*  join each numbered input for tracklist + time + lyrics  important! */
+  
+  
+  try {
+    // Convert files to base64
+    const audioBase64 = await fileToBase64(audioFile);
+    const coverBase64 = await fileToBase64(coverFile);
+    const ptSplashBase64 = await fileToBase64(ptSplashFile);
+    const lsSplashBase64 = await fileToBase64(lsSplashFile);
+    
+    // Generate the HTML document
+    const htmlDocument = generateHTMLDocument(title, artist, composer, label, date, trackList, time, lyrics, liners, links, bio, notes, mp3Base64, pngBase64);
+
+    
+    
+    // Create a new HTML file
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([htmlDocument], { type: 'text/html' }));
+    link.download = '' + ${title} + '.html';
+    
+    // Trigger the download
+    link.click();
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+    </script>
+</body>
+</html>

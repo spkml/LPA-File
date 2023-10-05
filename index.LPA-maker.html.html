@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Playable Audio (LPA) file CREATOR [prototype example]</title>
+</head>
+<body>
+    <form method="POST" action="generateLPA()">
+        <label for="mp3-input">MP3 File:</label>
+        <input type="file" id="mp3-input" accept=".mp3" >
+        <br />
+        <label for="png-input">PNG File:</label>
+        <input type="file" id="png-input" accept=".png" >
+         <br />
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" name="title" >
+				<br />
+        <label for="artist-input">Artist:</label>
+        <input type="text" id="artist-input" name="artist">
+         <br />
+        <label for="composer-input">Composer:</label>
+        <input type="text" id="composer-input" name="composer">
+				<br />
+        <label for="label-input">Label:</label>
+        <input type="text" id="label-input" name="label">
+				<br />      
+        <label for="date-input">Release Date:</label>
+        <input type="date" id="date-input" name="date">
+				<br />                 
+        <label for="track-list-input">Track List:</label>
+        <textarea rows="18" cols="48" id="track-list-input" name="track-list"></textarea>
+        <br />        
+        <label for="lyrics-input">Lyrics:</label>
+        <textarea id="lyrics-input" rows="20" cols="60" name="lyrics"></textarea>
+        <br />        
+        <label for="liner-notes-input">Liner Notes:</label>
+        <textarea id="liner-notes-input" rows="10" cols="48" name="liner-notes" ></textarea>
+         <br />         <label for="bio-input">Bio:</label>
+        <textarea id="bio-input" rows="10" cols="48" name="bio" ></textarea>
+				<br />        
+				<label for="c-input">Copyright:</label>
+        <textarea id="copyright-input" rows="10" cols="48" name="copyright" ></textarea>
+				<br />
+        <button id="submit-btn" type="submit" >Generate LPA File</button>
+    </form>
+    
+    <script>
+		/*jshint esversion: 8 */ 
+      // Function to convert file to base64
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+  resolve(reader.result.split(',')[1]);
+    };
+
+    reader.onerror = (error) => {
+      reject(error);
+    };
+
+  reader.readAsDataURL(file);
+  });
+}
+
+// Function to generate HTML document
+function generateHTMLDocument(title, artist, composer, label, date, trackList, lyrics, linerNotes, bio, copyright, mp3Base64, pngBase64) {
+  const html = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>${title} - ${artist}</title>
+				<style>
+				body {
+		color:#ddddef;
+		background-color:black;
+			}
+		.album {
+			width: 500px;
+			height: 1036px;
+			position: fixed;
+		}			
+				audio {
+      top: 0px;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+			height: 26px;
+      width: 500px;
+      background-color: transparent;
+			}
+			.l-toppane {
+      top : 0;
+      right : 0;
+      left : 0;
+      margin : 0;
+      padding : 0;
+      height : 500px;
+      width : 500px;
+      display:relative;
+      }
+      .LPCover {
+      margin : 0;
+      padding : 0;
+      top : 0;
+      right : 0;
+      left : 0;
+      width : 500px;
+			height: 500px;
+      }
+      .r-botpane {
+      right : 0;
+      left : 0;
+      top : 0;
+      padding :0px;
+      width : 500px;
+			height: 500px;
+			display: inline;
+		}	
+		.tabcontent {
+		position: inline;
+		display: none;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 500px;
+            height: 500px;
+            bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            text-align: justify;
+            overflow-y: scroll;
+            -webkit-box-shadow: inset 0px 6px 18px 3px #000000;
+            box-shadow: inset 0px 6px 18px 3px #000000;
+            text-shadow: -2px 2px 6px #000000;
+            border-left: 1px outset #363636;
+            border-right: 1px ridge #474747;
+            border-bottom: 2px groove #696969;
+            border-radius: 0px 0px 50px 50px;
+            background: -webkit-linear-gradient(left, #111111, #676767, #333333);
+            background: overlay(left, #222, #777, #333);
+          }
+      .scrollmenu {
+        width: 500px;
+				height: 36px;
+        -webkit-align: center;
+        border-top: 2px ridge rgba(46,174,255,0.69);
+        border-radius: 7px 7px 2px 2px;
+        margin-left: 0px;
+        margin-left: 0px;
+        margin-top: -7px;
+        bottom: 0px;
+        border-bottom: 0px solid #999;
+        background: #030303;
+        background: -webkit-linear-gradient(top, #363636, #474747, #000000);
+       overflow-x: scroll;
+       white-space: nowrap;
+      }
+      div.scrollmenu a {
+
+      text-decoration: none;
+      }
+      div.scrollmenu a:hover {
+      -webkit-transform: overlay deepskyblue;
+    }
+
+
+      /* Style the tab */
+      .tab {
+      min-width: -webkit-fit-content;
+      width: 500px;
+      line-height: -webkit-fit-content;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        bottom: -1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        left: 0%;
+        right: 0%;
+      }
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        left: 1px;
+        right: 1px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      border-left: .5px solid #333;
+      border-right: .5px solid #666;
+      border-bottom: 0px;
+      bottom: 0px;
+      border-radius: 7px 7px 3px 3px;
+      background: -moz-linear-gradient(top, #121212 100%, #686868 92%, #000 74%);
+      font-size: 11px;
+      font-weight: bolder;
+      text-decoration: none;
+      font-variant: small-caps;
+      text-transform: capitalize;
+      overflow-x: scroll;
+      cursor: hand;
+      padding: 2.5px 2.25px;
+      transition: 0.75s;
+      transition-timing-function: ease-in-out;
+      text-shadow: -2px -2px 8px black;
+      border-top: 3px ridge #5a5a5a;
+       -webkit-box-shadow: 2px 4px 9px 5px #000;
+      color: #ffffffde;
+      transform: multiply;
+      box-shadow: -3px -2px 6px #141414;
+      }
+      /* Change background color of buttons on hover */
+          .tab button:hover {
+          background: -webkit-linear-gradient(top, #585858 100%, #adadad 100%, bottom, #232323 100%);
+          border-top:3px ridge rgba(255,255,255,1.0);
+        -webkit-transform: screen;
+          }
+      /* Create an active/current tablink class */
+      .tab button.active {
+      text-decoration: rgba(0, 222, 222, 0.9);
+       -webkit-transform: multiply;
+       -webkit-filter: 2px 3px 4px #646464;
+       -webkit-color-transform: multiply;
+       animation: mymove 4s infinite;
+       transition-timing-function: ease-in-out;
+       color: white;
+       -webkit-border-bottom: 1px 3px 12px 5px #000;
+       text-shadow: 6px 4px 7px #555;
+       border-top: 3px groove #fff;
+      transition: 0.75s;
+      transition-timing-function: cubic-bezier(0.1,-1.4,0.8,0), ease-out;
+        -webkit-box-shadow: 0px -2px 3px 1px rgba(255,255,255,0.74);
+      }
+@keyframes mymove {
+  50% {
+    border-top: 3px groove deepskyblue;
+    color: deepskyblue;
+    text-shadow: 6px 4px 7px #141414;
+    transform: multiply;
+    transform: overlay;
+  }
+
+}
+
+     .notes {
+     font-size:7.9px;
+     line-height:92%;
+     overflow-wrap: break-word;
+     }
+
+
+pre.lyrics {
+    -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+        white-space: wrap;
+        max-width: 95%;
+        overflow-wrap: break-word;
+}
+
+      ol.playlist {
+      list-style-type: upper-roman;
+      }
+			
+				</style>
+      </head>
+      <body>
+        <h1>Album Title: ${title}</h1>
+        <p>Artist: ${artist}<br>Composer: ${composer}
+				 <br>Record Label: ${label}			
+					<br>Release Date: ${date}
+        </p>
+        <audio controls autoplay preload="metadata">
+          <source src="data:audio/mp3;base64,${mp3Base64}" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+	<div class="album">	
+		<div class="l-toppane">
+        <img src="data:image/png;base64,${pngBase64}" alt="Cover art" width="500px" height="500px" border="0px" class="LPCover">
+				</div>
+ <div class="r-botpane">
+    <center>
+      <div class="tab">
+        <div class="scrollmenu">
+          <button id="defaultOpen" class="tablinks active" onclick="openThisPage(event, 'Tracks')">Tracks</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Lyrics')">Lyrics</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Liners')">Liners</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Bio')">Bio</button>
+          <button class="tablinks" onclick="openThisPage(event, 'Copyright')">&copy; &amp; Credits</button>
+        </div>
+        </div>
+</div>
+			</center>
+			
+			<div id="Tracks" class="tabcontent" style="display: block;">
+        <ol start="I" class="playlist">
+          ${trackList.map((track) => `<li>${track}</li>`).join('')}
+					</ol>
+				</div>
+				<div id="Lyrics" class="tabcontent" style="display: none;">${lyrics}
+				</div>	
+        <div id="Liners" class="tabcontent" style="display: none;">${linerNotes}</div>
+				<div id="Bio" class="tabcontent" style="display: none;">${bio}</div>
+				<div id="Copyright" class="tabcontent" style="display: none;">${copyright}</div>
+				</div>		
+		      <!-- end tabs -->
+			</div>
+	</div>			
+</div>
+	    <script>
+      function openThisPage(evt, pageID) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(pageID).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </body>
+			</html>
+  `;
+  
+  return html;
+}
+document.addEventListener('DOMContentLoaded', () => {
+// Get the file input elements
+const mp3Input = document.getElementById('mp3-input');
+const pngInput = document.getElementById('png-input');
+
+// Get the text inputs
+const titleInput = document.getElementById('title-input');
+const artistInput = document.getElementById('artist-input');
+const composerInput = document.getElementById('composer-input');
+const labelInput = document.getElementById('label-input');
+const dateInput = document.getElementById('date-input');
+// Get the textarea input
+const lyricsInput = document.getElementById('lyrics-input');
+
+// Get the textarea input
+const linerNotesInput = document.getElementById('liner-notes-input');
+
+// Get the textarea input
+const copyrightInput = document.getElementById('copyright-input');
+
+// Get the track list input
+const trackListInput = document.getElementById('track-list-input');
+
+
+        // Add event listener for the submit button click
+document.getElementById('submit-btn').addEventListener('click', async () => {
+  // Get file objects
+  const mp3File = mp3Input.files[0];
+  const pngFile = pngInput.files[0];
+  
+  // Get text values
+  const title = titleInput.value;
+  const artist = artistInput.value;
+  const composer = composerInput.value;
+  const label = labelInput.value;
+	const date = dateInput.value;
+	  // Get track list values
+	const trackList = trackListInput.value.split('\n');
+  const lyrics = lyricsInput.value;
+	const linerNotes = linerNotesInput.value;
+  const copyright = copyrightInput.value;
+	
+  try {
+    // Convert files to base64
+    const mp3Base64 = await fileToBase64(mp3File);
+    const pngBase64 = await fileToBase64(pngFile);
+    // Generate the HTML document
+    const htmlDocument = generateHTMLDocument(title, artist, composer, label, date, trackList, lyrics, linerNotes, copyright, mp3Base64, pngBase64);
+
+    // Create a new HTML file
+    const link = document.createElement('a');
+link.href = URL.createObjectURL(new Blob([htmlDocument], { type: 'text/html' }));
+link.download = 'album.html';
+    }
+    // Trigger the download
+finally {
+	function generateLPA(){
+	link.click();}
+		}
+  })
+});
+    </script>
+</body>
+</html>

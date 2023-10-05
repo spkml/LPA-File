@@ -1,0 +1,81 @@
+
+<!DOCTYPE spkml [
+
+<!--
+# Author: Christopher D. Johnson redleader@spkml.com
+# Version: .01
+# Organization: SPEKTRUMCreations.com 
+# Created: July 23,  2005
+# Revision: First Draft_un-revised
+# Copyright: Copyright © 2005 SPEKTRUM CREAtIONS
+# License: Not currently licensed for use of any kind by anyone, besides the author,  for any concievable purpose whatsoever without the explicit documented permission granted specifically by the author, Christopher D. Johnson ( redleader@spkml.com / chris@spektrumcreations.com / spektrumcreations@gmail.com ) - Prosecution to the fullest extent allowed by law, within the jurisdictional power granted to the ruling body presiding over such matters, can be expected to accompany and be fully warranted in the event that these conditions are not compliantly met in full or are even breached slightly by anyone, regardless of the authorization granted solely by the author, to access and use and modify this document and other related materials or documents.  Note the following as ammending the previous, that no changes or removal will be allowed to occur without said penalties, unless given permission make changes is granted by Christopher D. Johnson (redleader@spkml.com) and that in most circumstances the changes allowed to this header comment will only be the right and responsibility to ammend the following enclosed elements['Version', 'Revision', 'Editor', 'Notes' and additional elements only if absolutely required in such cases as additions meet conditions requiring a new header documentation category line beginning with a hash mark {#}, and that no additions may nullify the legalies set forth by the author in respect to the license for this, and related, documents, not withholding the rights reserved to take legal actions to preserve the confidentiality of procedural, structural, critical and even trivial methods, function, etc... of the source code and it's resources.], Errors, typos and obviously overlooked omissions in this, and related statements on this topic, within related documents, should be recognized as being included by implication regardless of the lack of exlicit statement.  Related documents may hold identical or merely similar statements of claimaint to rights, agreements of non-disclosure, etc.  Variations that make additional provisions, will be considered inclusive, and part of this documentation, unless there is reason to believe that the document contradict the provisional elements set forth here. Whether implicit or imlied, provisions maintain this project's related elements will share provisions of claimaints to rights, non-disclosure agreements, etc. with the understanding that some documents, files, or other related pieces, parts, elements or documentation/tutorial may set forth a  different license, which will not be considered invalidating to the license set forth here, not with-holding the provisions included... This is to say, that perhaps, as an example: a result of this project may produce an element which uses files, that rely on, change or edit certain elements which may be given an open source license, allowing for the extension of that portion of the overal project, while maintaining a strict adherance to the original terms given to the rest of the project, includinng it's source, resources and comiled elements, regardless of their distribution scope. Modifications to these terms may be submitted for approval to the author, Christopher D. Johnson (redleader@spkml.com) who holds the sole right to accept or deny such inclusions or modifications, with the responsibility of either delegating the actual changing of such information or taking it upon himself to make the changes personally.  The result being the same, the decision remains the responsibilty and right of Christopher D. Johnson to approve or deny such critical changes within the scope of the project in question, and does not affect terms of any other project or the current rights to that which is within the scope of his domain(s).  
+# Notes: Although I have set forth these provisions regarding the claimant to rights, agreement to non-disclosure, etc., I believe that there is a way to more concisely and distictly set forth the articles and conditional provisions and claims, and do so in a possibly more accuately composed and effectively more legally binding manner, ensuring that the point(s) are not just set forth, but physically accepted contractually, creating an iron-clad blanket to cover all forseen events, while effectively providing protection from the results of unforseen events.  I just want to make sure the project is secure and not corrupted in such ways that could bring about issues that might produce negative effects regardless of how trivial they might actually be... It's the trivial things that are overlooked that can snowball into issues that can be nearly impossible to control, reverse or resolve.  
+# Abstract: An initial draft of the official DTD for specific use with SPKML documents.
+# CodeAccessAllowed: Private Internal Use only, Proprietary, non-disclosure, Closed-Source Code (subject to change. Restrictions remain valid until explicit notification is documented by the author, Christopher D. Johnson ( redleader@spkml.com ),
+# 
+-->
+
+<!ELEMENT spkml ( category | topic )* >
+<!ATTLIST spkml
+>
+<!ELEMENT album ( category+ ) >
+<!ATTLIST album
+name CDATA #REQUIRED
+>
+<!ELEMENT lpa ( cover | album | audio | )* >
+<!ATTLIST lpa
+>
+<!ELEMENT cover] ( #PCDATA)* >
+<!ATTLIST cover | albumCover | albumArt | gallery | image | slider | slideShow 
+>
+<!ELEMENT album ( #PCDATA | albumTitle | band-artist | releaseDate | recordLabel |
+publisher | featuredArtists
+| liners | notes | Links | website |
+trackList
+| lyrics | credits | rights | info | recordingLocation | recordingDates | recordingEngineer
+| producer | mixer
+| studioLocation | data | songwriter | albumTitle | license | documentation |
+ | genre
+| catagory | load | noload | self | 
+person | person2
+| person3 | person4 | random | 
+| spkml | star | system | talk_about | lpa | think | icon )*
+>
+<!ATTLIST album
+>
+<!ELEMENT audio EMPTY >
+<!ATTLIST audio
+>
+<!ELEMENT star EMPTY >
+<!ATTLIST star
+>
+<!ELEMENT random ( #PCDATA | li )* >
+<!ATTLIST random
+>
+<!ELEMENT noload EMPTY >
+<!ATTLIST noload
+url CDATA #REQUIRED
+>
+<!ELEMENT load EMPTY >
+<!ATTLIST load filename NMTOKEN #REQUIRED
+>
+<!ELEMENT spkml ( #PCDATA )* >
+<!ATTLIST spkml
+>
+
+<!ELEMENT think ( #PCDATA | self | person | identity | person2 | get_gender | person3 |
+person4 | trackTitle | trackTime | songNotes | details | tourDates | showVenue | showDate | showTime | ShowLocation | star )* >
+<!ATTLIST think
+>
+<!ELEMENT system ( #PCDATA )* >
+<!ATTLIST system
+>
+<!ELEMENT javascript ( #PCDATA )* >
+<!ATTLIST javascript
+>
+<!ELEMENT applescript ( #PCDATA )* >
+<!ATTLIST applescript
+>
+
+]>
+

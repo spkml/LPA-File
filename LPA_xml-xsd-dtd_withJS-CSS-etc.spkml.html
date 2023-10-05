@@ -1,0 +1,2385 @@
+<!-- here is the Dtd for the Lpa code using the lpa and spkml tags  //-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="spkml">
+      <attribute name="lang">
+        <data type="NCName"/>
+      </attribute>
+      <element name="lpa">
+        <attribute name="doc-published"/>
+        <element name="album">
+          <attribute name="type">
+            <data type="NCName"/>
+          </attribute>
+          <element name="title">
+            <text/>
+          </element>
+          <element name="artist">
+            <attribute name="act">
+              <data type="NCName"/>
+            </attribute>
+            <element name="name">
+              <attribute name="alias"/>
+              <text/>
+            </element>
+          </element>
+          <element name="publisher">
+            <attribute name="company-name"/>
+          </element>
+          <element name="detail">
+            <attribute name="abstract"/>
+            <attribute name="ar-rep"/>
+            <attribute name="prod-eng">
+              <data type="NCName"/>
+            </attribute>
+          </element>
+          <element name="date">
+            <attribute name="orig-rel"/>
+            <attribute name="prod-end"/>
+            <attribute name="recd-start"/>
+          </element>
+          <element name="player">
+            <attribute name="autoplay">
+              <data type="NCName"/>
+            </attribute>
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <attribute name="controls"/>
+            <attribute name="shuffle"/>
+            <attribute name="title">
+              <data type="NCName"/>
+            </attribute>
+          </element>
+          <element name="img">
+            <attribute name="alt"/>
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <attribute name="src"/>
+          </element>
+          <element name="nav">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <element name="navbar">
+              <attribute name="class">
+                <data type="NCName"/>
+              </attribute>
+              <oneOrMore>
+                <element name="button">
+                  <attribute name="class">
+                    <data type="NCName"/>
+                  </attribute>
+                  <optional>
+                    <attribute name="id">
+                      <data type="NCName"/>
+                    </attribute>
+                  </optional>
+                  <attribute name="onclick"/>
+                  <text/>
+                </element>
+              </oneOrMore>
+            </element>
+          </element>
+          <element name="tracks">
+            <element name="list">
+              <attribute name="class">
+                <data type="NCName"/>
+              </attribute>
+              <oneOrMore>
+                <element name="item">
+                  <element name="trk-numb">
+                    <optional>
+                      <attribute name="startCount">
+                        <data type="NCName"/>
+                      </attribute>
+                    </optional>
+                  </element>
+                  <element name="song">
+                    <oneOrMore>
+                      <choice>
+                        <text/>
+                        <ref name="space"/>
+                      </choice>
+                    </oneOrMore>
+                  </element>
+                </element>
+              </oneOrMore>
+            </element>
+          </element>
+          <element name="lyrics">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <ref name="label"/>
+            <ref name="text"/>
+          </element>
+          <element name="liners">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <ref name="label"/>
+            <ref name="text"/>
+          </element>
+          <element name="info">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <ref name="label"/>
+            <ref name="text"/>
+          </element>
+          <element name="links">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <ref name="label"/>
+            <ref name="text"/>
+          </element>
+          <element name="credits">
+            <attribute name="class">
+              <data type="NCName"/>
+            </attribute>
+            <ref name="label"/>
+            <oneOrMore>
+              <ref name="text"/>
+            </oneOrMore>
+          </element>
+        </element>
+      </element>
+    </element>
+  </start>
+  <define name="space">
+    <element name="space">
+      <attribute name="class">
+        <data type="NCName"/>
+      </attribute>
+      <text/>
+    </element>
+  </define>
+  <define name="label">
+    <element name="label">
+      <text/>
+    </element>
+  </define>
+  <define name="text">
+    <element name="text">
+      <oneOrMore>
+        <choice>
+          <text/>
+          <ref name="space"/>
+        </choice>
+      </oneOrMore>
+    </element>
+  </define>
+</grammar>
+
+
+
+<!-- The following code who's XSD or W3C XML schema //-->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="spkml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lpa"/>
+      </xs:sequence>
+      <xs:attribute name="lang" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lpa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="album"/>
+      </xs:sequence>
+      <xs:attribute name="doc-published" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="album">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="artist"/>
+        <xs:element ref="publisher"/>
+        <xs:element ref="detail"/>
+        <xs:element ref="date"/>
+        <xs:element ref="player"/>
+        <xs:element ref="img"/>
+        <xs:element ref="nav"/>
+        <xs:element ref="tracks"/>
+        <xs:element ref="lyrics"/>
+        <xs:element ref="liners"/>
+        <xs:element ref="info"/>
+        <xs:element ref="links"/>
+        <xs:element ref="credits"/>
+      </xs:sequence>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="artist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+      </xs:sequence>
+      <xs:attribute name="act" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="alias" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publisher">
+    <xs:complexType>
+      <xs:attribute name="company-name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="details">
+    <xs:complexType>
+      <xs:attribute name="abstract" use="required"/>
+      <xs:attribute name="ar-rep" use="required"/>
+      <xs:attribute name="prod-eng" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date">
+    <xs:complexType>
+      <xs:attribute name="orig-rel" use="required"/>
+      <xs:attribute name="prod-end" use="required"/>
+      <xs:attribute name="recd-start" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="player">
+    <xs:complexType>
+      <xs:attribute name="autoplay" use="required" type="xs:NCName"/>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+      <xs:attribute name="controls" use="required"/>
+      <xs:attribute name="shuffle" use="required"/>
+      <xs:attribute name="title" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="img">
+    <xs:complexType>
+      <xs:attribute name="alt" use="required"/>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+      <xs:attribute name="src" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nav">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="navbar"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="navbar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="button"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="button">
+    <xs:complexType mixed="true">
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" type="xs:NCName"/>
+      <xs:attribute name="onclick" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tracks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="list"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="item"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="trk-numb"/>
+        <xs:element ref="song"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trk-numb">
+    <xs:complexType>
+      <xs:attribute name="startCount" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="song">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="space"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lyrics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="liners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="links">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="text"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="credits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element maxOccurs="unbounded" ref="text"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="space">
+    <xs:complexType mixed="true">
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="label" type="xs:string"/>
+  <xs:element name="text">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="space"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+<!-- There's the XML document below: //-->
+
+
+<!DOCTYPE spkml>
+   <spkml lang="en-US" version="0.7.beta" encoding="UTF-8">
+	<head>
+	
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="“anonymous”">
+    <meta http-equiv="Access-Control-Allow-Credentials: true;">
+    <meta http-equiv="Access-Control-Allow-Headers" content="X-Requested-With">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="application-name" content="com.SPEKTRUMCreations.theFlight.lpa">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+    <meta name="color-scheme" content="only dark">
+    <!-- Add Light Theme also //-->
+    <meta name="apple-mobile-web-app-title" content="The Flight">
+    <meta name="spkml-long-play-album-title" content="The Flight">
+    <meta name="spkml-long-play-album-artist" content="Christopher Johnson">
+    <meta name="spkml-long-play-album-release-date" content="Monday, January 4-2021.004.03:14.05 CST" date-format="EarthDate-version2021">
+    <meta name="description" content="'A WebApp built specificlly to run on iOS deices, to bring the music album 'The Flight'' to the world...' --Christopher Johnson">
+    <meta name="keywords" content="SPKML, 'Web App', iOS, Music, Album, Songs, Lyrics, Liners, Notes, Cover, Artwork, Rock, Singer-Songwriter, 'Kansas City', Missouri, Denver, Colorado">
+    <meta name="author" content="Christopher Johnson, New Media Artisan: @spkml">
+    <title>The Flight</title>
+    <!-- iPhone ICON -->
+    <link href="theFlight-icon.png" rel="apple-touch-icon">
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    <link href="./startScreen.jpg" rel="apple-touch-startup-image">   
+    <!-- iPhone 11 - SPLASHSCREEN 	414x896 pt (828x1792 px @2x) -->
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- addToHomescreen Script and Style code follows  //-->
+<script type="text/javascript">
+    
+  /* Add to Homescreen v3.2.3 ~ (c) 2015 Matteo Spinelli ~ @license: http://cubiq.org/license */
+  (function addToHomescreen(window, document) {
+  /*
+  
+  by Matteo Spinelli ~ http://cubiq.org
+  
+  */
+  
+  // Check for addEventListener browser support (prevent errors in IE<9)
+  var _eventListener = 'addEventListener' in window;
+  
+  // Check if document is loaded, needed by autostart
+  var _DOMReady = false;
+  if ( document.readyState === 'complete' ) {
+  	_DOMReady = true;
+  } else if ( _eventListener ) {
+  	window.addEventListener('load', loaded, false);
+  }
+  
+  function loaded () {
+  	window.removeEventListener('load', loaded, false);
+  	_DOMReady = true;
+  }
+  
+  // regex used to detect if app has been added to the homescreen
+  var _reSmartURL = /\/ath(\/)?$/;
+  var _reQueryString = /([\?&]ath=[^&]*$|&ath=[^&]*(&))/;
+  
+  // singleton
+  var _instance;
+  function ath (options) {
+  	_instance = _instance || new ath.Class(options);
+  
+  	return _instance;
+  }
+  
+  // message in all supported languages
+  ath.intl = {
+  	cs_cs: {
+  		ios: 'Pro přidáni této webové aplikace na úvodní obrazovku: stlačte %icon a pak <strong>Přidat na úvodní obrazovku</strong>.',
+  		android: 'Pro přidáni této webové aplikace na úvodní obrazovku otevřete menu nastavení prohlížeče a stlačte <strong>Přidat na úvodní obrazovku</strong>. <small>K menu se dostanete stlačením hardwaroveho tlačítka, když ho vaše zařízení má, nebo stlačením pravé horní menu ikony <span class="ath-action-icon">icon</span>.</small>'
+  	},
+  
+  	de_de: {
+  		ios: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf %icon und dann <strong>Zum Home-Bildschirm</strong>.',
+  		android: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, öffnen Sie das Menü und tippen dann auf <strong>Zum Startbildschirm hinzufügen</strong>. <small>Wenn Ihr Gerät eine Menütaste hat, lässt sich das Browsermenü über diese öffnen. Ansonsten tippen Sie auf %icon.</small>'
+  	},
+  
+  	da_dk: {
+  		ios: 'For at tilføje denne web app til hjemmeskærmen: Tryk %icon og derefter <strong>Føj til hjemmeskærm</strong>.',
+  		android: 'For at tilføje denne web app til hjemmeskærmen, åbn browser egenskaber menuen og tryk på <strong>Føj til hjemmeskærm</strong>. <small>Denne menu kan tilgås ved at trykke på menu knappen, hvis din enhed har en, eller ved at trykke på det øverste højre menu ikon %icon.</small>'
+  	},
+  
+  	el_gr: {
+  		ios: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη: πατήστε το %icon και μετά <strong>Πρόσθεσε στην αρχική οθόνη</strong>.',
+  		android: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη, ανοίξτε τις επιλογές του browser σας και πατήστε το <strong>Προσθήκη στην αρχική οθόνη</strong>. <small>Μπορείτε να έχετε πρόσβαση στο μενού, πατώντας το κουμπί του μενού του κινητού σας ή το πάνω δεξιά κουμπί του μενού %icon.</small>'
+  	},
+  
+  	en_us: {
+  		ios: 'To add this WebApp to the home screen: tap %icon  and then <strong>Add to Home Screen</strong>.',
+  		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+  	},
+  
+  	es_es: {
+  		ios: 'Para añadir esta aplicación web a la pantalla de inicio: pulsa %icon y selecciona <strong>Añadir a pantalla de inicio</strong>.',
+  		android: 'Para añadir esta aplicación web a la pantalla de inicio, abre las opciones y pulsa <strong>Añadir a pantalla inicio</strong>. <small>El menú se puede acceder pulsando el botón táctil en caso de tenerlo, o bien el icono de la parte superior derecha de la pantalla %icon.</small>'
+  	},
+  
+  	fi_fi: {
+  		ios: 'Liitä tämä sovellus kotivalikkoon: klikkaa %icon ja tämän jälkeen <strong>Lisää kotivalikkoon</strong>.',
+  		android: 'Lisätäksesi tämän sovelluksen aloitusnäytölle, avaa selaimen valikko ja klikkaa tähti -ikonia tai <strong>Lisää aloitusnäytölle tekstiä</strong>. <small>Valikkoon pääsee myös painamalla menuvalikkoa, jos laitteessasi on sellainen tai koskettamalla oikealla yläkulmassa menu ikonia %icon.</small>'
+  	},
+  
+  	fr_fr: {
+  		ios: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez %icon et sélectionnez <strong>Ajouter sur l\'écran d\'accueil</strong>.',
+  		android: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez sur le bouton "menu", puis sur <strong>Ajouter sur l\'écran d\'accueil</strong>. <small>Le menu peut-être accessible en appuyant sur le bouton "menu" du téléphone s\'il en possède un <i class="fa fa-bars"></i>. Sinon, il se trouve probablement dans la coin supérieur droit du navigateur %icon.</small>'
+  	},
+  
+  	he_il: {
+  		ios: '<span dir="rtl">להוספת האפליקציה למסך הבית: ללחוץ על %icon ואז <strong>הוסף למסך הבית</strong>.</span>',
+  		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+  	},
+  
+  	hu_hu: {
+  		ios: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, érintse meg a következő ikont: %icon , majd a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontot.',
+  		android: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, a böngésző menüjében kattintson a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontra. <small>A böngésző menüjét a következő ikon megérintésével tudja megnyitni: %icon.</small>'
+  	},
+  
+  	it_it: {
+  		ios: 'Per aggiungere questa web app alla schermata iniziale: premi %icon e poi <strong>Aggiungi a Home</strong>.',
+  		android: 'Per aggiungere questa web app alla schermata iniziale, apri il menu opzioni del browser e premi su <strong>Aggiungi alla homescreen</strong>. <small>Puoi accedere al menu premendo il pulsante hardware delle opzioni se la tua device ne ha uno, oppure premendo l\'icona %icon in alto a destra.</small>'
+  	},
+  
+  	ja_jp: {
+  		ios: 'このウェプアプリをホーム画面に追加するには、%iconをタップして<strong>ホーム画面に追加</strong>してください。',
+  		android: 'このウェプアプリをホーム画面に追加するには、ブラウザのオプションメニューから<strong>ホーム画面に追加</strong>をタップしてください。<small>オプションメニューは、一部の機種ではデバイスのメニューボタンから、それ以外では画面右上の%iconからアクセスできます。</small>'
+   	},
+  
+  	ko_kr: {
+  		ios: '홈 화면에 바로가기 생성: %icon 을 클릭한 후 <strong>홈 화면에 추가</strong>.',
+  		android: '브라우저 옵션 메뉴의 <string>홈 화면에 추가</string>를 클릭하여 홈화면에 바로가기를 생성할 수 있습니다. <small>옵션 메뉴는 장치의 메뉴 버튼을 누르거나 오른쪽 상단의 메뉴 아이콘 %icon을 클릭하여 접근할 수 있습니다.</small>'
+  	},
+  
+  	nb_no: {
+  		ios: 'For å installere denne appen på hjem-skjermen: trykk på %icon og deretter <strong>Legg til på Hjem-skjerm</strong>.',
+  		android: 'For å legge til denne webappen på startsiden åpner en nettlesermenyen og velger <strong>Legg til på startsiden</strong>. <small>Menyen åpnes ved å trykke på den fysiske menyknappen hvis enheten har det, eller ved å trykke på menyikonet øverst til høyre %icon.</small>'
+  	},
+  
+  	pt_br: {
+  		ios: 'Para adicionar este app à tela de início: clique %icon e então <strong>Tela de início</strong>.',
+  		android: 'Para adicionar este app à tela de início, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
+  	},
+  
+  	pt_pt: {
+  		ios: 'Para adicionar esta app ao ecrã principal: clique %icon e depois <strong>Ecrã principal</strong>.',
+  		android: 'Para adicionar esta app web ecrã principal, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
+  	},
+  
+  	nl_nl: {
+  		ios: 'Om deze webapp aan je startscherm toe te voegen, klik op %icon en dan <strong>Zet in startscherm</strong>.',
+  		android: 'Om deze webapp aan je startscherm toe te voegen, open de browserinstellingen en tik op <strong>Toevoegen aan startscherm</strong>. <small>Gebruik de "menu" knop als je telefoon die heeft, anders het menu-icoon rechtsbovenin %icon.</small>'
+  	},
+  
+  	ru_ru: {
+  		ios: 'Чтобы добавить этот сайт на свой домашний экран, нажмите на иконку %icon и затем <strong>На экран "Домой"</strong>.',
+  		android: 'Чтобы добавить сайт на свой домашний экран, откройте меню браузера и нажмите на <strong>Добавить на главный экран</strong>. <small>Меню можно вызвать, нажав на кнопку меню вашего телефона, если она есть. Или найдите иконку сверху справа %icon[иконка].</small>'
+  	},
+  
+  	sk_sk: {
+  		ios: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku: stlačte %icon a potom <strong>Pridať na úvodnú obrazovku</strong>.',
+  		android: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku otvorte menu nastavenia prehliadača a stlačte <strong>Pridať na úvodnú obrazovku</strong>. <small>K menu sa dostanete stlačením hardwaroveho tlačidla, ak ho vaše zariadenie má, alebo stlačením pravej hornej menu ikony <span class="ath-action-icon">icon</span>.</small>'
+  	},
+  
+  	sv_se: {
+  		ios: 'För att lägga till denna webbapplikation på hemskärmen: tryck på %icon och därefter <strong>Lägg till på hemskärmen</strong>.',
+  		android: 'För att lägga till den här webbappen på hemskärmen öppnar du webbläsarens alternativ-meny och väljer <strong>Lägg till på startskärmen</strong>. <small>Man hittar menyn genom att trycka på hårdvaruknappen om din enhet har en sådan, eller genom att trycka på menyikonen högst upp till höger %icon.</small>'
+  	},
+  
+  	tr_tr: {
+  		ios: 'Uygulamayı ana ekrana eklemek için, %icon ve ardından <strong>ana ekrana ekle</strong> butonunu tıklayın.',
+  		android: 'Uygulamayı ana ekrana eklemek için, menüye girin ve <strong>ana ekrana ekle</strong> butonunu tıklayın. <small>Cihazınız menü tuşuna sahip ise menüye girmek için menü tuşunu tıklayın. Aksi takdirde %icon butonunu tıklayın.</small>'
+  	},
+  
+  	uk_ua: {
+  		ios: 'Щоб додати цей сайт на початковий екран, натисніть %icon, а потім <strong>На початковий екран</strong>.',
+  		android: 'Щоб додати цей сайт на домашній екран, відкрийте меню браузера та виберіть <strong>Додати на головний екран</strong>. <small>Це можливо зробити, натиснувши кнопку меню на вашому смартфоні, якщо така є. Або ж на іконці зверху справа %icon.</small>'
+  	},
+  
+  	zh_cn: {
+  		ios: '如要把应用程序加至主屏幕,请点击%icon, 然后<strong>添加到主屏幕</strong>',
+  		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+  	},
+  
+  	zh_tw: {
+  		ios: '如要把應用程式加至主屏幕, 請點擊%icon, 然後<strong>加至主屏幕</strong>.',
+  		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+  	}
+  };
+  
+  // Add 2 characters language support (Android mostly)
+  for ( var lang in ath.intl ) {
+  	ath.intl[lang.substr(0, 2)] = ath.intl[lang];
+  }
+  
+  // default options
+  ath.defaults = {
+  	appID: 'org.cubiq.addtohome',		// local storage name (no need to change)
+  	fontSize: 15,				// base font size, used to properly resize the popup based on viewport scale factor
+  	debug: false,				// override browser checks
+  	logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
+  	modal: false,				// prevent further actions until the message is closed
+  	mandatory: false,			// you can't proceed if you don't add the app to the homescreen
+  	autostart: true,			// show the message automatically
+  	skipFirstVisit: false,		// show only to returning visitors (ie: skip the first time you visit)
+  	startDelay: 1,				// display the message after that many seconds from page load
+  	lifespan: 15,				// life of the message in seconds
+  	displayPace: 1440,			// minutes before the message is shown again (0: display every time, default 24 hours)
+  	maxDisplayCount: 0,			// absolute maximum number of times the message will be shown to the user (0: no limit)
+  	icon: true,					// add touch icon to the message
+  	message: '',				// the message can be customized
+  	validLocation: [],			// list of pages where the message will be shown (array of regexes)
+  	onInit: null,				// executed on instance creation
+  	onShow: null,				// executed when the message is shown
+  	onRemove: null,				// executed when the message is removed
+  	onAdd: null,				// when the application is launched the first time from the homescreen (guesstimate)
+  	onPrivate: null,			// executed if user is in private mode
+  	privateModeOverride: false,	// show the message even in private mode (very rude)
+  	detectHomescreen: false		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+  };
+  
+  // browser info and capability
+  var _ua = window.navigator.userAgent;
+  
+  var _nav = window.navigator;
+  _extend(ath, {
+  	hasToken: document.location.hash == '#ath' || _reSmartURL.test(document.location.href) || _reQueryString.test(document.location.search),
+  	isRetina: window.devicePixelRatio && window.devicePixelRatio > 1,
+  	isIDevice: (/iphone|ipod|ipad/i).test(_ua),
+  	isMobileChrome: _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua) && _ua.indexOf("Version") == -1,
+  	isMobileIE: _ua.indexOf('Windows Phone') > -1,
+  	language: _nav.language && _nav.language.toLowerCase().replace('-', '_') || ''
+  });
+  
+  // falls back to en_us if language is unsupported
+  ath.language = ath.language && ath.language in ath.intl ? ath.language : 'en_us';
+  
+  ath.isMobileSafari = ath.isIDevice && _ua.indexOf('Safari') > -1 && _ua.indexOf('CriOS') < 0;
+  ath.OS = ath.isIDevice ? 'ios' : ath.isMobileChrome ? 'android' : ath.isMobileIE ? 'windows' : 'unsupported';
+  
+  ath.OSVersion = _ua.match(/(OS|Android) (\d+[_\.]\d+)/);
+  ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.') : 0;
+  
+  ath.isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
+  ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad') > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile') < 0);
+  
+  ath.isCompatible = (ath.isMobileSafari && ath.OSVersion >= 6) || ath.isMobileChrome;	// TODO: add winphone
+  
+  var _defaultSession = {
+  	lastDisplayTime: 0,			// last time we displayed the message
+  	returningVisitor: false,	// is this the first time you visit
+  	displayCount: 0,			// number of times the message has been shown
+  	optedout: false,			// has the user opted out
+  	added: false				// has been actually added to the homescreen
+  };
+  
+  ath.removeSession = function (appID) {
+  	try {
+  		if (!localStorage) {
+  			throw new Error('localStorage is not defined');
+  		}
+  
+  		localStorage.removeItem(appID || ath.defaults.appID);
+  	} catch (e) {
+  		// we are most likely in private mode
+  	}
+  };
+  
+  ath.doLog = function (logStr) {
+  	if ( this.options.logging ) {
+  		console.log(logStr);
+  	}
+  };
+  
+  ath.Class = function (options) {
+  	// class methods
+  	this.doLog = ath.doLog;
+  
+  	// merge default options with user config
+  	this.options = _extend({}, ath.defaults);
+  	_extend(this.options, options);
+  	// override defaults that are dependent on each other
+  	if ( this.options && this.options.debug && (typeof this.options.logging === "undefined") ) {
+  		this.options.logging = true;
+  	}
+  
+  	// IE<9 so exit (I hate you, really)
+  	if ( !_eventListener ) {
+  		return;
+  	}
+  
+  	// normalize some options
+  	this.options.mandatory = this.options.mandatory && ( 'standalone' in window.navigator || this.options.debug );
+  	this.options.modal = this.options.modal || this.options.mandatory;
+  	if ( this.options.mandatory ) {
+  		this.options.startDelay = -0.5;		// make the popup hasty
+  	}
+  	this.options.detectHomescreen = this.options.detectHomescreen === true ? 'hash' : this.options.detectHomescreen;
+  
+  	// setup the debug environment
+  	if ( this.options.debug ) {
+  		ath.isCompatible = true;
+  		ath.OS = typeof this.options.debug == 'string' ? this.options.debug : ath.OS == 'unsupported' ? 'android' : ath.OS;
+  		ath.OSVersion = ath.OS == 'ios' ? '8' : '4';
+  	}
+  
+  	// the element the message will be appended to
+  	this.container = document.body;
+  
+  	// load session
+  	this.session = this.getItem(this.options.appID);
+  	this.session = this.session ? JSON.parse(this.session) : undefined;
+  
+  	// user most likely came from a direct link containing our token, we don't need it and we remove it
+  	if ( ath.hasToken && ( !ath.isCompatible || !this.session ) ) {
+  		ath.hasToken = false;
+  		_removeToken();
+  	}
+  
+  	// the device is not supported
+  	if ( !ath.isCompatible ) {
+   		this.doLog("Add to homescreen: not displaying callout because device not supported");
+  		return;
+  	}
+  
+  	this.session = this.session || _defaultSession;
+  
+  	// check if we can use the local storage
+  	try {
+  		if (!localStorage) {
+  			throw new Error('localStorage is not defined');
+  		}
+  
+  		localStorage.setItem(this.options.appID, JSON.stringify(this.session));
+  		ath.hasLocalStorage = true;
+  	} catch (e) {
+  		// we are most likely in private mode
+  		ath.hasLocalStorage = false;
+  
+  		if ( this.options.onPrivate ) {
+  			this.options.onPrivate.call(this);
+  		}
+  	}
+  
+  	// check if this is a valid location
+  	var isValidLocation = !this.options.validLocation.length;
+  	for ( var i = this.options.validLocation.length; i--; ) {
+  		if ( this.options.validLocation[i].test(document.location.href) ) {
+  			isValidLocation = true;
+  			break;
+  		}
+  	}
+  
+  	// check compatibility with old versions of add to homescreen. Opt-out if an old session is found
+  	if ( this.getItem('addToHome') ) {
+  		this.optOut();
+  	}
+  
+  	// critical errors:
+  	if ( this.session.optedout ) {
+  		this.doLog("Add to homescreen: not displaying callout because user opted out");
+  		return;
+  	}
+  	if ( this.session.added ) {
+  		this.doLog("Add to homescreen: not displaying callout because already added to the homescreen");
+  		return;
+  	}
+  	if ( !isValidLocation ) {
+  		this.doLog("Add to homescreen: not displaying callout because not a valid location");
+  		return;
+  	}
+  
+  	// check if the app is in stand alone mode
+  	if ( ath.isStandalone ) {
+  		// execute the onAdd event if we haven't already
+  		if ( !this.session.added ) {
+  			this.session.added = true;
+  			this.updateSession();
+  
+  			if ( this.options.onAdd && ath.hasLocalStorage ) {	// double check on localstorage to avoid multiple calls to the custom event
+  				this.options.onAdd.call(this);
+  			}
+  		}
+  
+  		this.doLog("Add to homescreen: not displaying callout because in standalone mode");
+  		return;
+  	}
+  
+  	// (try to) check if the page has been added to the homescreen
+  	if ( this.options.detectHomescreen ) {
+  		// the URL has the token, we are likely coming from the homescreen
+  		if ( ath.hasToken ) {
+  			_removeToken();		// we don't actually need the token anymore, we remove it to prevent redistribution
+  
+  			// this is called the first time the user opens the app from the homescreen
+  			if ( !this.session.added ) {
+  				this.session.added = true;
+  				this.updateSession();
+  
+  				if ( this.options.onAdd && ath.hasLocalStorage ) {	// double check on localstorage to avoid multiple calls to the custom event
+  					this.options.onAdd.call(this);
+  				}
+  			}
+  
+  			this.doLog("Add to homescreen: not displaying callout because URL has token, so we are likely coming from homescreen");
+  			return;
+  		}
+  
+  		// URL doesn't have the token, so add it
+  		if ( this.options.detectHomescreen == 'hash' ) {
+  			history.replaceState('', window.document.title, document.location.href + '#ath');
+  		} else if ( this.options.detectHomescreen == 'smartURL' ) {
+  			history.replaceState('', window.document.title, document.location.href.replace(/(\/)?$/, '/ath$1'));
+  		} else {
+  			history.replaceState('', window.document.title, document.location.href + (document.location.search ? '&' : '?' ) + 'ath=');
+  		}
+  	}
+  
+  	// check if this is a returning visitor
+  	if ( !this.session.returningVisitor ) {
+  		this.session.returningVisitor = true;
+  		this.updateSession();
+  
+  		// we do not show the message if this is your first visit
+  		if ( this.options.skipFirstVisit ) {
+  			this.doLog("Add to homescreen: not displaying callout because skipping first visit");
+  			return;
+  		}
+  	}
+  
+  	// we do no show the message in private mode
+  	if ( !this.options.privateModeOverride && !ath.hasLocalStorage ) {
+  		this.doLog("Add to homescreen: not displaying callout because browser is in private mode");
+  		return;
+  	}
+  
+  	// all checks passed, ready to display
+  	this.ready = true;
+  
+  	if ( this.options.onInit ) {
+  		this.options.onInit.call(this);
+  	}
+  
+  	if ( this.options.autostart ) {
+  		this.doLog("Add to homescreen: autostart displaying callout");
+  		this.show();
+  	}
+  };
+  
+  ath.Class.prototype = {
+  	// event type to method conversion
+  	events: {
+  		load: '_delayedShow',
+  		error: '_delayedShow',
+  		orientationchange: 'resize',
+  		resize: 'resize',
+  		scroll: 'resize',
+  		click: 'remove',
+  		touchmove: '_preventDefault',
+  		transitionend: '_removeElements',
+  		webkitTransitionEnd: '_removeElements',
+  		MSTransitionEnd: '_removeElements'
+  	},
+  
+  	handleEvent: function (e) {
+  		var type = this.events[e.type];
+  		if ( type ) {
+  			this[type](e);
+  		}
+  	},
+  
+  	show: function (force) {
+  		// in autostart mode wait for the document to be ready
+  		if ( this.options.autostart && !_DOMReady ) {
+  			setTimeout(this.show.bind(this), 50);
+  			// we are not displaying callout because DOM not ready, but don't log that because
+  			// it would log too frequently
+  			return;
+  		}
+  
+  		// message already on screen
+  		if ( this.shown ) {
+  			this.doLog("Add to homescreen: not displaying callout because already shown on screen");
+  			return;
+  		}
+  
+  		var now = Date.now();
+  		var lastDisplayTime = this.session.lastDisplayTime;
+  
+  		if ( force !== true ) {
+  			// this is needed if autostart is disabled and you programmatically call the show() method
+  			if ( !this.ready ) {
+  				this.doLog("Add to homescreen: not displaying callout because not ready");
+  				return;
+  			}
+  
+  			// we obey the display pace (prevent the message to popup too often)
+  			if ( now - lastDisplayTime < this.options.displayPace * 60000 ) {
+  				this.doLog("Add to homescreen: not displaying callout because displayed recently");
+  				return;
+  			}
+  
+  			// obey the maximum number of display count
+  			if ( this.options.maxDisplayCount && this.session.displayCount >= this.options.maxDisplayCount ) {
+  				this.doLog("Add to homescreen: not displaying callout because displayed too many times already");
+  				return;
+  			}
+  		}
+  
+  		this.shown = true;
+  
+  		// increment the display count
+  		this.session.lastDisplayTime = now;
+  		this.session.displayCount++;
+  		this.updateSession();
+  
+  		// try to get the highest resolution application icon
+  		if ( !this.applicationIcon ) {
+  			if ( ath.OS == 'ios' ) {
+  				this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
+  			} else {
+  				this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');
+  			}
+  		}
+  
+  		var message = '';
+  
+  		if ( typeof this.options.message == 'object' && ath.language in this.options.message ) {		// use custom language message
+  			message = this.options.message[ath.language][ath.OS];
+  		} else if ( typeof this.options.message == 'object' && ath.OS in this.options.message ) {		// use custom os message
+  			message = this.options.message[ath.OS];
+  		} else if ( this.options.message in ath.intl ) {				// you can force the locale
+  			message = ath.intl[this.options.message][ath.OS];
+  		} else if ( this.options.message !== '' ) {						// use a custom message
+  			message = this.options.message;
+  		} else if ( ath.OS in ath.intl[ath.language] ) {				// otherwise we use our message
+  			message = ath.intl[ath.language][ath.OS];
+  		}
+  
+  		// add the action icon
+  		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
+  			return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
+  		}) + '</p>';
+  
+  		// create the message container
+  		this.viewport = document.createElement('div');
+  		this.viewport.className = 'ath-viewport';
+  		if ( this.options.modal ) {
+  			this.viewport.className += ' ath-modal';
+  		}
+  		if ( this.options.mandatory ) {
+  			this.viewport.className += ' ath-mandatory';
+  		}
+  		this.viewport.style.position = 'absolute';
+  
+  		// create the actual message element
+  		this.element = document.createElement('div');
+  		this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (parseInt(ath.OSVersion) || '') + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
+  		this.element.style.cssText = '-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-duration:0s;-webkit-transition-timing-function:ease-out;transition-property:transform,opacity;transition-duration:0s;transition-timing-function:ease-out;';
+  		this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+  		this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+  
+  		// add the application icon
+  		if ( this.options.icon && this.applicationIcon ) {
+  			this.element.className += ' ath-icon';
+  			this.img = document.createElement('img');
+  			this.img.className = 'ath-application-icon';
+  			this.img.addEventListener('load', this, false);
+  			this.img.addEventListener('error', this, false);
+  
+  			this.img.src = this.applicationIcon.href;
+  			this.element.appendChild(this.img);
+  		}
+  
+  		this.element.innerHTML += message;
+  
+  		// we are not ready to show, place the message out of sight
+  		this.viewport.style.left = '-99999em';
+  
+  		// attach all elements to the DOM
+  		this.viewport.appendChild(this.element);
+  		this.container.appendChild(this.viewport);
+  
+  		// if we don't have to wait for an image to load, show the message right away
+  		if ( this.img ) {
+  			this.doLog("Add to homescreen: not displaying callout because waiting for img to load");
+  		} else {
+  			this._delayedShow();
+  		}
+  	},
+  
+  	_delayedShow: function (e) {
+  		setTimeout(this._show.bind(this), this.options.startDelay * 1000 + 500);
+  	},
+  
+  	_show: function () {
+  		var that = this;
+  
+  		// update the viewport size and orientation
+  		this.updateViewport();
+  
+  		// reposition/resize the message on orientation change
+  		window.addEventListener('resize', this, false);
+  		window.addEventListener('scroll', this, false);
+  		window.addEventListener('orientationchange', this, false);
+  
+  		if ( this.options.modal ) {
+  			// lock any other interaction
+  			document.addEventListener('touchmove', this, true);
+  		}
+  
+  		// Enable closing after 1 second
+  		if ( !this.options.mandatory ) {
+  			setTimeout(function () {
+  				that.element.addEventListener('click', that, true);
+  			}, 1000);
+  		}
+  
+  		// kick the animation
+  		setTimeout(function () {
+  			that.element.style.webkitTransitionDuration = '1.2s';
+  			that.element.style.transitionDuration = '1.2s';
+  			that.element.style.webkitTransform = 'translate3d(0,0,0)';
+  			that.element.style.transform = 'translate3d(0,0,0)';
+  		}, 0);
+  
+  		// set the destroy timer
+  		if ( this.options.lifespan ) {
+  			this.removeTimer = setTimeout(this.remove.bind(this), this.options.lifespan * 1000);
+  		}
+  
+  		// fire the custom onShow event
+  		if ( this.options.onShow ) {
+  			this.options.onShow.call(this);
+  		}
+  	},
+  
+  	remove: function () {
+  		clearTimeout(this.removeTimer);
+  
+  		// clear up the event listeners
+  		if ( this.img ) {
+  			this.img.removeEventListener('load', this, false);
+  			this.img.removeEventListener('error', this, false);
+  		}
+  
+  		window.removeEventListener('resize', this, false);
+  		window.removeEventListener('scroll', this, false);
+  		window.removeEventListener('orientationchange', this, false);
+  		document.removeEventListener('touchmove', this, true);
+  		this.element.removeEventListener('click', this, true);
+  
+  		// remove the message element on transition end
+  		this.element.addEventListener('transitionend', this, false);
+  		this.element.addEventListener('webkitTransitionEnd', this, false);
+  		this.element.addEventListener('MSTransitionEnd', this, false);
+  
+  		// start the fade out animation
+  		this.element.style.webkitTransitionDuration = '0.3s';
+  		this.element.style.opacity = '0';
+  	},
+  
+  	_removeElements: function () {
+  		this.element.removeEventListener('transitionend', this, false);
+  		this.element.removeEventListener('webkitTransitionEnd', this, false);
+  		this.element.removeEventListener('MSTransitionEnd', this, false);
+  
+  		// remove the message from the DOM
+  		this.container.removeChild(this.viewport);
+  
+  		this.shown = false;
+  
+  		// fire the custom onRemove event
+  		if ( this.options.onRemove ) {
+  			this.options.onRemove.call(this);
+  		}
+  	},
+  
+  	updateViewport: function () {
+  		if ( !this.shown ) {
+  			return;
+  		}
+  
+  		this.viewport.style.width = window.innerWidth + 'px';
+  		this.viewport.style.height = window.innerHeight + 'px';
+  		this.viewport.style.left = window.scrollX + 'px';
+  		this.viewport.style.top = window.scrollY + 'px';
+  
+  		var clientWidth = document.documentElement.clientWidth;
+  
+  		this.orientation = clientWidth > document.documentElement.clientHeight ? 'landscape' : 'portrait';
+  
+  		var screenWidth = ath.OS == 'ios' ? this.orientation == 'portrait' ? screen.width : screen.height : screen.width;
+  		this.scale = screen.width > clientWidth ? 1 : screenWidth / window.innerWidth;
+  
+  		this.element.style.fontSize = this.options.fontSize / this.scale + 'px';
+  	},
+  
+  	resize: function () {
+  		clearTimeout(this.resizeTimer);
+  		this.resizeTimer = setTimeout(this.updateViewport.bind(this), 100);
+  	},
+  
+  	updateSession: function () {
+  		if ( ath.hasLocalStorage === false ) {
+  			return;
+  		}
+  
+          if (localStorage) {
+              localStorage.setItem(this.options.appID, JSON.stringify(this.session));
+          }
+  	},
+  
+  	clearSession: function () {
+  		this.session = _defaultSession;
+  		this.updateSession();
+  	},
+  
+  	getItem: function(item) {
+  		try {
+  			if (!localStorage) {
+  				throw new Error('localStorage is not defined');
+  			}
+  
+  			return localStorage.getItem(item);
+  		} catch(e) {
+  			// Preventing exception for some browsers when fetching localStorage key
+  			ath.hasLocalStorage = false;
+  		}
+  	},
+  
+  	optOut: function () {
+  		this.session.optedout = true;
+  		this.updateSession();
+  	},
+  
+  	optIn: function () {
+  		this.session.optedout = false;
+  		this.updateSession();
+  	},
+  
+  	clearDisplayCount: function () {
+  		this.session.displayCount = 0;
+  		this.updateSession();
+  	},
+  
+  	_preventDefault: function (e) {
+  		e.preventDefault();
+  		e.stopPropagation();
+  	}
+  };
+  
+  // utility
+  function _extend (target, obj) {
+  	for ( var i in obj ) {
+  		target[i] = obj[i];
+  	}
+  
+  	return target;
+  }
+  
+  function _removeToken () {
+  	if ( document.location.hash == '#ath' ) {
+  		history.replaceState('', window.document.title, document.location.href.split('#')[0]);
+  	}
+  
+  	if ( _reSmartURL.test(document.location.href) ) {
+  		history.replaceState('', window.document.title, document.location.href.replace(_reSmartURL, '$1'));
+  	}
+  
+  	if ( _reQueryString.test(document.location.search) ) {
+  		history.replaceState('', window.document.title, document.location.href.replace(_reQueryString, '$2'));
+  	}
+  }
+  
+  // expose to the world
+  window.addToHomescreen = ath;
+  
+  })(window, document);  
+    
+  </script>
+      <style>
+      /* Add to homescreen css  */ 
+      .ath-viewport * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      }
+      .ath-viewport {
+      position: relative;
+      z-index: 2147483641;
+      pointer-events: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -o-text-size-adjust: none;
+      text-size-adjust: none;
+      }
+      .ath-modal {
+      pointer-events: auto !important;
+      background: rgba(0,0,0,0.6);
+      }
+      .ath-mandatory {
+      background: #000;
+      }
+      .ath-container {
+      pointer-events: auto !important;
+      position: absolute;
+      z-index: 2147483641;
+      padding: 0.7em 0.6em;
+      width: 18em;
+      background: #454545;
+      background-size: 100% auto;
+      box-shadow: 0 0.2em 0 #999;
+      font-family: sans-serif;
+      font-size: 12px;
+      line-height: 1.5em;
+      text-align: center;
+      }
+      .ath-container small {
+      font-size: 0.8em;
+      line-height: 1.3em;
+      display: block;
+      margin-top: 0.5em;
+      }
+      .ath-ios.ath-phone {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      .ath-ios14 .ath-action-icon {
+      display: inline-block;
+      width: 18px;
+      height: 15px;
+      background-repeat: no-repeat;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+      background-size: 18px 15px;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios6.ath-tablet {
+      left: 5em;
+      top: 1.8em;
+      }
+      .ath-ios7.ath-tablet {
+      left: 0.7em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-tablet,
+      .ath-ios9.ath-tablet,
+      .ath-ios10.ath-tablet{
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-android {
+      bottom: 1.8em;
+      left: 50%;
+      margin-left: -9em;
+      }
+      /* close icon */
+      .ath-container:before {
+      content: '';
+      position: relative;
+      display: block;
+      float: right;
+      margin: -0.7em -0.6em 0 0.5em;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAMAAABmmnOVAAAAdVBMVEUAAAA5OTkzMzM7Ozs3NzdBQUFAQEA/Pz8+Pj5BQUFAQEA/Pz8+Pj5BQUFAQEA/Pz9BQUE+Pj4/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8+Pj4/Pz8+Pj4/Pz8/Pz8/Pz8/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8/Pz9AQEA/Pz+fdCaPAAAAJnRSTlMACQoNDjM4OTo7PEFCQ0RFS6ytsbS1tru8vcTFxu7x8vX19vf4+C5yomAAAAJESURBVHgBvdzLTsJAGEfxr4C2KBcVkQsIDsK8/yPaqIsPzVlyzrKrX/5p0kkXEz81L23otc9NpIbbWia2YVLqdnhlqFlhGWpSDHe1aopsSIpRb8gK0dC3G30b9rVmhWZIimTICsvQtx/FsuYOrWHoDjX3Gu31gzJxdki934WrAIOsAIOsAIOiAMPhPsJTgKGN0BVsYIVsYIVpYIVpYIVpYIVpYIVpYIVpYIVpYIVlAIVgEBRs8BRs8BRs8BRs8BRs8BRs8BRs8BRTNmgKNngKNngKNngKNngKNhiKGxgiOlZoBlaYBlaYBlaYBlaYBlaYBlaYBlaYBlZIBlBMfQMrVAMr2KAqBENSHFHhGEABhi5CV6gGUKgGUKgGUKgGUFwuqgEUvoEVsoEVpoEUpgEUggF+gKTKY+h1fxSlC7/Z+RrxOQ3fcEoAPPHZBlaYBlaYBlaYBlZYBlYIhvLBCstw7PgM7hkiWOEZWGEaWGEaWGEaIsakEAysmHkGVpxmvoEVqoEVpoEVpoEVpoEVpoEVpoEVkoEVgkFQsEFSsEFQsGEcoSvY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnmbNAUT2c2WAo2eAo2eAo2eAo2eAo2eArNEPFACjZ4CjZ4CjZ4CjaIird/rBvFH6llNCvewdli1URWCIakSIZesUaDoFg36dKFWk9zCZDei3TtwmCj7pC22AwikiIZPEU29IpFNliKxa/hC9DFITjQPYhcAAAAAElFTkSuQmCC);
+      background-color: rgba(128,128,128,0.9);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      width: 2.7em;
+      height: 2.7em;
+      text-align: center;
+      overflow: hidden;
+      color: #666;
+      z-index: 2147483642;
+      }
+      .ath-container.ath-icon:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-mandatory .ath-container:before {
+      display: none;
+      }
+      .ath-container.ath-android:before {
+      float: left;
+      margin: -0.7em 0.5em 0 -0.6em;
+      }
+      .ath-container.ath-android.ath-icon:before {
+      position: absolute;
+      right: auto;
+      left: 0;
+      margin: 0;
+      float: none;
+      }
+      .ath-container.ath-icon {
+      background-color: #787878;
+      }
+      .ath-action-icon {
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('square.and.arrow.up.png');
+      background-position: 50%;
+      background-repeat: no-repeat;
+      text-indent: -9999em;
+      overflow: hidden;
+      }
+      .ath-ios14 .ath-action-icon,
+      .ath-ios13 .ath-action-icon,
+      .ath-ios12 .ath-action-icon,
+      .ath-ios11 .ath-action-icon{
+      width: 1.6em;
+      height: 1.6em;
+      background-image:url(data:image/png;base64,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);
+      margin-top: -0.3em;
+      background-size: auto 100%;
+      }
+      .ath-ios6 .ath-action-icon {
+      width: 1.8em;
+      height: 1.8em;
+      background-image:url(data:image/png;base64,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);
+      margin-bottom: 0.4em;
+      background-size: 100% auto;
+      }
+      .ath-android .ath-action-icon {
+      width: 1.4em;
+      height: 1.5em;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEVmZmb///9mZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZW6fJrAAAAEXRSTlMAAAYHG21ub8fLz9DR8/T4+RrZ9owAAAB3SURBVHja7dNLDoAgDATQWv4gKve/rEajJOJiWLgg6WzpSyB0aHqHiNj6nL1lovb4C+hYzkSNAT7mryQFAVOeGAj4CjwEtgrWXpD/uZKtwEJApXt+Vn0flzRhgNiFZQkOXY0aADQZCOCPlsZJ46Rx0jhp3IiN2wGDHhxtldrlwQAAAABJRU5ErkJggg==);
+      background-size: 100% auto;
+      }
+      .ath-container p {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 2147483642;
+      text-shadow: 0.1em 0.1em 0 #000;
+      font-size: 1.1em;
+      }
+      .ath-ios.ath-phone:after {
+      content: '';
+      background: #eee;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      bottom: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: 
+      scaleX(0.9);
+      rotate(45deg);
+      transform: scaleX(0.9);
+      rotate(45deg);
+      box-shadow: 0.2em 0.2em 0 #ccc;
+      }
+      .ath-ios.ath-tablet:after {
+      content: '';
+      background: #666;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      top: -0.9em;
+      left: 50%;
+      margin-left: -1em;
+      -webkit-transform: scaleX(0.9) rotate(45deg);
+      transform: scaleX(0.9) rotate(45deg);
+      z-index: 2147483641;
+      }
+      .ath-application-icon {
+      position: relative;
+      padding: 0;
+      border: 0;
+      margin: 0 auto 0.2em auto;
+      height: 6em;
+      width: 6em;
+      background: transparent;
+      background-image: url('./favicon-96x96.png');
+      z-index: 2147483642;
+      }
+      .ath-container.ath-ios .ath-application-icon {
+      border-radius: 1em;
+      box-shadow: 0 0.2em 0.4em rgba(0,0,0,0.3),
+      inset 0 0.07em 0 rgba(74,74,74,0.5);
+      margin: 0 auto 0.4em auto;
+      }
+      @media only screen and (orientation: landscape) {
+      .ath-container.ath-phone {
+      width: 24em;
+      }
+      .ath-android.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios.ath-phone {
+      margin-left: -12em;
+      }
+      .ath-ios6:after {
+      left: 39%;
+      }
+      .ath-ios8.ath-phone {
+      left: auto;
+      bottom: auto;
+      right: 0.4em;
+      top: 1.8em;
+      }
+      .ath-ios8.ath-phone:after {
+      bottom: auto;
+      top: -0.9em;
+      left: 68%;
+      z-index: 2147483641;
+      box-shadow: none;
+      }
+      }
+      /* End of Add to homescreen css */
+    </style>
+	<!-- end addToHomescreen Script and Style code  //-->
+
+    <style> 
+      /* REST OF CSS FOR WEB APP LPA */
+/*   
+@media (prefers-color-scheme: dark) {
+
+
+
+
+}
+
+@media (prefers-color-scheme: light) {
+
+
+
+
+}
+
+*/
+
+
+           @media (orientation: landscape) {
+
+      html {
+      -webkit-border-top-left-radius: 50px;
+      -webkit-border-top-right-radius: 50px;
+      -webkit-border-bottom-right-radius:50px;
+      -webkit-border-bottom-left-radius:50px;
+      -webkit-background-clip: padding-box; 
+      -webkit-border-radius: 50px;
+      padding-left: max(12px, env(safe-area-inset-left));
+      padding-right: max(12px, env(safe-area-inset-right));
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+      }
+      body {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      font-family: Arial, Helvetica, sans;
+      font-size: 12px;
+      color: #CFCFCF;
+      font-weight: bold;
+      font-style: oblique;
+      width : 100vw;
+      height : 100vh;
+      position : fixed;
+    }
+      div.webApp {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      width : cover;
+      height : contain;
+      display : flex;
+      position : fixed;
+      }
+      audio.myPlayer {
+      position : absolute;
+      top : 0px;
+      right : 50%;
+      left : 0px;
+      margin : 0;
+      padding : 0;
+      z-index : 2;
+      width: 50%;
+      background-color: transparent;
+      }
+      .l-toppane {
+      top : 0;
+      right : 50vw;
+      left : 0;
+      bottom: 0;
+      margin : 0;
+      padding : 0;
+      height : 100vh;
+      width : 50vw;
+      position: fixed;
+      display: block;
+      }
+      .LPcover {
+      display: block;
+      margin : 0px;
+      padding : 0px;
+      top : 0px;
+      right : 0px;
+      left : 0px;
+      bottom: 0px;
+      width: 50vw;
+      max-height: 100%;
+      max-width : cover;
+      }
+      .r-botpane {
+      right : 0px;
+      left : 50vw;
+      top : 0%;
+      bottom : 0px;
+      padding : 0px;
+      width : 50vw;
+      max-height : 100vh;
+      position : fixed;
+    }
+
+    .tabcontent {
+            color: #cecece;
+            display: none;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            width: 100% -30px;
+            height: 100%;
+            bottom: -2px;
+            padding-left: 18px;
+            padding-right: 18px;
+            text-align: justify;
+            overflow-y: scroll;
+            -webkit-box-shadow: inset 0px 6px 18px 3px #000000; 
+            box-shadow: inset 0px 6px 18px 3px #000000;
+            text-shadow: -2px 2px 6px #000000;
+            border-radius: 0px 0px 47px 47px;
+            background: #333333;
+            background: -webkit-linear-gradient(left, #111111, #676767, #333333);
+            border: 3px inset #999;
+            border-bottom: 6px groove #999;
+            border-top: 3px ridge #333;
+    }
+
+
+}
+
+
+
+           @media (orientation: portrait) {
+
+
+
+      spkml {
+      -webkit-border-top-left-radius: 50px;
+      -webkit-border-top-right-radius: 50px;
+      -webkit-border-bottom-right-radius:50px;
+      -webkit-border-bottom-left-radius:50px;
+      -webkit-background-clip: padding-box; 
+      -webkit-border-radius: 50px;
+      padding-left: max(12px, env(safe-area-inset-left));
+      padding-right: max(12px, env(safe-area-inset-right));
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+      }
+      body {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      font-family: Arial, Helvetica, sans;
+      font-size: 12px;
+      color: #CFCFCF;
+      font-weight: bold;
+      font-style: oblique;
+      width : 100vw;
+      height : contain;
+      position : fixed;
+    }
+      div.webApp {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      width : contain;
+      height : contain;
+      display : flex;
+      position : fixed;
+      }
+      audio.myPlayer {
+      position : absolute;
+      top : 0px;
+      right : 0;
+      left : 0;
+      bottom : 0;
+      margin : 0;
+      padding : 0;
+      z-index : 2;
+      height: 36px;
+      min-width : 74%;
+      width: 100%;
+      background-color: transparent;
+      }
+      .l-toppane {
+      top : 0;
+      right : 0;
+      left : 0;
+      bottom: 50vh;
+      margin : 0;
+      padding : 0;
+      height : 50vh;
+      width : 100vw;
+      position: fixed;
+      display: block;
+      }
+      .LPcover {
+      display: block;
+      margin : 0px;
+      padding : 0px;
+      top : 0px;
+      right : 0px;
+      left : 0px;
+      bottom: 0px;
+      width: 100vw;
+      max-height: 50%;
+      max-width : contain;
+      }
+      .r-botpane {
+      right : 0;
+      left : 0;
+      top : 50%;
+      bottom : 0px;
+      padding : 0px;
+      width : 100vw;
+      max-height : 50vh;
+      position : fixed;
+    }
+    
+    .tabcontent {
+            color: #cecece;
+            display: none;
+            top: 50vh;
+            left: 0px;
+            right: 0px;
+            width: 100vw -30px;
+            height: 100%;
+            bottom: -2px;
+            padding-left: 18px;
+            padding-right: 18px;
+            text-align: justify;
+            overflow-y: scroll;
+            -webkit-box-shadow: inset 0px 6px 18px 3px #000000; 
+            box-shadow: inset 0px 6px 18px 3px #000000;
+            text-shadow: -2px 2px 6px #000000;
+            border-radius: 0px 0px 47px 47px;
+            background: #333333;
+            background: -webkit-linear-gradient(left, #111111, #676767, #333333);
+            border: 3px inset #999;
+            border-bottom: 6px groove #999;
+            border-top: 3px ridge #333;
+    }
+    
+    
+}
+      
+/* closed portrait mode  */
+
+
+     
+/* Removes mute-button */
+audio::-webkit-media-controls-seek-backward-button {
+  display: visible;
+}
+
+/* Removes play-button */
+audio::-webkit-media-controls-seek-forward-button {
+  display: visible;
+}
+
+audio::-webkit-media-controls-timeline-container {
+    -webkit-appearance: media-timeline-container;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-flex: 0;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 12px;
+    right: 0;
+
+    width: auto /2;
+    height: 32px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* End: Mute/Volume */
+
+/* Start: Track (Captions and Chapters) */
+
+.chapters-button {
+    position: relative;
+    visibility: visible;
+		display: visible;
+}
+
+
+
+.chapters-button > button {
+    background-position: -0px 0;
+        visibility: visible;
+}
+
+.chapters-button > .chapters-selector {
+    background: rgba(50, 50, 50, 0.7);
+    border: solid 1px transparent;
+    border-radius: 0;
+    bottom: 100%;
+    margin-right: 43px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 50%;
+    visibility: visible;
+    width: 86px;
+}
+
+.chapters-button > .chapters-selector {
+    margin-right: -55px;
+    width: 110px;
+        visibility: visible;
+}
+
+
+.chapters-selector-list {
+    list-style-type: auto !important;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+
+
+.chapters-selector-list-item {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    list-style-type: none !important;
+    margin: 0 0 6px;
+    overflow: visible;
+    padding: 0;
+}
+
+
+.chapters-selector-list-item:hover {
+    background-color: rgb(200, 200, 200) !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+
+.chapters-selector-input {
+    clear: both;
+    float: right;
+    left: -100px;
+    margin: 3px 3px 0 5px;
+    position: absolute;
+}
+
+
+.chapters-selector-label {
+    cursor: pointer;
+    float: left;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 4px 10px 0;
+    width: 100%;
+}
+
+
+.chapters-selected {
+    color: rgba(33, 248, 248, 1);
+}
+
+
+
+
+
+      p pre code {
+         max-width: 100% -30px;
+         overflow: wrap;
+         overflow-wrap: break-word;
+         width: 100% -30px;
+      }
+      .playlist {
+      position : fixed;
+      margin : 18px;
+      margin-left: 13px;
+      text-align : justify;
+      filter : drop-shadow(7px 7px 7px black);
+      }
+      .copyright {
+      position : relative;
+      bottom : 0;
+      right : 0;
+      left : 0;
+      margin : 0;
+      width : 100vw;
+      height : 48px;
+      font-size : xx-small;
+      text-align : center;
+      }
+      .scrollmenu {
+        width: 100%;
+        -webkit-align: center;
+        border-top: 4px ridge rgba(255,255,255,0.92);
+        border-radius: 12px 12px 0px 0px;
+        margin-left: 0px;
+        margin-left: 0px;
+        bottom: 0px;
+        border-bottom: 0px solid #999;
+        background: #333;
+        background: -webkit-linear-gradient(top, #666, #ababab, #000000);
+       overflow-x: scroll;
+       white-space: nowrap;
+      }
+      div.scrollmenu a {
+        
+      text-decoration: none;
+      }
+      div.scrollmenu a:hover {
+      -webkit-transform: hue lightblue;
+    }
+
+      /* Style the tab */
+      .tab {
+      min-width: -webkit-fit-content;
+      max-width: 100%;
+      line-height: -webkit-fit-content;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        bottom: -1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        left: 0%;
+        right: 0%;
+      }
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        left: 1px;
+        right: 1px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      border-left: 1px solid #333;
+      border-right: 1px solid #666;
+      border-bottom: 0px;
+      bottom: 0px;
+      border-radius: 12px 12px 0px 0px;
+      background: -moz-linear-gradient(top, #333333 100%, #cccccc 92%, #000 74%);
+      font-size: 12px;
+      font-weight: bolder;
+      text-decoration: none;
+      font-style: oblique;
+      font-variant: small-caps;
+      text-transform: capitalize;
+      overflow-x: scroll;
+      cursor: hand;
+      padding: 2px 2px;
+      transition: 0.5s;
+      transition-timing-function: ease-in-out;
+      text-shadow: -2px -2px 8px black;
+      border-top: 3px ridge #dfdfdf;
+       -webkit-box-shadow: 2px 4px 9px 5px #000;
+      color: #ffffffde;
+      transform: overlay;
+      box-shadow: -3px -2px 6px #141414;
+      }
+      /* Change background color of buttons on hover */
+          .tab button:hover {
+          background: -webkit-linear-gradient(top, #585858 100%, #adadad 100%, bottom, #232323 100%);
+          border-top:3px ridge rgba(255,255,255,1.0);
+        -webkit-transform: screen;
+          }
+      /* Create an active/current tablink class */
+      .tab button.active {
+      text-decoration: rgba(0, 222, 222, 0.9);
+      -webkit-box-shadow: -1px -2px 3px 2px #333;
+       -webkit-transform: multiply;
+       -webkit-filter: 2px 3px 4px #64646;
+       -webkit-color-transform: difference;
+       animation: mymove 4s infinite;
+       transition-timing-function: ease-in-out;
+       color: white;
+       -webkit-border-bottom: 1px 3px 12px 5px #000;
+       text-shadow: 6px 4px 7px #555;
+       border-top: 3px groove #fff;
+
+      }
+@keyframes mymove {
+  50% {
+    border-top: 3px groove skyblue;
+    color: skyblue;
+    text-shadow: 6px 4px 7px #111;
+    transform: overlay;
+  }
+
+      ol {
+      list-style-type: upper-roman;
+      }
+   
+    </style>
+	</head>   
+		<lpa doc-published="11/11/2020" type="DigitalLongPlayAlbum" oncontextmenu="return false;" onorientationchange="updateOrientation();">
+         
+
+            
+            
+       <audio controls="controls" title="myPlayer" class="myPlayer" autoplay="autoplay" preload="metadata" shuffle="off">
+        <source src="https://spkml.app/wp-content/uploads/2023/05/theflight-SPKMLapp.m3u" type="audio/mp3">
+        <track default src="./TheFlight-TrackCue_ChapterList.vtt" kind="chapters" label="English" srclang="en" />
+        </audio>
+            
+          <!--  <player controls="default" title="myPlayer" id="myPlayer" class="myPlayer"  autoplay="yes" shuffle="off"></player> //-->
+            
+      <img src="https://spkml.app/wp-content/uploads/2023/07/WhatIDo-mp3-image.jpg" alt="'The Flight' Album Cover" class="LPcover">
+            <nav class="tab">
+               <navbar class="scrollmenu">
+                  <button class="tablinks" onclick="openThisPage(event, 'Album')" id="defaultOpen">💿</button>
+                  <button class="tablinks" onclick="openThisPage(event, 'Tracks')">🎶</button>
+                  <button class="tablinks" onclick="openThisPage(event, 'Lyrics')">📝</button>
+                  <button class="tablinks" onclick="openThisPage(event, 'Liners')">📓</button>
+                  <button class="tablinks" onclick="openThisPage(event, 'About')"></button>
+                  <button class="tablinks" onclick="openThisPage(event, 'Links')">🌎</button>
+                  <button class="tablinks" onclick="openThisPage(event, 'Credits')">©️</button>
+               </navbar>
+            </nav>
+            
+    <album id="Album" class="tabcontent">
+            <h1>The Flight</h1>
+            <code>
+            <artist act="solo">
+               <name alias="@spkml">
+                  Christopher Johnson
+               </name>
+            </artist>
+            <publisher company-name="SPEKTRUM Creations" />
+            <detail abstract="recording-location:'Denver, CO'; prod-time:'3-weeks';" ar-rep="indep, none" prod-eng="self" />
+            <date recd-start="july 3, 2019" prod-end="July 23, 2019" orig-rel="09/19/2019" />
+            </code>
+            <h2>
+        About this Album<!--2-->
+        </h2><h3>Created by: Christopher Johnson</h3>
+        <p>This is an experiment in creating a web app that contains only Standards Based content created in HTML5 using only native javascript and CSS.</p>
+        <p>The music for this hybrid webApp design was initially set up with only one mp3 file Playing through an HTML5 audio tag element, which was on purpose so that the listener could experience the album as an album, which is what this app is being created as.</p>
+        <p>To serve the purpose of creating a Standards Based stand-alone bundle with an elegant approach to logically designing a self contained, fluid UI and a base set of functionalities to present all the embedded content, including album cover, track listing, liner notes, bio, photos, social and web links, etc... this is where the idea came for the LPA file type Named for the classic long play album vinyl records.</p>
+        <p>If we can agree that webpacked webapps are at first an acceptable crossplatform container for the LPA file bundle, the next question is can it or should it be a stand alone file type with built in player to play the embedded content?</p>
+        <p>In the spirit of FOSS, for accesibility by Timmy the bedroom hobby-ist musician as well as by artists, the likes of Paul McCartney and Ringo Starr, the LPA format has the goal of being widely used and hopefully can standardized a release format by presenting a platform to develop the .lpa file type for eventual mime-type recognition.</p>
+        <p>The current state of things seemes to make it clear that mp3 is the most compatible choice to start from. MP3 uses the power of embedded content in the ID3 Tags. Taken a step further and especially when filled out in fullness the mp3 id3/4 tag content will make the .LPA file type make you want to sing...</p>
+        <p>Along other ideas, so long as the content is represented by a fully navigatable, fully accessible by controls, music album, the .lpa file standards will meet minimum requirements of acceptability for licensed release.</p>
+        <p>Instead of using MP3 files in M3U8 playlist or HLS streaming, convert The MP3 files to MP4 and use M3U8  to host the Mp4 audio files(). Use the poster attribute to display the album cover.  Adding timed captioning of lyrics would be an accessibility dream come true. </p>
+        <p>At this point, or at least at the time of this writing, the aim is now to stick firmly to strict W3C standards and guidelines and remain completely open source. that's said, The design will follow as such:</p>
+        <ol start="i">
+          <li>
+            The XML file markup structure will be defined by an XSD, initially built as an internal   definition.
+          </li>
+          <li>
+            Turn the 'Tracks Listing' section into an .XSPF style XML playlist that is written as XML file content but including the inline embedded internal XML Schema, NameSpace and inline XSD defined in just preceeding XSD data which will then be readable by HTML through a JavaScript XML parser script.
+          </li>
+          <li>  
+            But the XML will be reused as UI content that is styled as needed by CSS while still remaining  readable by the audio element  embedded into the code of thia HTML5.
+          </li>
+          <li>      
+            The question arises also of whether to use the information contained within the properly encoded mp4 audio files by getting the tag content from embedded meta-data... -TBD;
+          </li>
+          <li>
+            Additional album content such as the artwork can also be pulled from the meta tags in the audio tracks. I will call
+          </li>
+        </ol>
+        <p>View the source code of this webpage/webapp to learn more about the code through the actual code wich has comments 
+          throughout this document written with html5, js/es5-6 and css3+ 
+        </p>
+        <br>
+    </album>       
+    <tracks id="Tracks" class="tabcontent">
+       <list class="playlist">
+          <item>
+             <trk-numb startCount="I" />
+             <song>
+                Citizens Of Earth (album cut) 
+                <space class="songTime">(03:42)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                The Great Fall
+                <space class="songTime">(00:52)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                What I do (Remastered)
+                <space class="songTime">(02:22)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Sunday Afternoon (Remastered)
+                <space class="songTime">(04:03)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Sheep In Wolves Clothing
+                <space class="songTime">(04:19)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Anyway
+                <space class="songTime">(03:44)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                It doesn&#39;t feel right
+                <space class="songTime">(03:03)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                2 Pause (Ah...)
+                <space class="songTime">(03:11)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Billed As
+                <space class="songTime">(05:12)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Feeling Blue
+                <space class="songTime">(03:56)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Gettin' It
+                <space class="songTime">(05:26)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Lifestyle
+                <space class="songTime">(04:00)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                The Gopher On The TV
+                <space class="songTime">(03:21)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                The Epic of Mister Resistor
+                <space class="songTime">(03:34)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                Play My Life Away
+                <space class="songTime">(04:38)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                For Samantha
+                <space class="songTime">(03:10)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                When All Is Said And Done
+                <space class="songTime">(03:42)</space>
+             </song>
+          </item>
+          <item>
+             <trk-numb />
+             <song>
+                D.S. Al Coda
+                <space class="songTime">(01:56)</space>
+             </song>
+          </item>
+       </list>
+    </tracks>
+    <lyrics id="Lyrics" class="tabcontent">
+       <label>Lyrics</label>
+       <text> coming soon...</text>
+    </lyrics>
+    <liners id="Liners" class="tabcontent">
+       <label>Liner notes</label>
+       <text> coming soon...</text>
+    </liners>
+    <info id="About" class="tabcontent">
+       <label>About</label>
+       <text>
+         <p>
+                    From the perspective of music, Christopher Johnson is a musician at heart, a guitarist by preference, though he can tickle the ivories when needed… Recording and Mixing is a passion for Christopher and his catalog of music can back that up…
+                </p>
+                <p>
+                    But how did Christopher get from there to here? In his words;
+                </p>
+                <p>
+                    “I was in fourth and fifth grade playing church music giving it no attention I thought because I wasn’t playing Van Halen. As it were, I knew a few songs at best and a handful of chords but didn’t realize that church music I played used the same chords to play the rock music I loved from the radio. I set it down…
+                </p>
+                <p>
+                    In 1992, I was over at a duplex with a friend and we were visiting a friend named Eric Boyce. Eric had been playing a couple of years and when he played “American Pie”, I payed attention to his hands and recognized the chords, at least a few of them if not most and I was inspired… I went out the next day and bought a classical acoustic and tried to put steel strings on it, which as anyone knows, will destroy a pawn shop guitar meant for nylon strings… Anyway, after a terrible electric guitar purchase, I traded it in with cash, to buy a Lotus Acoustic Dreadnaught with black binding. I named the guitar “Stoney Kingston Buckthorne” . I still play Stoney as my main acoustic to this day…
+                </p>
+                <p>
+                    I started recording songs with a four-track tape recorder in probably mid-1993 or later, but I was recording myself to get better and learn songs. I bought my own Fostex X-18 4-track recorder and Eric had the same model and so we shared and collaborated between the tapes we shared. Sometimes we would setup and just jam… Other times we worked out songs or came up with different parts and they would come together in a song. This is the basis for the drawing on the album cover of “Midnight Jam”.
+                </p>
+                <p>
+                    By 1995, Eric and I were sort of drifting and life was happening for him and me. I started to play at a Sunday jam session which I ended up being a strong member of most of the summer. In November of that same year I played my first solo show. I opened for a St. Louis band named MU330…
+                </p>
+                <p>
+                    Just about a month prior to the show opening for MU330, I wrote a long-hand rough draft of a screenplay which I wrote over three or so days at an AppleBee’s in Topeka, KS. The story, “The Overnight Success” was about a band who sold platinum in literally one night over the internet. It was way ahead of it’s time. iTunes didn’t even come out until 2003 and the iPod was only released in October of 2001. Recordable CD drives were out barely and were outrageously priced in 1995 . Windows 95 was only just released in August of 1995 and I saw a story to be told to shape the future. I got on AOL as soon as I could, probably in 1996 and early 1997. I was working on recording with my Multitrack recorder and worked on learning about the content to write a full screenplay with a basic soundtrack which I copyrighted in 1998 as “The Other Side Of Blue”.
+                </p>
+                <p>
+                    I ultimately had to turn down a record deal that I’d negotiated for the film. I feel it would have laid the ground work for a quite different outcome. However, “The Other Side Of Blue” went unproduced and probably just as well.
+                </p>
+                <p>
+                    I followed up over the next couple years with writing two or so more screenplays in a series of the story of SPEKTRUM, the band in “The Other Side Of Blue”. I set to work on a work that was different.
+                </p>
+                <p>
+                    In the late 1990’s, I released a a could albums on mp3.com/spektrum. I had become intrigued by AI, Artificial Intelligence and I started looking into programming in a language called AIML . I’d envisioned a hybrid language called SPKML based in part in the XML structure of AIML with the MultiMedia capabilities of HTML, or then DHTML; now, HTML5… SPKML is an acronym in this case for Specific Purpose Knowledge and Media Language. I call it something different in a book I wrote inspired by the idea in 2003-2004, “CodeBase” was written and then published in various incarnations as well as in paperback since 2005. You can find it today in paperback at https://www.amazon.com/Codebase-Chris-Johnson/dp/1438248628
+                </p>
+                <p>
+                    In early 2005 I began working on a MacBook G4 laptop and it was a dream for the time. I set out recording an album of music that year and started mainly recording midi Karaoke tracks that were more real than midi, at least in my attempt to make good ‘covers’… There’s a selection from those recordings… under ‘Music’ in the menu.
+                </p>
+                <p>
+                    I worked on some stuff but not much for a couple years, dealing with life on life’s terms as it were and doing poorly until I got to build my first computer in 2009 and it was good enough to run World Of Warcraft. Though that doesn’t say much since I also was able to get it hackintoshed and was able to not only hackintosh an atom powered netbook from hp but also run World of Warcraft.
+                </p>
+                <p>
+                    I played a few years and worked on music on my hackintosh machines but I had to come back to windows and then back to a real mac. I’d run my website and ran a podcast for a while and have run SPKML.com and SPEKTRUMCreations.com for years, perhaps since 2003-2005?
+                </p>
+                <p>
+                    One of the reasons that I thought a Mac works better for me is that Apple bought Logic, they slimmed it down to make Garageband and include it as an app in a standard install… Now Garageband is a full-fledged app that is more than capable and though I like Logic, I find with 24 bit audio master mixdowns, it is plenty good enough for my needs… On top of that I now share on blend.io/spkml where you can download my actual Garageband sessions to remaster or remix yourself.
+                </p>
+                <p>
+                    I’ve recorded on an iPhone in fact to the point that I’ve actually done entire albums worth of material on my iPhone 4, 6 and now 8. I’ll eventually upgrade but that’s not the point of this… I guess I’m a nerd still… But I’m a music nerd, so I think my 4th grade self would think that’s pretty neat…
+                </p>
+       </text>
+    </info>
+    <links id="Links" class="tabcontent">
+       <label>Online</label>
+       <text>
+       <ul>
+       <li>Instagram - 
+  </li><li>Facebook - 
+  </li><li>Twitter - 
+  </li><li>YouTube - 
+  </li><li>Spotify - 
+  </li><li>Music -
+  </li><li>YourWebSite.com
+  </li>
+  </ul>
+  </text>
+    </links>
+    <credits id="Credits" class="tabcontent">
+       <label>Credits</label>
+       <text>All songs written, performed and recorded by Christopher Johnson.  "The Flight" was recorded in Denver, Colorado in within three weeks in July and August of 2019 and was originally released on September 19, 2019.</text>
+               <h3>Credits</h3>
+        <p>All songs written, performed and recorded by Christopher Johnson.  "The Flight" was recorded in Denver, Colorado in within three weeks in July and August of 2019 and was originally released on September 19, 2019.</p>
+      
+         
+        
+      <p>  
+        Note: The goal of this software’s development is to create a
+  file type which acts as a container, that will be comprised of
+  standardized and open-sourced code for use by anyone upon the
+  release of the code, with accepting of terms by the user whom 
+  may be interested in contributing to extensible additions or 
+  more streamlined approaches, with a common goal to make this 
+  code for use by musicians as well as by listeners for the goal
+  of enhancing the ability of both parties to enjoy the final
+  product, either presenting or being presented, and providing 
+  a win-win scenario for everyone involved.  Please Contribute
+  if you can but note that any changes you make to the overall
+  code portion of these documents must be shared back to the 
+  group of developers located hereforth at either site below: </p>
+  
+      <a href="http://github.com/SPEKTRUM-Creations">github.com/SPEKTRUM-Creations</a>  
+        OR:  
+      <a href="http://SCDN.SPEKTRUMCreations.com">SCDN.SPEKTRUMCreations.com</a>
+
+
+<p>Software Licenses for Digital LP Album App</p>
+
+<span class="licenses">
+  
+  <h1 class="title">W3C Software and Document Notice and License</h1>
+  <div class="status">  <div style="margin-left: 3em; font-size: .9em; background: #666; border: thin solid black; padding: 1em;">
+<p><strong>Status:</strong> This license takes effect 13 May, 2015.</p></div>
+               <div id="w3c_content_body">
+                  <div class="line">
+
+              <p class="intro tPadding">This work is being provided by the copyright holders under the following license.</p>
+              
+<h2>License</h2>
+                     
+  <p class="tPadding">
+By obtaining and/or copying this work, you (the licensee)
+agree that you have read, understood, and will comply with the following
+terms and conditions.</p>
+
+                     <p>Permission to copy, modify, and distribute this work, with or without modification,&nbsp;for any purpose and without
+fee or royalty is hereby granted, provided that you include the following on
+ALL copies of the work or portions thereof, including
+modifications:</p>
+
+                     <ul class="show_items">
+		       <li>The full text of this NOTICE in a location
+    viewable to users of the redistributed or derivative
+    work.</li>
+		       <li>Any pre-existing intellectual property
+    disclaimers, notices, or terms and conditions. If none exist,
+    the <a href="/Consortium/Legal/copyright-software-short-notice">W3C Software and Document Short Notice</a> should be included.</li>
+		       <li>Notice of any changes or modifications, through a copyright statement on the new code or document such as "This software or document includes material copied from or derived from [title and URI of the W3C document]. Copyright © [YEAR] W3C® (MIT, ERCIM, Keio, Beihang)." </li></ul>
+
+<h2>Disclaimers</h2>
+
+                     <p>THIS WORK IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS
+MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR
+PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENT WILL NOT INFRINGE
+ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.</p>
+
+                     <p>COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR
+DOCUMENT.</p>
+
+                     <p>The name and trademarks of copyright holders may NOT be used in
+advertising or publicity pertaining to the work without specific, written
+prior permission. Title to copyright in this work will at all times remain with copyright holders.</p></div></div></div>
+
+
+<h3>MIT License<br />
+  ===========</h3>
+</code>
+Copyright (c) 2020 Christopher Johnson (SPEKTRUMCreations.com)
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+<br />
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+<br />
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+</code>
+<br />
+<cite>
+
+ <span>This LP (Long-Play) ALBUM Container Software (a.k.a. The LPA file OR file-type, or the bundle of files and content that makes up this package) AND the Contents of the embedded audio recording(s), including all contents that comprise the album,  "The Flight" contained herein (text, code, images as well as the overall concept as implimented or discussed as being considered for inclusion in this iteration or other future adaptations of this software for album releases to come) <br /><br />Copyright © 2020 SPEKTRUM Creations / Christopher Johnson<br /> All Rights Reserved. </span>
+Monday January 4/2021.004.19:16:11 Central Standard Time
+</cite>
+</span>
+
+
+
+
+       
+       
+       <text>
+          <space class="copyright">Copyright © 2020 SPEKTRUM Creations</space>
+       </text>
+    </credits>
+    
+    
+        <script type="text/javascript">
+      function openThisPage(evt, pageID) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      }
+      
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(pageID).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
+      
+    </script>
+    <script>
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+<!--
+  bouncefix.js 
+  //-->
+		<script src="./bouncefix.js"></script>
+		<script>
+			bouncefix.add('content');
+		</script>
+    
+    
+    
+    	</lpa>
+   </spkml>
+   </html>

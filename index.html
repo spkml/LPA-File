@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Long Play Album (LPA)file CREATOR [prototype example]</title>
+</head>
+<body>
+    <form method="POST">
+        <label for="mp3-input">MP3 File:</label>
+        <input type="file" id="mp3-input" accept=".mp3" required>
+        <br />
+        <label for="png-input">PNG File:</label>
+        <input type="file" id="png-input" accept=".png" required>
+         <br />
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" name="title" required>
+				<br />
+        <label for="artist-input">Artist:</label>
+        <input type="text" id="artist-input" name="artist" required>
+         <br />       
+        <label for="track-list-input">Track List:</label>
+        <textarea rows="10" cols="32" id="track-list-input" name="track-list" required></textarea>
+        <br />        
+        <label for="liner-notes-input">Liner Notes:</label>
+        <textarea id="liner-notes-input" rows="10" cols="32" name="liner-notes" required></textarea>
+         <br />       
+        <button id="submit-btn" type="button">Generate code for LPA File</button>
+    </form>
+    
+    <script type="text/javascript">
+		/*jshint esversion: 8 */ 
+      // Function to convert file to base64
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+      resolve(reader.result.split(',')[1]);
+    };
+
+    reader.onerror = (error) => {
+      reject(error);
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+// Function to generate HTML document
+function generateHTMLDocument(title, artist, trackList, linerNotes, mp3Base64, pngBase64) {
+  const html = `
+    <!DOCTYPE html>
+    <html>
+      <head><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+        <title>${title}</title>
+      </head>
+      <body>
+        <h1>${title}</h1>
+        <p>Artist: ${artist}</p>
+        <ul>
+          ${trackList.map((track) => `<li>${track}</li>`).join('')}
+        </ul>
+        <div>${linerNotes}</div>
+        <audio controls>
+          <source src="data:audio/mp3;base64,${mp3Base64}" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <img src="data:image/png;base64,${pngBase64}" alt="Cover Image">
+      </body>
+    </html>
+  `;
+  
+  return html;
+}
+
+// Get the file input elements
+const mp3Input = document.getElementById('mp3-input');
+const pngInput = document.getElementById('png-input');
+
+// Get the text inputs
+const titleInput = document.getElementById('title-input');
+const artistInput = document.getElementById('artist-input');
+
+// Get the textarea input
+const linerNotesInput = document.getElementById('liner-notes-input');
+
+// Get the track list input
+const trackListInput = document.getElementById('track-list-input');
+
+// Add event listener for the submit button click
+document.getElementById('submit-btn').addEventListener('click', async () => {
+  // Get file objects
+  const mp3File = mp3Input.files[0];
+  const pngFile = pngInput.files[0];
+  
+  // Get text values
+  const title = titleInput.value;
+  const artist = artistInput.value;
+  const linerNotes = linerNotesInput.value;
+  
+  // Get track list values
+  const trackList = trackListInput.value.split('\n');
+
+  try {
+    // Convert files to base64
+    const mp3Base64 = await fileToBase64(mp3File);
+    const pngBase64 = await fileToBase64(pngFile);
+
+    // Generate the HTML document
+    const htmlDocument = generateHTMLDocument(title, artist, trackList, linerNotes, mp3Base64, pngBase64);
+
+    // Create a new HTML file
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([htmlDocument], { type: 'text/html' }));
+    link.download = '${title}.html';
+    
+    // Trigger the download
+    link.click();
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+    </script>
+</body>
+</html>
