@@ -1,4 +1,5 @@
 # LPA-File
+<body style="font:"courier New", courier, monospaced">
 see https://github.com/SPEKTRUM-Creations/LPA-WebApp
 <Pre>
 Are you a developer? Join us for a fun set of projects being developed by the team we will assemble through both the SCDN.SPEKTRUMCreations.com/ website and the online community we will start posting our development project files to on the repositories located and/or mirrored at github.com/SPEKTRUM-Creations.
