@@ -1,18 +1,20 @@
 # LPA-File
 see https://github.com/SPEKTRUM-Creations/LPA-WebApp
-
+<Pre>
 Are you a developer? Join us for a fun set of projects being developed by the team we will assemble through both the SCDN.SPEKTRUMCreations.com/ website and the online community we will start posting our development project files to on the repositories located and/or mirrored at github.com/SPEKTRUM-Creations.
-
- ________________________________________________________________________
- __|____|____|____|____|____|_____|___|_____|_____|____|___|_____|____|__
- ___|____|_____|___|_____|____|_____|___/\_____|____|____|________|____|_
- __|____|___/   _____/\_______  \|    |/  \__/     \__|   |_|____|____|__
- _|____|____\___    \__|     ___/|       /__/  \ /  \_|   |_____|____|___
- ___|____|__/        \_|    |_|__|    |  \_/    \    \|   |_|_____|____|_
- |____|____/_______  /_|____|__|_|____|___\\____/\_  /|_______\|____|____
- ___|____|____|____\/____|____|____|___|_\/___|____\/___|____\/___|____|_
- _|____|_____|____|_____|___|_______|_|______|__|______|__|_____|____|___
+ </pre><pre>
+<code> __________________________________________________________
+   |____|____|____|____|____|_____|___|_____|_____|____|___|_____|_
+   |____|_____|___|_____|____|_____|___/\_____|____|____|________|
+  _____|___/   _____/\_______  \|    |/  \__/     \__|   |_|____|
+ |____|____\___    \__|     ___/|       /__/  \ /  \_|   |_____|__
+   |____|__/        \_|    |_|__|    |  \_/    \    \|   |_|_____|__
+     |____/_______  /_|____|__|_|____|___\\____/\_  /|_______\|____|
+   |____|____|____\/____|____|____|___|_\/___|____\/___|____\/___|
+ |____|_____|____|_____|___|_______|_|______|__|______|__|_____|
  
+</code> </pre><pre>
+  
 This "Long Play Album" WebApp is where we begin with long term goal of creating the file-type (.LPA) as the definitive Digital-LongPlayAlbum container to be developed as the standard means of distributing digital albums (with full contents, not just the music but lyrics, liners, credits and more such as artwork and video content even...). The goal will be to leverage the SPKML Language as a part of the development of the .LPA file-type, making both the language and the file-type standard as essential to the musical world on the web...
 
 To view an example of the code we are developing, check out,
@@ -23,11 +25,15 @@ Note: the actual mp3 file being used, contains chapters already and as the goal 
 
 Details will follow soon, so please stay tuned so you don't miss your chance to help design code using standard code to create new standards of certain file type we've been working on to open-source for this community being called by the name: SPEKTRUM Creations Development Network.
 
+ </pre><pre>
+
 Some Programs Keep Me Learning
             and
 Some Programmers Know My Language
          as well as,
 Some People Know My Lyrics
+
+ </pre><pre>
     ____________________________
   ⎛\  Scripted ✚ Designed by:  \
   ⎝⎠⎞   Christopher Johnson     ⎞
@@ -36,6 +42,9 @@ Some People Know My Lyrics
    ⎛        Join S.C.D.N.      ⎛
    ⎢  help code the spkml DOM  ⎝
    \____________________________\
+   
+    </pre><pre>
+ 
 This is an .lpa file prototype containing the example code and structure for the file type for the album contents format being developed by SCDN, led by the project lead and supported by all members of the dev team...
 
 This contains the mp3 file of the album:
@@ -79,6 +88,7 @@ Additional referrence links to standards ref docs / specification requirements a
 ◦	https://developer.apple.com/documentation/musickitjs
 ◦	https://www.w3.org/2019/webapps/
 ◦	https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
 Documentation previously spitballed in some accurate detail in relatively close to meeting certified current html 5 / living Standard standards. Regarding the SPKML as a Language in the book called CodeBase by Christopher Johnson (c) 2004-2005 Spektrum Creations/Christopher Johnson : originally published on-demand paperback in 2005. Also Developed as a Tiger Dashnoard app on introduction of widget Dashboard on Mac OS X 10.4 (dead link ref and removed from archive.org on last check days ago -approx. DEC16-18, 2020 cj) and as a widget also for the Yahoo widget engine later same period after Yahoo rebrand of Konfanulator exe for Windows (see next section on CodeBase & SPKML LANGUAGE ORIGINS)- - createspace AN Amazon.com on-demand paperback publishing company - republished "CodeBase" 2009 and Kindle followed in 2014??{note get correct pub date from Kindle CodeBase ebook page - get URL + add link and pub date w/version}
 
 ##CodeBase & SPKML LANGUAGE ORIGINS)-
@@ -99,8 +109,9 @@ For the time being we are going to use MIT license and will soon append the addi
 
 W3C Software and Document Notice and License
 
-Status: This license takes effect 13 May, 2015.
-
+Status: This license takes effect 13 May, 2015. </pre><pre>
+  
+  
                  <p class="intro tPadding">This work is being provided by the copyright holders under the following
 license.
 
@@ -145,8 +156,8 @@ Copyright © 2020 Christopher Johnson / SPEKTRUM Creations / SCDN -- Permission 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
+ </pre><pre>
+<h2>
 Ch̥̳͍̭̆̔̈ͅr̟̘̭̺͔̀i͍̼͉̼̯ͤ̓ͤ̐̚s̞̟͚͂̇t̙͓̞̝̽̏ͬo̼ͫ̇̚pͫ̇h̩̙̾̀̆e̙̖̳̣̳͛̐͐r̞̞͆͗ ͎̯͇̻̎̽ͫͬͅJ͓̙̜̄ͬôh̼͈̦̮͆ͤ̒̓͋ṋ̭ͫ͂ͭ̐s̠͇̝̮ͯo̙̦ͣ̍͌̔̋ͅnͦͦͪ͛ͤ
 
 
@@ -154,9 +165,12 @@ Ch̥̳͍̭̆̔̈ͅr̟̘̭̺͔̀i͍̼͉̼̯ͤ̓ͤ̐̚s̞̟͚͂̇t̙͓̞̝̽̏ͬo�
 
 
 ̟͓̣̂@͔̌̓̓ͣs̗̙͖͂̋ͦ͂͛ͅp̥ͦ̓̔ͫͩk̤̹̳̰̂́ͧ͗m͇̺l̔̓
+</h2>
 
+ </pre><pre>
                Copyright © 2020 SPEKTRUMCreations
                        All Rights Reserved.
 
 
          |===============================================|
+ </pre>
