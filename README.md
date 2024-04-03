@@ -3,7 +3,7 @@
 see https://github.com/SPEKTRUM-Creations/LPA-WebApp
 <Pre>
 Are you a developer? Join us for a fun set of projects being developed by the team we will assemble through both the SCDN.SPEKTRUMCreations.com/ website and the online community we will start posting our development project files to on the repositories located and/or mirrored at github.com/SPEKTRUM-Creations.
- </pre><pre>
+ </pre><pre style="font:"courier New", courier, monospaced; font-size:14pt;">
  __________________________________________________________
    |____|____|____|____|____|_____|___|_____|_____|____|___|_____|_
    |____|_____|___|_____|____|_____|___/\_____|____|____|________|
@@ -142,7 +142,8 @@ CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENT.
 
                  <p>The name and trademarks of copyright holders may NOT be used in
 advertising or publicity pertaining to the work without specific, written prior permission. Title to copyright in this work will at all times remain with copyright holders.
-
+<legend>
+  <address>
 MIT License
 ===========
 
@@ -157,8 +158,9 @@ Copyright © 2020 Christopher Johnson / SPEKTRUM Creations / SCDN -- Permission 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</address>
  </pre><pre>
-<h2>
+<h2 style="font-size:18px;">
 Ch̥̳͍̭̆̔̈ͅr̟̘̭̺͔̀i͍̼͉̼̯ͤ̓ͤ̐̚s̞̟͚͂̇t̙͓̞̝̽̏ͬo̼ͫ̇̚pͫ̇h̩̙̾̀̆e̙̖̳̣̳͛̐͐r̞̞͆͗ ͎̯͇̻̎̽ͫͬͅJ͓̙̜̄ͬôh̼͈̦̮͆ͤ̒̓͋ṋ̭ͫ͂ͭ̐s̠͇̝̮ͯo̙̦ͣ̍͌̔̋ͅnͦͦͪ͛ͤ
 
 
