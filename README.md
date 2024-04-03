@@ -34,7 +34,7 @@ Some Programmers Know My Language
          as well as,
 Some People Know My Lyrics
 
- </pre><pre>
+   </pre><pre style="font:"courier New", courier, monospaced; font-size:14pt;">
     ____________________________
   ⎛\  Scripted ✚ Designed by:  \
   ⎝⎠⎞   Christopher Johnson     ⎞
